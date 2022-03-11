@@ -7,7 +7,7 @@ export const products = [
     {
         id: 2,
         img: "https://i.ibb.co/BNcD42t/R-Gym.png",
-        link: "https://alehnovich-vladimir.github.io",
+        link: "https://github.com/Alehnovich-Vladimir/R_Gym-Store",
     },
     {
         id: 3,

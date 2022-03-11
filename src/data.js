@@ -1,13 +1,13 @@
 export const products = [
     {
         id: 1,
-        img: "https://i.ibb.co/kmb7957/github.png",
-        link: "https://github.com/Alehnovich-Vladimir",
+        img: "https://i.ibb.co/MMNFhzX/portfolio.png",
+        link: "https://portfolio-alexvovan.vercel.app",
     },
     {
         id: 2,
         img: "https://i.ibb.co/BNcD42t/R-Gym.png",
-        link: "http://lama.dev",
+        link: "https://alehnovich-vladimir.github.io",
     },
     {
         id: 3,

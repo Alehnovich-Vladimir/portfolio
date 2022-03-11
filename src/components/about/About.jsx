@@ -1,4 +1,5 @@
 import "./about.css";
+import Award from "../../img/award.jpg";
 
 const About = () => {
   return (
@@ -24,26 +25,12 @@ const About = () => {
               of my work… Hard-working, with great sense of responsibility and humor.
               </p>
               <div className="a-award">
-                  <div className="a-award-skills">
-                      <h4 className="a-award-title">SKILLS:</h4>
-                      <ul>
-                            <li>JavaScript</li>
-                            <li>HTML 5</li>
-                            <li>CSS3, SCSS/SASS</li>
-                            <li>FIGMA</li>
-                            <li>GIT</li>
-                            <li>REACT/REDUX</li>
-                      </ul>
-                  </div>
-                  <div className="a-award-lang">
-                      <h4 className="a-award-title">LANGUAGES:</h4>
-                      <ul>
-                            <li>English - A2</li>
-                            <li>Spanish - A1</li>
-                            <li>Russian - Native</li>
-                            <li>Belarusian - Native</li>
-                      </ul>
-                  </div>  
+                 <img src={Award} alt="" className="a-award-img" />
+                  <div className="a-award-texts">
+                      <h4 className="a-award-title">IT school TeachMeSkills - Frontend developer course:</h4>
+                      <p className="a-award-desc">School teaching TeachMeSkills it was the best time of my life.
+                          Many thanks to my teachers and colleagues for being with me throughout the entire training.</p>
+                  </div> 
               </div>
           </div>
       </div>

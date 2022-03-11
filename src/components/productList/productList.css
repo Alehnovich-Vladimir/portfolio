@@ -28,6 +28,7 @@
 
 @media screen and (max-width: 480px) {
     .pl {
+        margin-top: 10px;
         padding: 10px;
     }
 
@@ -37,5 +38,9 @@
 
     .pl-desc {
         display: none;
+    }
+
+    .pl-title {
+        font-size: 20px;
     }
 }

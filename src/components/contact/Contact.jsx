@@ -47,11 +47,11 @@ const Contact = () => {
                       </div>
                       <div className="c-info-item">
                           <img src={Email} alt="" className="c-icon" />
-                          alehnovich.vova@gmail.com
+                          alexvovan.dev@gmail.com
                       </div>
                       <div className="c-info-item">
                           <img src={Address} alt="" className="c-icon" />
-                          46520 Virgen del Carmen Street, Puerto de Sagunto, Valencia, Spain
+                          46520 Avenida Mediterraneo 2, Canet d'en Berenguer, Valencia, Spain
                       </div>
                   </div> 
               </div>

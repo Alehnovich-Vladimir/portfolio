@@ -3,7 +3,7 @@ import Phone from "../../img/phone.png";
 import Email from "../../img/email.png";
 import Address from "../../img/address.png";
 import { useContext, useRef, useState } from "react";
-import emailjs from "emailjs-com";
+import emailjs from "@emailjs/browser";
 import { ThemeContext } from "../../context";
 
 const Contact = () => {
@@ -14,13 +14,15 @@ const Contact = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        emailjs
+       emailjs
     .sendForm(
         'service_bkvinbd',
         'template_zu8f9oc',
         formRef.current,
-        'q30z76Yq-la8hnw9I'
-            )
+        {
+            publicKey: 'q30z76Yq-la8hnw9I',
+        }
+    )
             .then(
                 (result) => {
                     console.log(result.text);

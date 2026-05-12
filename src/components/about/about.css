@@ -44,6 +44,7 @@
     height: 300px;
     border: 5px solid #59b256;
     border-radius: 5px;
+    flex-shrink: 0;
 }
 
 .a-title {
@@ -62,7 +63,7 @@
     margin-top: 50px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    gap: 30px;
 }
 
 .a-award-texts{
@@ -115,6 +116,7 @@
     .a-award {
         margin-top: 10px;
         margin-bottom: 30px;
+        gap: 12px;
     }
 
     .a-award-img {

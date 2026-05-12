@@ -87,6 +87,15 @@ button {
     margin-right: 50px;
 }
 
+input::placeholder,
+textarea::placeholder {
+    color: #888;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+}
 
 @media  screen and (max-width: 480px) {
     .c-wrapper {
@@ -128,4 +137,3 @@ button {
         margin-top: 10px;
     }
 }
-

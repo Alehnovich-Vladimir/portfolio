@@ -25,11 +25,7 @@ const Contact = () => {
     setSending(true);
 
     emailjs
-      .sendForm(
-        "service_bkvinbd",
-        "template_zu8f9oc",
-        formRef.current
-      )
+      .sendForm("service_bkvinbd", "template_zu8f9oc", formRef.current)
       .then(
         (result) => {
           console.log("EmailJS success:", result.text);
@@ -76,28 +72,44 @@ const Contact = () => {
 
           <form ref={formRef} onSubmit={handleSubmit}>
             <input
-              style={{ backgroundColor: darkMode && "#333" }}
+              style={{
+                backgroundColor: darkMode ? "#333" : "",
+                color: darkMode ? "white" : "",
+                caretColor: darkMode ? "white" : "",
+              }}
               type="text"
               placeholder="Name"
               name="user_name"
               required
             />
             <input
-              style={{ backgroundColor: darkMode && "#333" }}
+              style={{
+                backgroundColor: darkMode ? "#333" : "",
+                color: darkMode ? "white" : "",
+                caretColor: darkMode ? "white" : "",
+              }}
               type="text"
               placeholder="Subject"
               name="user_subject"
               required
             />
             <input
-              style={{ backgroundColor: darkMode && "#333" }}
+              style={{
+                backgroundColor: darkMode ? "#333" : "",
+                color: darkMode ? "white" : "",
+                caretColor: darkMode ? "white" : "",
+              }}
               type="email"
               placeholder="Email"
               name="user_email"
               required
             />
             <textarea
-              style={{ backgroundColor: darkMode && "#333" }}
+              style={{
+                backgroundColor: darkMode ? "#333" : "",
+                color: darkMode ? "white" : "",
+                caretColor: darkMode ? "white" : "",
+              }}
               rows="5"
               placeholder="Message"
               name="message"

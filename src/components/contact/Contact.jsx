@@ -15,11 +15,11 @@ const Contact = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         emailjs
-            .sendForm(
-                'service_zygj0dy',
-                'template_gd74tts',
-                formRef.current,
-                'user_c7EURjYbRXZpUcmT2SqIP'
+    .sendForm(
+        'service_bkvinbd',
+        'template_zu8f9oc',
+        formRef.current,
+        'q30z76Yq-la8hnw9I'
             )
             .then(
                 (result) => {

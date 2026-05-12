@@ -2,34 +2,33 @@ import "./contact.css";
 import Phone from "../../img/phone.png";
 import Email from "../../img/email.png";
 import Address from "../../img/address.png";
-import { useContext, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { ThemeContext } from "../../context";
 
 const Contact = () => {
   const formRef = useRef();
   const [done, setDone] = useState(false);
+  const [sending, setSending] = useState(false);
   const theme = useContext(ThemeContext);
   const darkMode = theme.state.darkMode;
+
+  useEffect(() => {
+    emailjs.init({
+      publicKey: "q30z76Yq-Ia8hnw9l",
+    });
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setDone(false);
-
-    console.log("EmailJS config:", {
-      service: "service_bkvinbd",
-      template: "template_zu8f9oc",
-      publicKey: "q30z76Yq-la8hnw9I",
-    });
+    setSending(true);
 
     emailjs
       .sendForm(
         "service_bkvinbd",
         "template_zu8f9oc",
-        formRef.current,
-        {
-          publicKey: "q30z76Yq-la8hnw9I",
-        }
+        formRef.current
       )
       .then(
         (result) => {
@@ -41,7 +40,10 @@ const Contact = () => {
           console.log("EmailJS error:", error);
           alert("Message was not sent. Check console for details.");
         }
-      );
+      )
+      .finally(() => {
+        setSending(false);
+      });
   };
 
   return (
@@ -101,7 +103,9 @@ const Contact = () => {
               name="message"
               required
             />
-            <button type="submit">Submit</button>
+            <button type="submit" disabled={sending}>
+              {sending ? "Sending..." : "Submit"}
+            </button>
             {done && "Thank you..."}
           </form>
         </div>

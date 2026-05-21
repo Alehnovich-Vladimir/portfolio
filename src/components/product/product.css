@@ -5,6 +5,7 @@
     border: 2px solid rgb(243, 242, 242);
     border-radius: 10px 10px 0px 0px;
     overflow: hidden;
+    background-color: white;
 }
 
 .p-browser {
@@ -33,11 +34,28 @@
     transform: translateY(-100%);
 }
 
-
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 768px) {
     .p {
-        width: 40%;
-        height: 20vh;
+        width: min(100%, 430px);
+        height: 280px;
+        margin: 0;
+        border-radius: 16px 16px 0 0;
+        box-shadow: 0 16px 42px rgba(0, 0, 0, 0.22);
+    }
 
+    .p-browser {
+        height: 28px;
+    }
+
+    .p-circle {
+        width: 8px;
+        height: 8px;
+        margin: 4px;
+    }
+}
+
+@media screen and (max-width: 390px) {
+    .p {
+        height: 250px;
     }
 }

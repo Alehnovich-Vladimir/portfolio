@@ -1,5 +1,5 @@
 .a {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
 }
@@ -45,6 +45,7 @@
     border: 5px solid #59b256;
     border-radius: 5px;
     flex-shrink: 0;
+    object-fit: cover;
 }
 
 .a-title {
@@ -68,7 +69,7 @@
 
 .a-award-texts{
     width: 50%;
-    height: 300px;
+    min-height: 300px;
 }
 
 .a-award-title {
@@ -82,60 +83,91 @@
     padding: 10px;
 }
 
-@media screen and (max-width:480px) {
+@media screen and (max-width: 768px) {
     .a {
+        min-height: auto;
         flex-direction: column;
         text-align: center;
-        margin-top: 50px;
-    }
-
-    .a-sub {
-        margin-top: 0;
-    }
-
-    .a-title {
-        font-size: 22px;
+        padding: 54px 22px 34px;
+        box-sizing: border-box;
+        gap: 28px;
     }
 
     .a-left {
         width: 100%;
-    }
-
-    .a-card {
-        height: 30vh;
+        height: auto;
     }
 
     .a-card.bg{
         display: none;
     }
 
-    .a-desc {
-        font-size: 14px;
-    }
-
-    .a-award {
-        margin-top: 10px;
-        margin-bottom: 30px;
-        gap: 12px;
-    }
-
-    .a-award-img {
-        margin-top: 5px;
-        width: 180px;
-        height: 100px;
-    }
-
-    .a-award-texts{
-        height: 100px;
-        font-size: 12px;
-    }
-
-    .a-award-title {
-        margin-top: 0px;
-        margin-bottom: 0px;
+    .a-card {
+        width: min(72vw, 330px);
+        height: min(72vw, 330px);
+        border-radius: 28px;
+        box-shadow: 0 18px 45px rgba(0, 0, 0, 0.18);
     }
 
     .a-right {
-       padding: 20px; 
+        width: 100%;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .a-title {
+        font-size: 34px;
+        line-height: 1.15;
+        margin: 0 0 12px;
+    }
+
+    .a-sub {
+        max-width: 620px;
+        margin: 0 auto 22px;
+        font-size: 21px;
+        line-height: 1.45;
+    }
+
+    .a-desc {
+        max-width: 620px;
+        margin: 0 auto;
+        font-size: 18px;
+        line-height: 1.55;
+    }
+
+    .a-award {
+        width: 100%;
+        margin: 32px auto 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
+    }
+
+    .a-award-img {
+        width: min(100%, 390px);
+        height: auto;
+        aspect-ratio: 1.4 / 1;
+        object-fit: cover;
+    }
+
+    .a-award-texts{
+        width: min(100%, 430px);
+        min-height: auto;
+        height: auto;
+        font-size: 17px;
+    }
+
+    .a-award-title {
+        margin: 0 0 12px;
+        color: #59b256;
+        font-size: 20px;
+        line-height: 1.35;
+    }
+
+    .a-award-desc {
+        padding: 0;
+        margin: 0;
+        line-height: 1.45;
     }
 }

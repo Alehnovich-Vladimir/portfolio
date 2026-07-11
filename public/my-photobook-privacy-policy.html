@@ -205,6 +205,7 @@
           <li>copies of selected photos stored inside the app's private local storage;</li>
           <li>photo metadata, such as the date and time when a photo was taken;</li>
           <li>embedded photo location metadata, such as GPS coordinates, if such metadata exists in the selected photo and the feature is used;</li>
+          <li>approximate location permission on Android, when needed only to convert embedded photo coordinates into a readable place name;</li>
           <li>generated PDF files created by the app at your request.</li>
         </ul>
 
@@ -220,13 +221,19 @@
 
         <h2>4. Location information</h2>
         <p>
-          My PhotoBook does not request or track your live device location.
+          My PhotoBook does not request precise location permission, does not use background location,
+          and does not continuously track your live device location.
         </p>
         <p>
           Some photos may contain embedded location metadata, for example GPS coordinates saved by the camera
           at the time the photo was taken. If you use smart album features or location-based album organization,
           the app may read this embedded photo metadata to help group photos, generate album details,
           or display place names.
+        </p>
+        <p>
+          On Android, the app may request approximate foreground location permission only when it is needed
+          for reverse geocoding: converting coordinates already embedded in selected photos into readable
+          place names. This permission is not used for continuous tracking.
         </p>
         <p>
           When coordinates from photo metadata are converted into readable place names, the device or platform
@@ -374,6 +381,7 @@
           <li>копии выбранных фотографий, сохранённые в приватном локальном хранилище приложения;</li>
           <li>метаданные фотографий, например дату и время съёмки;</li>
           <li>встроенные данные о месте съёмки, например GPS-координаты, если такие данные есть в выбранной фотографии и используется соответствующая функция;</li>
+          <li>разрешение на приблизительное местоположение на Android, когда оно нужно только для преобразования координат, встроенных в выбранные фотографии, в читаемое название места;</li>
           <li>PDF-файлы, созданные приложением по вашему запросу.</li>
         </ul>
 
@@ -391,13 +399,20 @@
 
         <h2>4. Информация о местоположении</h2>
         <p>
-          My PhotoBook не запрашивает и не отслеживает текущее местоположение вашего устройства.
+          My PhotoBook не запрашивает разрешение на точное местоположение, не использует фоновое
+          местоположение и не отслеживает текущее местоположение вашего устройства постоянно.
         </p>
         <p>
           Некоторые фотографии могут содержать встроенные данные о месте съёмки, например GPS-координаты,
           сохранённые камерой в момент создания фотографии. Если вы используете умные альбомы
           или функции организации фотографий по месту, приложение может читать такие встроенные метаданные,
           чтобы группировать фотографии, формировать данные альбома или показывать названия мест.
+        </p>
+        <p>
+          На Android приложение может запрашивать разрешение на приблизительное местоположение на переднем плане
+          только тогда, когда оно нужно для обратного геокодинга: преобразования координат, уже встроенных
+          в выбранные фотографии, в читаемые названия мест. Это разрешение не используется для постоянного
+          отслеживания пользователя.
         </p>
         <p>
           Когда координаты из метаданных фотографии преобразуются в читаемые названия мест,
@@ -551,6 +566,7 @@
           <li>copias de las fotos seleccionadas guardadas en el almacenamiento local privado de la aplicación;</li>
           <li>metadatos de fotos, como la fecha y hora en que se tomó una foto;</li>
           <li>metadatos de ubicación incrustados en la foto, como coordenadas GPS, si dichos datos existen en la foto seleccionada y se utiliza la función correspondiente;</li>
+          <li>permiso de ubicación aproximada en Android, cuando sea necesario solo para convertir las coordenadas incrustadas en las fotos seleccionadas en un nombre de lugar legible;</li>
           <li>archivos PDF generados por la aplicación a petición del usuario.</li>
         </ul>
 
@@ -566,13 +582,19 @@
 
         <h2>4. Información de ubicación</h2>
         <p>
-          My PhotoBook no solicita ni rastrea la ubicación en tiempo real de su dispositivo.
+          My PhotoBook no solicita permiso de ubicación precisa, no usa ubicación en segundo plano
+          y no rastrea continuamente la ubicación en tiempo real de su dispositivo.
         </p>
         <p>
           Algunas fotos pueden contener metadatos de ubicación incrustados, por ejemplo coordenadas GPS guardadas
           por la cámara en el momento de tomar la foto. Si utiliza funciones de álbum inteligente u organización
           basada en ubicación, la aplicación puede leer estos metadatos incrustados para ayudar a agrupar fotos,
           generar detalles del álbum o mostrar nombres de lugares.
+        </p>
+        <p>
+          En Android, la aplicación puede solicitar permiso de ubicación aproximada en primer plano solo cuando
+          sea necesario para la geocodificación inversa: convertir coordenadas ya incrustadas en las fotos
+          seleccionadas en nombres de lugares legibles. Este permiso no se utiliza para rastreo continuo.
         </p>
         <p>
           Cuando las coordenadas de los metadatos de una foto se convierten en nombres de lugares legibles,

@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Privacy Policy - My PhotoBook</title>
+
   <style>
     :root {
       --bg: #fff8ef;
@@ -11,7 +12,9 @@
       --text: #2b2520;
       --muted: #6f6760;
       --accent: #1f9f93;
+      --accent-dark: #157a70;
       --border: #eadfd3;
+      --notice-bg: #f0faf8;
     }
 
     * {
@@ -27,7 +30,7 @@
     }
 
     .page {
-      max-width: 920px;
+      max-width: 960px;
       margin: 0 auto;
       padding: 32px 18px;
     }
@@ -38,6 +41,37 @@
       border-radius: 18px;
       padding: 36px;
       box-shadow: 0 8px 24px rgba(43, 37, 32, 0.08);
+    }
+
+    .language-switcher {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: flex-end;
+      margin-bottom: 24px;
+    }
+
+    .language-button {
+      border: 1px solid var(--border);
+      background: #ffffff;
+      color: var(--text);
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .language-button:hover {
+      border-color: var(--accent);
+      color: var(--accent-dark);
+    }
+
+    .language-button.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #ffffff;
+      font-weight: 700;
     }
 
     h1 {
@@ -69,8 +103,8 @@
     }
 
     a {
-      color: var(--accent);
-      font-weight: 600;
+      color: var(--accent-dark);
+      font-weight: 700;
     }
 
     .updated {
@@ -80,7 +114,7 @@
 
     .notice {
       border-left: 4px solid var(--accent);
-      background: #f0faf8;
+      background: var(--notice-bg);
       padding: 14px 16px;
       border-radius: 10px;
       margin: 22px 0;
@@ -90,6 +124,10 @@
       margin-top: 34px;
       color: var(--muted);
       font-size: 14px;
+    }
+
+    .policy[hidden] {
+      display: none;
     }
 
     @media (max-width: 640px) {
@@ -102,6 +140,10 @@
         border-radius: 14px;
       }
 
+      .language-switcher {
+        justify-content: flex-start;
+      }
+
       h1 {
         font-size: 28px;
       }
@@ -112,180 +154,597 @@
     }
   </style>
 </head>
+
 <body>
   <main class="page">
     <article class="card">
-      <h1>Privacy Policy</h1>
-      <p class="updated">Last updated: July 11, 2026</p>
+      <nav class="language-switcher" aria-label="Language selection">
+        <button type="button" class="language-button" data-lang-button="en">English</button>
+        <button type="button" class="language-button" data-lang-button="ru">Русский</button>
+        <button type="button" class="language-button" data-lang-button="es">Español</button>
+      </nav>
 
-      <p>
-        This Privacy Policy explains how the mobile application <strong>My PhotoBook</strong>
-        handles information when you use the app to create photo albums, digital books,
-        printable photobooks, and PDF exports.
-      </p>
+      <section id="policy-en" class="policy">
+        <h1>Privacy Policy for My PhotoBook</h1>
+        <p class="updated">Last updated: July 11, 2026</p>
 
-      <div class="notice">
         <p>
-          <strong>Core principle:</strong> My PhotoBook is designed to work locally on your device.
-          The app does not require an account, does not use a developer-operated backend server,
-          and does not upload your photos or album content to our own server.
+          This Privacy Policy explains how the mobile application <strong>My PhotoBook</strong>
+          handles information when you use the app to create photo albums, digital books,
+          printable photobooks, and PDF exports.
         </p>
-      </div>
 
-      <h2>1. About My PhotoBook</h2>
-      <p>
-        My PhotoBook allows users to create personal photo albums from photos selected on their device.
-        Users can add album titles, subtitles, photo captions, cover images, page styles, colors,
-        crop settings, photo order, and other album layout preferences.
-      </p>
-      <p>
-        The app can also create printable photobook layouts and generate PDF files that users may preview,
-        open, save, or share through the standard system options available on their device.
-      </p>
+        <div class="notice">
+          <p>
+            <strong>Core principle:</strong> My PhotoBook is designed to work locally on your device.
+            The app does not require an account, does not use a developer-operated backend server,
+            and does not upload your photos or album content to our own server.
+          </p>
+        </div>
 
-      <h2>2. Information processed by the app</h2>
-      <p>
-        Depending on how you use the app, My PhotoBook may process the following information locally
-        on your device:
-      </p>
-      <ul>
-        <li>photos selected by you from your device photo library;</li>
-        <li>album names, subtitles, descriptions, captions, and other text entered by you;</li>
-        <li>album type, theme, color, cover style, layout settings, crop settings, and photo order;</li>
-        <li>copies of selected photos stored inside the app's private local storage;</li>
-        <li>photo metadata, such as the date and time when a photo was taken;</li>
-        <li>embedded photo location metadata, such as GPS coordinates, if such metadata exists in the selected photo and the feature is used;</li>
-        <li>generated PDF files created by the app at your request.</li>
-      </ul>
+        <h2>1. About My PhotoBook</h2>
+        <p>
+          My PhotoBook allows users to create personal photo albums from photos selected on their device.
+          Users can add album titles, subtitles, photo captions, cover images, page styles, colors,
+          crop settings, photo order, and other album layout preferences.
+        </p>
+        <p>
+          The app can create digital photo books, printable photobook layouts, and PDF files that users may preview,
+          open, save, or share through the standard system options available on their device.
+        </p>
 
-      <h2>3. Photo access and media permissions</h2>
-      <p>
-        My PhotoBook may request access to your photo library so that you can choose photos for your albums.
-        The app only uses the photos that you select for creating and editing your albums.
-      </p>
-      <p>
-        On supported devices, the app may also access embedded media metadata from selected photos.
-        This can include the original photo date or embedded photo location information stored inside the image file.
-      </p>
+        <h2>2. Information processed by the app</h2>
+        <p>
+          Depending on how you use the app, My PhotoBook may process the following information locally
+          on your device:
+        </p>
+        <ul>
+          <li>photos selected by you from your device photo library;</li>
+          <li>album names, subtitles, descriptions, captions, and other text entered by you;</li>
+          <li>album type, theme, color, cover style, layout settings, crop settings, and photo order;</li>
+          <li>copies of selected photos stored inside the app's private local storage;</li>
+          <li>photo metadata, such as the date and time when a photo was taken;</li>
+          <li>embedded photo location metadata, such as GPS coordinates, if such metadata exists in the selected photo and the feature is used;</li>
+          <li>generated PDF files created by the app at your request.</li>
+        </ul>
 
-      <h2>4. Location information</h2>
-      <p>
-        My PhotoBook does not request or track your live device location.
-      </p>
-      <p>
-        Some photos may contain embedded location metadata, for example GPS coordinates saved by the camera
-        at the time the photo was taken. If you use smart album features or location-based album organization,
-        the app may read this embedded photo metadata to help group photos, generate album details,
-        or display place names.
-      </p>
-      <p>
-        When coordinates from photo metadata are converted into readable place names, the device or platform
-        geocoding services may be used. This processing is controlled by the operating system and platform services,
-        not by a developer-operated My PhotoBook server.
-      </p>
+        <h2>3. Photo access and media permissions</h2>
+        <p>
+          My PhotoBook may request access to your photo library so that you can choose photos for your albums.
+          The app only uses the photos that you select for creating and editing your albums.
+        </p>
+        <p>
+          On supported devices, the app may also access embedded media metadata from selected photos.
+          This can include the original photo date or embedded photo location information stored inside the image file.
+        </p>
 
-      <h2>5. Local storage</h2>
-      <p>
-        Album data and imported photo copies are stored locally in the app's private storage on your device.
-        This may include album information, selected photos, captions, cover settings, crop settings,
-        print layout settings, and generated files.
-      </p>
-      <p>
-        My PhotoBook does not provide cloud synchronization and does not store your albums on a developer-operated server.
-      </p>
+        <h2>4. Location information</h2>
+        <p>
+          My PhotoBook does not request or track your live device location.
+        </p>
+        <p>
+          Some photos may contain embedded location metadata, for example GPS coordinates saved by the camera
+          at the time the photo was taken. If you use smart album features or location-based album organization,
+          the app may read this embedded photo metadata to help group photos, generate album details,
+          or display place names.
+        </p>
+        <p>
+          When coordinates from photo metadata are converted into readable place names, the device or platform
+          geocoding services may be used. This processing is controlled by the operating system and platform services,
+          not by a developer-operated My PhotoBook server.
+        </p>
 
-      <h2>6. PDF generation, export, and sharing</h2>
-      <p>
-        My PhotoBook can generate PDF files from your albums. These PDF files may contain selected photos,
-        captions, album titles, page layouts, and other album content chosen by you.
-      </p>
-      <p>
-        When you choose to preview, open, save, export, or share a PDF, the app may pass the file to Android
-        system dialogs or to another app selected by you. After you choose another app or service,
-        the handling of that file is governed by the privacy policy and settings of that selected app or service.
-      </p>
+        <h2>5. Local storage</h2>
+        <p>
+          Album data and imported photo copies are stored locally in the app's private storage on your device.
+          This may include album information, selected photos, captions, cover settings, crop settings,
+          print layout settings, and generated files.
+        </p>
+        <p>
+          My PhotoBook does not provide cloud synchronization and does not store your albums on a developer-operated server.
+        </p>
 
-      <h2>7. Data collection by the developer</h2>
-      <p>
-        The developer of My PhotoBook does not collect, sell, rent, or share your photos, albums, captions,
-        or generated PDF files through a developer-operated backend server.
-      </p>
-      <p>
-        The app does not require user registration and does not require you to create an account.
-      </p>
+        <h2>6. PDF generation, export, and sharing</h2>
+        <p>
+          My PhotoBook can generate PDF files from your albums. These PDF files may contain selected photos,
+          captions, album titles, page layouts, and other album content chosen by you.
+        </p>
+        <p>
+          When you choose to preview, open, save, export, or share a PDF, the app may pass the file to Android
+          system dialogs or to another app selected by you. After you choose another app or service,
+          the handling of that file is governed by the privacy policy and settings of that selected app or service.
+        </p>
 
-      <h2>8. Advertising and analytics</h2>
-      <p>
-        My PhotoBook does not include advertising SDKs.
-      </p>
-      <p>
-        My PhotoBook does not include developer-operated analytics SDKs for tracking user behavior
-        inside the app.
-      </p>
+        <h2>7. Data collection by the developer</h2>
+        <p>
+          The developer of My PhotoBook does not collect, sell, rent, or share your photos, albums, captions,
+          or generated PDF files through a developer-operated backend server.
+        </p>
+        <p>
+          The app does not require user registration and does not require you to create an account.
+        </p>
 
-      <h2>9. Third-party services</h2>
-      <p>
-        My PhotoBook is built using mobile platform technologies and system services. Certain actions,
-        such as selecting photos, opening files, sharing PDFs, or converting embedded photo coordinates
-        into readable place names, may involve operating system services or apps selected by the user.
-      </p>
-      <p>
-        We are not responsible for the privacy practices of third-party apps or services that you choose
-        to use for opening, saving, printing, or sharing exported files.
-      </p>
+        <h2>8. Advertising and analytics</h2>
+        <p>
+          My PhotoBook does not include advertising SDKs.
+        </p>
+        <p>
+          My PhotoBook does not include developer-operated analytics SDKs for tracking user behavior inside the app.
+        </p>
 
-      <h2>10. Data deletion</h2>
-      <p>
-        You can delete albums inside the app. Deleting an album removes the album information managed by the app.
-      </p>
-      <p>
-        You can also delete app data by clearing the app's storage through Android system settings
-        or by uninstalling the app from your device.
-      </p>
-      <p>
-        Because My PhotoBook does not store your albums on a developer-operated server, the developer cannot remotely
-        access or delete album data stored locally on your device.
-      </p>
+        <h2>9. Third-party services</h2>
+        <p>
+          My PhotoBook is built using mobile platform technologies and system services. Certain actions,
+          such as selecting photos, opening files, sharing PDFs, or converting embedded photo coordinates
+          into readable place names, may involve operating system services or apps selected by the user.
+        </p>
+        <p>
+          We are not responsible for the privacy practices of third-party apps or services that you choose
+          to use for opening, saving, printing, or sharing exported files.
+        </p>
 
-      <h2>11. Data security</h2>
-      <p>
-        My PhotoBook stores album data locally using the storage mechanisms available on your device.
-        The security of locally stored data depends on your device, operating system, screen lock,
-        backups, and other system-level security settings.
-      </p>
-      <p>
-        We recommend keeping your device protected with a secure lock screen and keeping your operating system updated.
-      </p>
+        <h2>10. Data deletion</h2>
+        <p>
+          You can delete albums inside the app. Deleting an album removes the album information managed by the app.
+        </p>
+        <p>
+          You can also delete app data by clearing the app's storage through Android system settings
+          or by uninstalling the app from your device.
+        </p>
+        <p>
+          Because My PhotoBook does not store your albums on a developer-operated server, the developer cannot remotely
+          access or delete album data stored locally on your device.
+        </p>
 
-      <h2>12. Children</h2>
-      <p>
-        My PhotoBook is not designed to knowingly collect personal information from children through a developer-operated server.
-        Photos and albums created in the app remain under the control of the device user.
-      </p>
-      <p>
-        Parents or guardians should supervise how children use photos, sharing features, and exported PDF files.
-      </p>
+        <h2>11. Data security</h2>
+        <p>
+          My PhotoBook stores album data locally using the storage mechanisms available on your device.
+          The security of locally stored data depends on your device, operating system, screen lock,
+          backups, and other system-level security settings.
+        </p>
 
-      <h2>13. Changes to this Privacy Policy</h2>
-      <p>
-        We may update this Privacy Policy from time to time to reflect changes in the app, legal requirements,
-        or platform requirements. When we update the policy, we will change the "Last updated" date at the top
-        of this page.
-      </p>
+        <h2>12. Children</h2>
+        <p>
+          My PhotoBook is not designed to knowingly collect personal information from children through a developer-operated server.
+          Photos and albums created in the app remain under the control of the device user.
+        </p>
+        <p>
+          Parents or guardians should supervise how children use photos, sharing features, and exported PDF files.
+        </p>
 
-      <h2>14. Contact</h2>
-      <p>
-        For privacy-related questions, contact:
-      </p>
-      <p>
-        <a href="mailto:alexvovan.dev@gmail.com">alexvovan.dev@gmail.com</a>
-      </p>
+        <h2>13. Changes to this Privacy Policy</h2>
+        <p>
+          We may update this Privacy Policy from time to time to reflect changes in the app, legal requirements,
+          or platform requirements. When we update the policy, we will change the "Last updated" date at the top
+          of this page.
+        </p>
 
-      <p class="footer">
-        Developer website:
-        <a href="https://portfolio-alexvovan.vercel.app">https://portfolio-alexvovan.vercel.app</a>
-      </p>
+        <h2>14. Contact</h2>
+        <p>
+          For privacy-related questions, contact:
+          <a href="mailto:alexvovan.dev@gmail.com">alexvovan.dev@gmail.com</a>
+        </p>
+
+        <p class="footer">
+          Developer website:
+          <a href="https://portfolio-alexvovan.vercel.app">https://portfolio-alexvovan.vercel.app</a>
+        </p>
+      </section>
+
+      <section id="policy-ru" class="policy" hidden>
+        <h1>Политика конфиденциальности My PhotoBook</h1>
+        <p class="updated">Последнее обновление: 11 июля 2026 года</p>
+
+        <p>
+          Настоящая Политика конфиденциальности объясняет, как мобильное приложение
+          <strong>My PhotoBook</strong> обрабатывает информацию при создании фотоальбомов,
+          цифровых книг, печатных фотокниг и PDF-файлов.
+        </p>
+
+        <div class="notice">
+          <p>
+            <strong>Главный принцип:</strong> My PhotoBook разработано для локальной работы на устройстве пользователя.
+            Приложение не требует учётной записи, не использует сервер разработчика и не загружает ваши фотографии
+            или содержимое альбомов на наш собственный сервер.
+          </p>
+        </div>
+
+        <h2>1. О приложении My PhotoBook</h2>
+        <p>
+          My PhotoBook позволяет пользователям создавать личные фотоальбомы из фотографий,
+          выбранных на устройстве. Пользователь может добавлять названия альбомов, подзаголовки,
+          подписи к фотографиям, обложки, стили страниц, цвета, настройки кадрирования,
+          порядок фотографий и другие параметры оформления альбома.
+        </p>
+        <p>
+          Приложение может создавать цифровые фотокниги, макеты для печати и PDF-файлы,
+          которые пользователь может просматривать, открывать, сохранять или отправлять через стандартные
+          системные функции устройства.
+        </p>
+
+        <h2>2. Какая информация обрабатывается приложением</h2>
+        <p>
+          В зависимости от того, как вы используете приложение, My PhotoBook может локально
+          обрабатывать на вашем устройстве следующую информацию:
+        </p>
+        <ul>
+          <li>фотографии, выбранные вами из фотогалереи устройства;</li>
+          <li>названия альбомов, подзаголовки, описания, подписи и другой текст, введённый вами;</li>
+          <li>тип альбома, тему, цвет, стиль обложки, настройки макета, кадрирование и порядок фотографий;</li>
+          <li>копии выбранных фотографий, сохранённые в приватном локальном хранилище приложения;</li>
+          <li>метаданные фотографий, например дату и время съёмки;</li>
+          <li>встроенные данные о месте съёмки, например GPS-координаты, если такие данные есть в выбранной фотографии и используется соответствующая функция;</li>
+          <li>PDF-файлы, созданные приложением по вашему запросу.</li>
+        </ul>
+
+        <h2>3. Доступ к фотографиям и разрешениям устройства</h2>
+        <p>
+          My PhotoBook может запрашивать доступ к вашей фотогалерее, чтобы вы могли выбрать фотографии
+          для своих альбомов. Приложение использует только те фотографии, которые вы сами выбираете
+          для создания и редактирования альбомов.
+        </p>
+        <p>
+          На поддерживаемых устройствах приложение также может получать доступ к встроенным метаданным
+          выбранных фотографий. Это может включать дату съёмки или информацию о месте съёмки,
+          сохранённую внутри файла изображения.
+        </p>
+
+        <h2>4. Информация о местоположении</h2>
+        <p>
+          My PhotoBook не запрашивает и не отслеживает текущее местоположение вашего устройства.
+        </p>
+        <p>
+          Некоторые фотографии могут содержать встроенные данные о месте съёмки, например GPS-координаты,
+          сохранённые камерой в момент создания фотографии. Если вы используете умные альбомы
+          или функции организации фотографий по месту, приложение может читать такие встроенные метаданные,
+          чтобы группировать фотографии, формировать данные альбома или показывать названия мест.
+        </p>
+        <p>
+          Когда координаты из метаданных фотографии преобразуются в читаемые названия мест,
+          могут использоваться системные или платформенные службы геокодирования. Такая обработка
+          контролируется операционной системой и платформенными службами, а не сервером My PhotoBook.
+        </p>
+
+        <h2>5. Локальное хранение данных</h2>
+        <p>
+          Данные альбомов и копии импортированных фотографий хранятся локально в приватном хранилище
+          приложения на вашем устройстве. Это может включать информацию об альбомах, выбранные фотографии,
+          подписи, настройки обложки, кадрирование, параметры печатного макета и созданные файлы.
+        </p>
+        <p>
+          My PhotoBook не предоставляет облачную синхронизацию и не хранит ваши альбомы
+          на сервере разработчика.
+        </p>
+
+        <h2>6. Создание, экспорт и отправка PDF</h2>
+        <p>
+          My PhotoBook может создавать PDF-файлы из ваших альбомов. Эти PDF-файлы могут содержать
+          выбранные фотографии, подписи, названия альбомов, макеты страниц и другое содержимое,
+          выбранное вами.
+        </p>
+        <p>
+          Когда вы выбираете просмотр, открытие, сохранение, экспорт или отправку PDF-файла,
+          приложение может передать файл в системные диалоги Android или в другое приложение,
+          выбранное вами. После выбора другого приложения или сервиса дальнейшая обработка файла
+          регулируется политикой конфиденциальности и настройками выбранного приложения или сервиса.
+        </p>
+
+        <h2>7. Сбор данных разработчиком</h2>
+        <p>
+          Разработчик My PhotoBook не собирает, не продаёт, не сдаёт в аренду и не передаёт ваши фотографии,
+          альбомы, подписи или созданные PDF-файлы через собственный сервер.
+        </p>
+        <p>
+          Приложение не требует регистрации пользователя и не требует создания учётной записи.
+        </p>
+
+        <h2>8. Реклама и аналитика</h2>
+        <p>
+          My PhotoBook не содержит рекламных SDK.
+        </p>
+        <p>
+          My PhotoBook не содержит аналитических SDK разработчика для отслеживания поведения пользователя
+          внутри приложения.
+        </p>
+
+        <h2>9. Сторонние сервисы</h2>
+        <p>
+          My PhotoBook использует мобильные платформенные технологии и системные службы.
+          Некоторые действия, например выбор фотографий, открытие файлов, отправка PDF или преобразование
+          координат из метаданных фотографий в названия мест, могут выполняться с участием системных служб
+          или приложений, выбранных пользователем.
+        </p>
+        <p>
+          Мы не отвечаем за практики конфиденциальности сторонних приложений или сервисов,
+          которые вы выбираете для открытия, сохранения, печати или отправки экспортированных файлов.
+        </p>
+
+        <h2>10. Удаление данных</h2>
+        <p>
+          Вы можете удалять альбомы внутри приложения. Удаление альбома удаляет информацию об альбоме,
+          управляемую приложением.
+        </p>
+        <p>
+          Вы также можете удалить данные приложения, очистив хранилище приложения через системные настройки Android
+          или удалив приложение с устройства.
+        </p>
+        <p>
+          Поскольку My PhotoBook не хранит ваши альбомы на сервере разработчика, разработчик не может удалённо
+          получить доступ к данным альбомов, сохранённым локально на вашем устройстве, или удалить их.
+        </p>
+
+        <h2>11. Безопасность данных</h2>
+        <p>
+          My PhotoBook хранит данные альбомов локально, используя механизмы хранения, доступные на вашем устройстве.
+          Безопасность локально сохранённых данных зависит от вашего устройства, операционной системы,
+          блокировки экрана, резервного копирования и других системных настроек безопасности.
+        </p>
+
+        <h2>12. Дети</h2>
+        <p>
+          My PhotoBook не предназначено для осознанного сбора персональной информации детей через сервер разработчика.
+          Фотографии и альбомы, созданные в приложении, остаются под контролем пользователя устройства.
+        </p>
+        <p>
+          Родителям или законным представителям следует контролировать, как дети используют фотографии,
+          функции отправки файлов и экспортированные PDF-файлы.
+        </p>
+
+        <h2>13. Изменения в настоящей Политике конфиденциальности</h2>
+        <p>
+          Мы можем время от времени обновлять настоящую Политику конфиденциальности, чтобы отразить изменения
+          в приложении, требования законодательства или требования платформ. При обновлении политики
+          мы изменим дату «Последнее обновление» в верхней части этой страницы.
+        </p>
+
+        <h2>14. Контакты</h2>
+        <p>
+          По вопросам конфиденциальности можно связаться с нами:
+          <a href="mailto:alexvovan.dev@gmail.com">alexvovan.dev@gmail.com</a>
+        </p>
+
+        <p class="footer">
+          Сайт разработчика:
+          <a href="https://portfolio-alexvovan.vercel.app">https://portfolio-alexvovan.vercel.app</a>
+        </p>
+      </section>
+
+      <section id="policy-es" class="policy" hidden>
+        <h1>Política de privacidad de My PhotoBook</h1>
+        <p class="updated">Última actualización: 11 de julio de 2026</p>
+
+        <p>
+          Esta Política de privacidad explica cómo la aplicación móvil <strong>My PhotoBook</strong>
+          trata la información cuando usted utiliza la app para crear álbumes de fotos, libros digitales,
+          fotolibros imprimibles y archivos PDF.
+        </p>
+
+        <div class="notice">
+          <p>
+            <strong>Principio principal:</strong> My PhotoBook está diseñada para funcionar localmente
+            en el dispositivo del usuario. La aplicación no requiere una cuenta, no utiliza un servidor propio
+            gestionado por el desarrollador y no sube sus fotos ni el contenido de sus álbumes a nuestro propio servidor.
+          </p>
+        </div>
+
+        <h2>1. Sobre My PhotoBook</h2>
+        <p>
+          My PhotoBook permite a los usuarios crear álbumes personales con fotos seleccionadas en su dispositivo.
+          Los usuarios pueden añadir títulos de álbum, subtítulos, textos para las fotos, imágenes de portada,
+          estilos de página, colores, ajustes de recorte, orden de fotos y otras preferencias de diseño del álbum.
+        </p>
+        <p>
+          La aplicación también puede crear libros de fotos digitales, diseños de fotolibros imprimibles
+          y archivos PDF que el usuario puede previsualizar, abrir, guardar o compartir mediante las opciones
+          estándar disponibles en su dispositivo.
+        </p>
+
+        <h2>2. Información procesada por la aplicación</h2>
+        <p>
+          Dependiendo de cómo utilice la app, My PhotoBook puede procesar localmente en su dispositivo
+          la siguiente información:
+        </p>
+        <ul>
+          <li>fotos seleccionadas por usted desde la galería de fotos del dispositivo;</li>
+          <li>nombres de álbumes, subtítulos, descripciones, textos de fotos y otros textos introducidos por usted;</li>
+          <li>tipo de álbum, tema, color, estilo de portada, ajustes de diseño, ajustes de recorte y orden de fotos;</li>
+          <li>copias de las fotos seleccionadas guardadas en el almacenamiento local privado de la aplicación;</li>
+          <li>metadatos de fotos, como la fecha y hora en que se tomó una foto;</li>
+          <li>metadatos de ubicación incrustados en la foto, como coordenadas GPS, si dichos datos existen en la foto seleccionada y se utiliza la función correspondiente;</li>
+          <li>archivos PDF generados por la aplicación a petición del usuario.</li>
+        </ul>
+
+        <h2>3. Acceso a fotos y permisos multimedia</h2>
+        <p>
+          My PhotoBook puede solicitar acceso a su galería de fotos para que pueda elegir fotos para sus álbumes.
+          La aplicación utiliza únicamente las fotos que usted selecciona para crear y editar sus álbumes.
+        </p>
+        <p>
+          En dispositivos compatibles, la aplicación también puede acceder a metadatos incrustados en las fotos seleccionadas.
+          Esto puede incluir la fecha original de la foto o información de ubicación guardada dentro del archivo de imagen.
+        </p>
+
+        <h2>4. Información de ubicación</h2>
+        <p>
+          My PhotoBook no solicita ni rastrea la ubicación en tiempo real de su dispositivo.
+        </p>
+        <p>
+          Algunas fotos pueden contener metadatos de ubicación incrustados, por ejemplo coordenadas GPS guardadas
+          por la cámara en el momento de tomar la foto. Si utiliza funciones de álbum inteligente u organización
+          basada en ubicación, la aplicación puede leer estos metadatos incrustados para ayudar a agrupar fotos,
+          generar detalles del álbum o mostrar nombres de lugares.
+        </p>
+        <p>
+          Cuando las coordenadas de los metadatos de una foto se convierten en nombres de lugares legibles,
+          pueden utilizarse servicios de geocodificación del dispositivo o de la plataforma. Este procesamiento
+          está controlado por el sistema operativo y los servicios de la plataforma, no por un servidor propio
+          de My PhotoBook.
+        </p>
+
+        <h2>5. Almacenamiento local</h2>
+        <p>
+          Los datos de los álbumes y las copias de las fotos importadas se almacenan localmente en el almacenamiento
+          privado de la aplicación en su dispositivo. Esto puede incluir información de álbumes, fotos seleccionadas,
+          textos, ajustes de portada, ajustes de recorte, ajustes de diseño para impresión y archivos generados.
+        </p>
+        <p>
+          My PhotoBook no ofrece sincronización en la nube y no almacena sus álbumes en un servidor propio
+          gestionado por el desarrollador.
+        </p>
+
+        <h2>6. Generación, exportación y uso compartido de PDF</h2>
+        <p>
+          My PhotoBook puede generar archivos PDF a partir de sus álbumes. Estos archivos PDF pueden contener
+          fotos seleccionadas, textos, títulos de álbum, diseños de página y otros contenidos elegidos por usted.
+        </p>
+        <p>
+          Cuando usted decide previsualizar, abrir, guardar, exportar o compartir un PDF, la aplicación puede pasar
+          el archivo a los diálogos del sistema Android o a otra aplicación seleccionada por usted. Después de seleccionar
+          otra aplicación o servicio, el tratamiento de ese archivo se rige por la política de privacidad y la configuración
+          de la aplicación o servicio seleccionado.
+        </p>
+
+        <h2>7. Recopilación de datos por parte del desarrollador</h2>
+        <p>
+          El desarrollador de My PhotoBook no recopila, vende, alquila ni comparte sus fotos, álbumes, textos
+          o archivos PDF generados mediante un servidor propio gestionado por el desarrollador.
+        </p>
+        <p>
+          La aplicación no requiere registro de usuario ni la creación de una cuenta.
+        </p>
+
+        <h2>8. Publicidad y analítica</h2>
+        <p>
+          My PhotoBook no incluye SDK de publicidad.
+        </p>
+        <p>
+          My PhotoBook no incluye SDK de analítica gestionados por el desarrollador para rastrear el comportamiento
+          del usuario dentro de la aplicación.
+        </p>
+
+        <h2>9. Servicios de terceros</h2>
+        <p>
+          My PhotoBook está construida con tecnologías móviles y servicios del sistema. Algunas acciones,
+          como seleccionar fotos, abrir archivos, compartir PDF o convertir coordenadas incrustadas en fotos
+          en nombres de lugares legibles, pueden implicar servicios del sistema operativo o aplicaciones
+          seleccionadas por el usuario.
+        </p>
+        <p>
+          No somos responsables de las prácticas de privacidad de aplicaciones o servicios de terceros que usted elija
+          para abrir, guardar, imprimir o compartir archivos exportados.
+        </p>
+
+        <h2>10. Eliminación de datos</h2>
+        <p>
+          Puede eliminar álbumes dentro de la aplicación. Al eliminar un álbum, se elimina la información del álbum
+          gestionada por la app.
+        </p>
+        <p>
+          También puede eliminar los datos de la aplicación borrando el almacenamiento de la app desde los ajustes
+          del sistema Android o desinstalando la aplicación de su dispositivo.
+        </p>
+        <p>
+          Como My PhotoBook no almacena sus álbumes en un servidor propio gestionado por el desarrollador,
+          el desarrollador no puede acceder de forma remota ni eliminar los datos de álbumes almacenados localmente
+          en su dispositivo.
+        </p>
+
+        <h2>11. Seguridad de los datos</h2>
+        <p>
+          My PhotoBook almacena los datos de los álbumes localmente utilizando los mecanismos de almacenamiento
+          disponibles en su dispositivo. La seguridad de los datos almacenados localmente depende de su dispositivo,
+          sistema operativo, bloqueo de pantalla, copias de seguridad y otros ajustes de seguridad del sistema.
+        </p>
+
+        <h2>12. Menores</h2>
+        <p>
+          My PhotoBook no está diseñada para recopilar conscientemente información personal de menores mediante
+          un servidor propio gestionado por el desarrollador. Las fotos y álbumes creados en la aplicación permanecen
+          bajo el control del usuario del dispositivo.
+        </p>
+        <p>
+          Los padres, madres o tutores legales deben supervisar cómo los menores utilizan las fotos,
+          las funciones de compartir y los archivos PDF exportados.
+        </p>
+
+        <h2>13. Cambios en esta Política de privacidad</h2>
+        <p>
+          Podemos actualizar esta Política de privacidad ocasionalmente para reflejar cambios en la aplicación,
+          requisitos legales o requisitos de las plataformas. Cuando actualicemos la política, modificaremos
+          la fecha de "Última actualización" en la parte superior de esta página.
+        </p>
+
+        <h2>14. Contacto</h2>
+        <p>
+          Para preguntas relacionadas con la privacidad, puede contactar con:
+          <a href="mailto:alexvovan.dev@gmail.com">alexvovan.dev@gmail.com</a>
+        </p>
+
+        <p class="footer">
+          Sitio web del desarrollador:
+          <a href="https://portfolio-alexvovan.vercel.app">https://portfolio-alexvovan.vercel.app</a>
+        </p>
+      </section>
     </article>
   </main>
+
+  <script>
+    const supportedLanguages = ["en", "ru", "es"];
+
+    function normalizeLanguage(value) {
+      if (!value || typeof value !== "string") {
+        return null;
+      }
+
+      const normalized = value.trim().toLowerCase().slice(0, 2);
+      return supportedLanguages.includes(normalized) ? normalized : null;
+    }
+
+    function getLanguageFromUrl() {
+      const params = new URLSearchParams(window.location.search);
+      return normalizeLanguage(params.get("lang"));
+    }
+
+    function getLanguageFromBrowser() {
+      return normalizeLanguage(navigator.language) || "en";
+    }
+
+    function setActiveLanguage(language, shouldUpdateUrl) {
+      const activeLanguage = supportedLanguages.includes(language) ? language : "en";
+
+      document.querySelectorAll(".policy").forEach((section) => {
+        section.hidden = true;
+      });
+
+      const activePolicy = document.getElementById(`policy-${activeLanguage}`);
+      if (activePolicy) {
+        activePolicy.hidden = false;
+      }
+
+      document.querySelectorAll("[data-lang-button]").forEach((button) => {
+        const isActive = button.getAttribute("data-lang-button") === activeLanguage;
+        button.classList.toggle("active", isActive);
+        button.setAttribute("aria-pressed", String(isActive));
+      });
+
+      document.documentElement.lang = activeLanguage;
+
+      if (shouldUpdateUrl) {
+        const url = new URL(window.location.href);
+        url.searchParams.set("lang", activeLanguage);
+        window.history.replaceState({}, "", url.toString());
+      }
+    }
+
+    document.querySelectorAll("[data-lang-button]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const selectedLanguage = button.getAttribute("data-lang-button");
+        setActiveLanguage(selectedLanguage, true);
+      });
+    });
+
+    const initialLanguage = getLanguageFromUrl() || getLanguageFromBrowser();
+    setActiveLanguage(initialLanguage, false);
+  </script>
 </body>
 </html>

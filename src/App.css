@@ -1,0 +1,21 @@
+.app {
+  min-height: 100vh;
+  overflow: hidden;
+  transition: background-color 0.35s ease, color 0.35s ease;
+}
+
+.app--dark {
+  background:
+    linear-gradient(120deg, rgba(89, 178, 86, 0.08), transparent 34%),
+    #181a1f;
+}
+
+.app--light {
+  background:
+    linear-gradient(120deg, rgba(89, 178, 86, 0.08), transparent 34%),
+    #ffffff;
+}
+
+a {
+  color: inherit;
+}

@@ -35,12 +35,36 @@
     margin-bottom: 50px;
 }
 
+.c-kicker {
+    margin: 0 0 14px;
+    color: #59b256;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
 .c-info-item {
     display: flex;
     align-items: center;
     margin: 50px 0px;
     font-weight: 300;
     width: 60%;
+    transition: transform 0.2s ease;
+}
+
+.c-info-item span,
+.c-info-item a {
+    min-width: 0;
+}
+
+.c-email {
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.c-info-item:hover {
+    transform: translateX(8px);
 }
 
 .c-icon {
@@ -53,6 +77,8 @@
 .c-desc {
     font-weight: 200;
     margin-bottom: 80px;
+    max-width: 560px;
+    line-height: 1.65;
 }
 
 form {
@@ -67,6 +93,8 @@ input {
     margin: 10px 0px;
     font-size: 14px;
     padding-left: 10px;
+    color: inherit;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
 }
 
 textarea {
@@ -74,6 +102,8 @@ textarea {
     margin: 10px 0px;
     font-size: 14px;
     padding-left: 10px;
+    color: inherit;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
 }
 
 button {
@@ -86,6 +116,17 @@ button {
     font-weight: 500;
     cursor: pointer;
     margin-right: 50px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+button:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px rgba(89, 178, 86, 0.24);
+}
+
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.72;
 }
 
 input::placeholder,
@@ -96,6 +137,7 @@ textarea::placeholder {
 input:focus,
 textarea:focus {
     outline: none;
+    border-color: #59b256;
 }
 
 @media screen and (max-width: 768px) {
@@ -128,12 +170,27 @@ textarea:focus {
         margin: 0 0 38px;
     }
 
+    .c-kicker {
+        font-size: 12px;
+    }
+
     .c-info-item {
         width: 100%;
         margin: 24px 0;
         font-size: clamp(18px, 5.3vw, 28px);
         line-height: 1.35;
-        word-break: break-word;
+        overflow-wrap: normal;
+        word-break: normal;
+    }
+
+    .c-info-item span {
+        overflow-wrap: anywhere;
+    }
+
+    .c-email {
+        font-size: clamp(18px, 5vw, 25px);
+        overflow-wrap: normal;
+        word-break: keep-all;
     }
 
     .c-icon {

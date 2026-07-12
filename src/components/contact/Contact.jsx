@@ -4,14 +4,16 @@ import Email from "../../img/email.png";
 import Address from "../../img/address.png";
 import { useContext, useEffect, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
-import { ThemeContext } from "../../context";
+import { LanguageContext, ThemeContext } from "../../context";
 
 const Contact = () => {
   const formRef = useRef();
   const [done, setDone] = useState(false);
   const [sending, setSending] = useState(false);
   const theme = useContext(ThemeContext);
+  const { t } = useContext(LanguageContext);
   const darkMode = theme.state.darkMode;
+  const contact = t.contact;
 
   useEffect(() => {
     emailjs.init({
@@ -34,7 +36,7 @@ const Contact = () => {
         },
         (error) => {
           console.log("EmailJS error:", error);
-          alert("Message was not sent. Check console for details.");
+          alert(contact.error);
         }
       )
       .finally(() => {
@@ -43,31 +45,36 @@ const Contact = () => {
   };
 
   return (
-    <div className="c">
+    <div className="c" id="contact">
       <div className="c-bg"></div>
       <div className="c-wrapper">
         <div className="c-left">
-          <h1 className="c-title">Let's discuss your project</h1>
+          <p className="c-kicker">{contact.kicker}</p>
+          <h1 className="c-title">{contact.title}</h1>
           <div className="c-info">
             <div className="c-info-item">
               <img src={Phone} alt="" className="c-icon" />
-              +34 654 35 01 89
+              <span>+34 654 35 01 89</span>
             </div>
             <div className="c-info-item">
               <img src={Email} alt="" className="c-icon" />
-              alexvovan.dev@gmail.com
+              <a className="c-email" href="mailto:alexvovan.dev@gmail.com">
+                alexvovan.dev@gmail.com
+              </a>
             </div>
             <div className="c-info-item">
               <img src={Address} alt="" className="c-icon" />
-              46520 Avenida Mediterraneo 2, Canet d'en Berenguer, Valencia, Spain
+              <span>
+                46520 Avenida Mediterraneo 2, Canet d'en Berenguer, Valencia,
+                Spain
+              </span>
             </div>
           </div>
         </div>
 
         <div className="c-right">
           <p className="c-desc">
-            <b>What's your story?</b> Get in touch. Always avaliable for
-            freelancing if the right project comes along me.
+            <b>{contact.descriptionLead}</b> {contact.description}
           </p>
 
           <form ref={formRef} onSubmit={handleSubmit}>
@@ -78,7 +85,7 @@ const Contact = () => {
                 caretColor: darkMode ? "white" : "",
               }}
               type="text"
-              placeholder="Name"
+              placeholder={contact.placeholders.name}
               name="user_name"
               required
             />
@@ -89,7 +96,7 @@ const Contact = () => {
                 caretColor: darkMode ? "white" : "",
               }}
               type="text"
-              placeholder="Subject"
+              placeholder={contact.placeholders.subject}
               name="user_subject"
               required
             />
@@ -100,7 +107,7 @@ const Contact = () => {
                 caretColor: darkMode ? "white" : "",
               }}
               type="email"
-              placeholder="Email"
+              placeholder={contact.placeholders.email}
               name="user_email"
               required
             />
@@ -111,14 +118,14 @@ const Contact = () => {
                 caretColor: darkMode ? "white" : "",
               }}
               rows="5"
-              placeholder="Message"
+              placeholder={contact.placeholders.message}
               name="message"
               required
             />
             <button type="submit" disabled={sending}>
-              {sending ? "Sending..." : "Submit"}
+              {sending ? contact.sending : contact.submit}
             </button>
-            {done && "Thank you..."}
+            {done && contact.success}
           </form>
         </div>
       </div>

@@ -5,6 +5,7 @@ export const translations = {
     intro: {
       kicker: "Web and mobile product developer",
       greeting: "Hello, my name is",
+      name: "Uladzimir Aliakhnovich",
       titleItems: [
         "Android App Developer",
         "React Developer",
@@ -30,7 +31,19 @@ export const translations = {
       subtitle:
         "I started with front-end development and now I am moving deeper into mobile products for Android, with iPhone releases on the roadmap.",
       description:
-        "I like the part of development where ideas become something people can tap, scroll, save and use. My current focus is React, mobile app development, product UX, local-first features, maps, media workflows and the practical work of publishing apps.",
+        "My front-end foundation is HTML5, CSS3, Sass, Bootstrap, JavaScript, React, Redux, Git and Figma. Now I use that base to build responsive interfaces, mobile apps, product UX, local-first features, maps, media workflows and the practical path to publishing apps.",
+      skills: [
+        "HTML5",
+        "CSS3",
+        "Sass",
+        "Bootstrap",
+        "JavaScript",
+        "React",
+        "Redux",
+        "Git",
+        "Figma",
+        "Android",
+      ],
       awardTitle: "TeachMeSkills frontend developer course",
       awardDescription:
         "This course gave me a strong start in web development. Since then I have kept building, improving and turning learning into shipped products.",
@@ -45,7 +58,7 @@ export const translations = {
       liveBuild: "Live build",
       storeButton: "Google Play",
       contactButton: "Discuss mobile work",
-      privacyButton: "Политика конфиденциальности",
+      privacyButton: "Privacy policy",
       items: {
         "my-route": {
           status: "Live on Google Play",
@@ -68,14 +81,16 @@ export const translations = {
       },
     },
     projects: {
-      kicker: "Selected web work",
-      title: "Projects that shaped the path",
+      kicker: "Selected projects",
+      title: "Web foundation and mobile products",
       description:
-        "A few earlier web projects from the portfolio: layouts, storefronts, landing pages and interface experiments that helped me grow toward product development.",
+        "A mix of my front-end course work, diploma project and current Android applications.",
       openProject: "Open project",
       items: {
         1: { description: "Personal website with responsive sections and contact flow." },
-        2: { description: "Catalog-style frontend for a fitness store concept." },
+        2: { description: "Diploma project: an online store for rhythmic gymnastics products." },
+        7: { description: "Published Android travel app for walking routes, city discovery and travel memories." },
+        8: { description: "Android photobook app for albums, printable layouts and PDF export." },
         3: { description: "Marketplace interface experiment with product filtering." },
         4: { description: "Responsive food delivery website with a bright visual style." },
         5: { description: "Pixel-focused webpage layout and adaptive presentation." },
@@ -106,11 +121,12 @@ export const translations = {
     intro: {
       kicker: "Desarrollador web y de productos móviles",
       greeting: "Hola, me llamo",
+      name: "Uladzimir Aliakhnovich",
       titleItems: [
         "Desarrollador Android",
         "Desarrollador React",
         "Creador de UX móvil",
-        "Preparando lanzamientos iPhone",
+        "Próximamente iOS",
         "Creador con visión de producto",
       ],
       description:
@@ -131,7 +147,19 @@ export const translations = {
       subtitle:
         "Empecé con desarrollo front-end y ahora avanzo más hacia productos móviles para Android, con lanzamientos para iPhone en el roadmap.",
       description:
-        "Me gusta esa parte del desarrollo donde las ideas se convierten en algo que la gente puede tocar, deslizar, guardar y usar. Ahora me centro en React, desarrollo móvil, UX de producto, funciones local-first, mapas, flujos multimedia y el trabajo práctico de publicar apps.",
+        "Mi base front-end incluye HTML5, CSS3, Sass, Bootstrap, JavaScript, React, Redux, Git y Figma. Ahora uso esa base para crear interfaces responsive, apps móviles, UX de producto, funciones local-first, mapas, flujos multimedia y el camino práctico para publicar aplicaciones.",
+      skills: [
+        "HTML5",
+        "CSS3",
+        "Sass",
+        "Bootstrap",
+        "JavaScript",
+        "React",
+        "Redux",
+        "Git",
+        "Figma",
+        "Android",
+      ],
       awardTitle: "Curso de desarrollador frontend en TeachMeSkills",
       awardDescription:
         "Este curso me dio una base sólida en desarrollo web. Desde entonces he seguido construyendo, mejorando y convirtiendo el aprendizaje en productos publicados.",
@@ -169,14 +197,16 @@ export const translations = {
       },
     },
     projects: {
-      kicker: "Trabajos web seleccionados",
-      title: "Proyectos que marcaron el camino",
+      kicker: "Proyectos seleccionados",
+      title: "Base web y productos móviles",
       description:
-        "Algunos proyectos web anteriores del portfolio: layouts, tiendas, landing pages y experimentos de interfaz que me ayudaron a crecer hacia el desarrollo de productos.",
+        "Una mezcla de trabajos front-end, proyecto final del curso y aplicaciones Android actuales.",
       openProject: "Abrir proyecto",
       items: {
         1: { description: "Sitio personal con secciones responsive y formulario de contacto." },
-        2: { description: "Frontend tipo catálogo para un concepto de tienda fitness." },
+        2: { description: "Proyecto final: tienda online de productos para gimnasia rítmica." },
+        7: { description: "App Android publicada para rutas a pie, descubrir ciudades y guardar recuerdos de viaje." },
+        8: { description: "App Android para fotolibros, álbumes, diseños imprimibles y exportación PDF." },
         3: { description: "Experimento de marketplace con filtrado de productos." },
         4: { description: "Sitio responsive de comida a domicilio con estilo visual vivo." },
         5: { description: "Maquetación web cuidada con presentación adaptativa." },
@@ -207,6 +237,7 @@ export const translations = {
     intro: {
       kicker: "Разработчик web и мобильных продуктов",
       greeting: "Привет, меня зовут",
+      name: "Владимир Алехнович",
       titleItems: [
         "Android-разработчик",
         "React-разработчик",
@@ -232,7 +263,19 @@ export const translations = {
       subtitle:
         "Я начинал с front-end разработки, а сейчас все глубже ухожу в мобильные продукты для Android, с планами релизов для iPhone.",
       description:
-        "Мне нравится та часть разработки, где идея превращается во что-то, чем люди могут пользоваться: нажимать, листать, сохранять и возвращаться снова. Сейчас мой фокус - React, мобильная разработка, продуктовый UX, local-first функции, карты, работа с медиа и практический путь к публикации приложений.",
+        "Моя front-end база - HTML5, CSS3, Sass, Bootstrap, JavaScript, React, Redux, Git и Figma. Сейчас я использую эту основу для адаптивных интерфейсов, мобильных приложений, продуктового UX, local-first функций, карт, работы с медиа и практического пути к публикации приложений.",
+      skills: [
+        "HTML5",
+        "CSS3",
+        "Sass",
+        "Bootstrap",
+        "JavaScript",
+        "React",
+        "Redux",
+        "Git",
+        "Figma",
+        "Android",
+      ],
       awardTitle: "Курс frontend-разработчика TeachMeSkills",
       awardDescription:
         "Этот курс дал мне хороший старт в веб-разработке. С тех пор я продолжаю строить, улучшать и превращать обучение в опубликованные продукты.",
@@ -247,7 +290,7 @@ export const translations = {
       liveBuild: "Живая версия",
       storeButton: "Google Play",
       contactButton: "Обсудить приложение",
-      privacyButton: "Privacy policy",
+      privacyButton: "Политика конфиденциальности",
       items: {
         "my-route": {
           status: "Опубликовано в Google Play",
@@ -270,14 +313,16 @@ export const translations = {
       },
     },
     projects: {
-      kicker: "Избранные web-проекты",
-      title: "Проекты, с которых рос путь",
+      kicker: "Избранные проекты",
+      title: "Web-основа и мобильные продукты",
       description:
-        "Несколько ранних web-проектов из портфолио: верстка, витрины, лендинги и интерфейсные эксперименты, которые помогли мне перейти к продуктовой разработке.",
+        "Здесь собраны учебные front-end работы, дипломный проект и мои актуальные Android-приложения.",
       openProject: "Открыть проект",
       items: {
         1: { description: "Личный сайт с адаптивными секциями и контактной формой." },
-        2: { description: "Фронтенд в формате каталога для концепта fitness-магазина." },
+        2: { description: "Дипломный проект: интернет-магазин товаров для художественной гимнастики." },
+        7: { description: "Опубликованное Android-приложение для пеших маршрутов, городов и воспоминаний о поездках." },
+        8: { description: "Android-приложение для фотокниг, альбомов, печатных макетов и экспорта PDF." },
         3: { description: "Эксперимент marketplace-интерфейса с фильтрацией товаров." },
         4: { description: "Адаптивный сайт доставки еды с ярким визуальным стилем." },
         5: { description: "Аккуратная web-верстка с адаптивной презентацией." },

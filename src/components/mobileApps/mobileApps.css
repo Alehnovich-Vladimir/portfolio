@@ -185,7 +185,10 @@
 
 .apps-device {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
+    gap: 18px;
 }
 
 .apps-phone {
@@ -236,6 +239,9 @@
     padding: 8px;
     background: #f4f8fb;
     position: relative;
+    touch-action: pan-y;
+    user-select: none;
+    cursor: pointer;
 }
 
 .apps-screenshot {
@@ -248,17 +254,24 @@
 }
 
 .apps-shot-dots {
-    position: absolute;
-    left: 50%;
-    bottom: 18px;
     display: flex;
+    align-items: center;
     gap: 8px;
-    padding: 7px 9px;
+}
+
+.apps-screen-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 10px;
     border-radius: 999px;
     background: rgba(255, 255, 255, 0.78);
     box-shadow: 0 10px 24px rgba(19, 32, 44, 0.18);
-    transform: translateX(-50%);
     backdrop-filter: blur(10px);
+}
+
+.app--dark .apps-screen-controls {
+    background: rgba(31, 34, 40, 0.82);
 }
 
 .apps-shot-dots button {
@@ -452,8 +465,30 @@
         width: min(310px, 100%);
     }
 
+    .apps-phone.has-screenshots {
+        width: min(300px, 100%);
+    }
+
     .apps-screen {
         padding: 54px 18px 20px;
+    }
+
+    .apps-screen-controls {
+        padding: 10px 12px;
+    }
+
+    .apps-shot-dots {
+        gap: 10px;
+    }
+
+    .apps-shot-dots button {
+        width: 12px;
+        min-width: 12px;
+        height: 12px;
+    }
+
+    .apps-shot-dots button.active {
+        width: 30px;
     }
 
     .apps-screen h3 {

@@ -5,7 +5,7 @@ import Product from "../product/Product";
 import { products } from "../../data";
 
 const ProductList = () => {
-  const { t } = useContext(LanguageContext);
+  const { language, t } = useContext(LanguageContext);
 
   return (
     <div className="pl" id="projects">
@@ -15,16 +15,29 @@ const ProductList = () => {
         <p className="pl-desc">{t.projects.description}</p>
       </div>
       <div className="pl-list">
-        {products.map((item) => (
+        {products.map((item, index) => (
           <Product
             key={item.id}
-            product={{ ...item, ...t.projects.items[item.id] }}
+            product={{
+              ...item,
+              img: getProductImage(item, language),
+              ...t.projects.items[item.id],
+            }}
             openLabel={t.projects.openProject}
+            index={index}
           />
         ))}
       </div>
     </div>
   );
+};
+
+const getProductImage = (product, language) => {
+  if (!product.thumbnails) {
+    return product.img;
+  }
+
+  return product.thumbnails[language] || product.thumbnails.en || product.img;
 };
 
 export default ProductList;

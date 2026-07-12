@@ -13,7 +13,7 @@ const Intro = () => {
         <div className="i-left-wrapper">
           <div className="i-kicker">{intro.kicker}</div>
           <h2 className="i-intro">{intro.greeting}</h2>
-          <h1 className="i-name">Uladzimir Aliakhnovich</h1>
+          <h1 className="i-name">{intro.name}</h1>
           <div className="i-title">
             <div className="i-title-wrapper">
               {intro.titleItems.map((item) => (

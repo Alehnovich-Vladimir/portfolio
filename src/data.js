@@ -1,19 +1,12 @@
 export const products = [
     {
-        id: 1,
-        img: "https://i.ibb.co/MMNFhzX/portfolio.png",
-        link: "https://portfolio-alexvovan.vercel.app",
-        title: "Portfolio",
-        tag: "React",
-        description: "Personal website with responsive sections and contact flow.",
-    },
-    {
         id: 2,
         img: "https://i.ibb.co/BNcD42t/R-Gym.png",
         link: "https://github.com/Alehnovich-Vladimir/R_Gym-Store",
         title: "R Gym Store",
         tag: "Commerce",
-        description: "Catalog-style frontend for a fitness store concept.",
+        kind: "web",
+        description: "Online store for rhythmic gymnastics products.",
     },
     {
         id: 3,
@@ -21,6 +14,7 @@ export const products = [
         link: "https://alehnovich-vladimir.github.io/O-ZONE/",
         title: "O-ZONE",
         tag: "JavaScript",
+        kind: "web",
         description: "Marketplace interface experiment with product filtering.",
     },
     {
@@ -29,6 +23,7 @@ export const products = [
         link: "https://alehnovich-vladimir.github.io/Food-delivery-website/",
         title: "Food Delivery",
         tag: "Landing",
+        kind: "web",
         description: "Responsive food delivery website with a bright visual style.",
     },
     {
@@ -37,6 +32,7 @@ export const products = [
         link: "https://alehnovich-vladimir.github.io/Weiss/",
         title: "Weiss",
         tag: "Layout",
+        kind: "web",
         description: "Pixel-focused webpage layout and adaptive presentation.",
     },
     {
@@ -45,7 +41,45 @@ export const products = [
         link: "https://alehnovich-vladimir.github.io/Wildlife/",
         title: "Wildlife",
         tag: "HTML/CSS",
+        kind: "web",
         description: "Nature-themed page with careful desktop and mobile layout.",
+    },
+    {
+        id: 1,
+        img: "https://i.ibb.co/MMNFhzX/portfolio.png",
+        link: "https://portfolio-alexvovan.vercel.app",
+        title: "Portfolio",
+        tag: "React",
+        kind: "web",
+        description: "Personal website with responsive sections and contact flow.",
+    },
+    {
+        id: 7,
+        img: "/app-screens/my-route-home-en.jpg",
+        thumbnails: {
+            en: "/app-screens/my-route-home-en.jpg",
+            es: "/app-screens/my-route-home-es.jpg",
+            ru: "/app-screens/my-route-home.jpg",
+        },
+        link: "https://play.google.com/store/apps/details?id=com.alexvovan.myrouteapp",
+        title: "My Route",
+        tag: "Android",
+        kind: "app",
+        description: "Published Android travel app for routes, maps and city exploration.",
+    },
+    {
+        id: 8,
+        img: "/app-screens/my-photobook-home-en.jpg",
+        thumbnails: {
+            en: "/app-screens/my-photobook-home-en.jpg",
+            es: "/app-screens/my-photobook-home-es.jpg",
+            ru: "/app-screens/my-photobook-home-ru.jpg",
+        },
+        link: "/my-photobook-privacy-policy.html",
+        title: "My PhotoBook",
+        tag: "Android",
+        kind: "app",
+        description: "Mobile photobook app for albums, layouts and PDF export.",
     },
 ]
 

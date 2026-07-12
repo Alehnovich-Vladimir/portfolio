@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { LanguageContext } from "../../context";
 import { apps } from "../../data";
 import "./mobileApps.css";
@@ -7,6 +7,7 @@ const MobileApps = () => {
   const { language, t } = useContext(LanguageContext);
   const [activeId, setActiveId] = useState(apps[0].id);
   const [screenIndex, setScreenIndex] = useState(0);
+  const touchStartX = useRef(null);
   const activeApp = apps.find((app) => app.id === activeId) || apps[0];
   const appCopy = t.mobileApps.items[activeApp.id];
   const screenshots = getScreenshotsForLanguage(activeApp.screenshots, language);
@@ -15,6 +16,49 @@ const MobileApps = () => {
   useEffect(() => {
     setScreenIndex(0);
   }, [activeId, language]);
+
+  const showPreviousScreen = () => {
+    if (screenshots.length < 2) {
+      return;
+    }
+
+    setScreenIndex((current) =>
+      current === 0 ? screenshots.length - 1 : current - 1
+    );
+  };
+
+  const showNextScreen = () => {
+    if (screenshots.length < 2) {
+      return;
+    }
+
+    setScreenIndex((current) =>
+      current === screenshots.length - 1 ? 0 : current + 1
+    );
+  };
+
+  const handleTouchStart = (event) => {
+    touchStartX.current = event.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (event) => {
+    if (touchStartX.current === null) {
+      return;
+    }
+
+    const deltaX = event.changedTouches[0].clientX - touchStartX.current;
+    touchStartX.current = null;
+
+    if (Math.abs(deltaX) < 36) {
+      return;
+    }
+
+    if (deltaX > 0) {
+      showPreviousScreen();
+    } else {
+      showNextScreen();
+    }
+  };
 
   return (
     <section className="apps" id="apps">
@@ -72,26 +116,18 @@ const MobileApps = () => {
       >
         <div className={`apps-phone ${screenshots.length ? "has-screenshots" : ""}`}>
           <div className="apps-phone-speaker"></div>
-          <div className={`apps-screen ${screenshots.length ? "has-screenshots" : ""}`}>
+          <div
+            className={`apps-screen ${screenshots.length ? "has-screenshots" : ""}`}
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
+            onClick={screenshots.length > 1 ? showNextScreen : undefined}
+          >
             {activeScreenshot ? (
-              <>
-                <img
-                  src={activeScreenshot.src}
-                  alt={`${activeApp.name} ${activeScreenshot.label}`}
-                  className="apps-screenshot"
-                />
-                <div className="apps-shot-dots" aria-label={`${activeApp.name} screens`}>
-                  {screenshots.map((screenshot, index) => (
-                    <button
-                      className={index === screenIndex ? "active" : ""}
-                      key={screenshot.src}
-                      type="button"
-                      aria-label={screenshot.label}
-                      onClick={() => setScreenIndex(index)}
-                    ></button>
-                  ))}
-                </div>
-              </>
+              <img
+                src={activeScreenshot.src}
+                alt={`${activeApp.name} ${activeScreenshot.label}`}
+                className="apps-screenshot"
+              />
             ) : (
               <>
                 <div className="apps-status">
@@ -115,6 +151,22 @@ const MobileApps = () => {
             )}
           </div>
         </div>
+
+        {screenshots.length > 1 && (
+          <div className="apps-screen-controls" aria-label={`${activeApp.name} screens`}>
+            <div className="apps-shot-dots">
+              {screenshots.map((screenshot, index) => (
+                <button
+                  className={index === screenIndex ? "active" : ""}
+                  key={screenshot.src}
+                  type="button"
+                  aria-label={screenshot.label}
+                  onClick={() => setScreenIndex(index)}
+                ></button>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );

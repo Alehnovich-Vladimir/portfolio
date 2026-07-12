@@ -64,10 +64,7 @@ const Contact = () => {
             </div>
             <div className="c-info-item">
               <img src={Address} alt="" className="c-icon" />
-              <span>
-                46520 Avenida Mediterraneo 2, Canet d'en Berenguer, Valencia,
-                Spain
-              </span>
+              <span>Canet d'en Berenguer, Valencia, Spain</span>
             </div>
           </div>
         </div>

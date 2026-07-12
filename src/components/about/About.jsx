@@ -24,11 +24,9 @@ const About = () => {
         <p className="a-sub">{about.subtitle}</p>
         <p className="a-desc">{about.description}</p>
         <div className="a-focus">
-          <span>React</span>
-          <span>Android</span>
-          <span>Mobile UX</span>
-          <span>Vercel</span>
-          <span>Google Play</span>
+          {about.skills.map((skill) => (
+            <span key={skill}>{skill}</span>
+          ))}
         </div>
         <div className="a-award">
           <img src={Award} alt="" className="a-award-img" />

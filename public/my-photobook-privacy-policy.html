@@ -187,7 +187,7 @@
         <p>Platform services and user-selected destination apps may process data when the user grants permissions, opens a PDF, or shares a file.</p>
         <h2>Permissions and location</h2>
         <p>The app may request photo library access so the user can select photos for albums. In smart album mode, it may request access to photo metadata, including embedded photo location metadata, to support automatic dates and place names.</p>
-        <p>On Android, the app may request media-location metadata access to read GPS coordinates already embedded in selected photos. The app does not request live device location, does not use background location, and does not continuously track the user's current location.</p>
+        <p>On Android, the app may request media-location metadata access to read GPS coordinates already embedded in selected photos. In smart album mode, Android may also show a foreground location permission prompt because the system geocoder requires that permission to turn selected photo coordinates into readable place names. Before that Android prompt, the app shows an in-app explanation that the permission is used only to name places from selected photo metadata. The app does not request the user's current position, does not use background location, and does not continuously track the user's current location.</p>
         <h2>Deleting data</h2>
         <p>The user can delete albums inside the app. The user can also remove app data by uninstalling the app or clearing app storage through Android system settings.</p>
         <h2>Contact</h2>
@@ -224,7 +224,7 @@
         <p>Платформенные сервисы и выбранные пользователем приложения могут обрабатывать данные, когда пользователь выдаёт разрешения, открывает PDF или отправляет файл.</p>
         <h2>Разрешения и местоположение</h2>
         <p>Приложение может запрашивать доступ к библиотеке фотографий, чтобы пользователь мог выбрать фотографии для альбомов. В режиме умного альбома приложение также может запрашивать доступ к метаданным фотографий, включая встроенные данные о месте съёмки, для автоматических дат и названий мест.</p>
-        <p>На Android приложение может запрашивать доступ к геометаданным медиафайлов, чтобы прочитать GPS-координаты, уже встроенные в выбранные фотографии. Приложение не запрашивает текущее местоположение устройства, не использует фоновое местоположение и не отслеживает текущее местоположение пользователя.</p>
+        <p>На Android приложение может запрашивать доступ к геометаданным медиафайлов, чтобы прочитать GPS-координаты, уже встроенные в выбранные фотографии. В режиме умного альбома Android также может показать запрос разрешения на местоположение при использовании приложения, потому что системный геокодер требует это разрешение, чтобы превратить координаты выбранных фотографий в понятные названия мест. Перед этим системным запросом приложение показывает собственное объяснение, что разрешение используется только для названий мест из метаданных выбранных фотографий. Приложение не запрашивает текущую позицию пользователя, не использует фоновое местоположение и не отслеживает текущее местоположение пользователя.</p>
         <h2>Удаление данных</h2>
         <p>Пользователь может удалить альбомы внутри приложения. Также пользователь может удалить данные приложения, удалив приложение или очистив его хранилище в системных настройках Android.</p>
         <h2>Контакты</h2>
@@ -261,7 +261,7 @@
         <p>Los servicios de la plataforma y las aplicaciones de destino seleccionadas por el usuario pueden procesar datos cuando el usuario concede permisos, abre un PDF o comparte un archivo.</p>
         <h2>Permisos y ubicación</h2>
         <p>La aplicación puede solicitar acceso a la biblioteca de fotos para que el usuario pueda seleccionar fotos para sus álbumes. En el modo de álbum inteligente, también puede solicitar acceso a metadatos de las fotos, incluidos los datos de ubicación incrustados, para admitir fechas y nombres de lugares automáticos.</p>
-        <p>En Android, la aplicación puede solicitar acceso a metadatos de ubicación de medios para leer coordenadas GPS ya incrustadas en las fotos seleccionadas. La aplicación no solicita la ubicación actual del dispositivo, no usa ubicación en segundo plano y no rastrea continuamente la ubicación actual del usuario.</p>
+        <p>En Android, la aplicación puede solicitar acceso a metadatos de ubicación de medios para leer coordenadas GPS ya incrustadas en las fotos seleccionadas. En el modo de álbum inteligente, Android también puede mostrar un permiso de ubicación en primer plano porque el geocodificador del sistema lo requiere para convertir las coordenadas de las fotos seleccionadas en nombres de lugares legibles. Antes de ese permiso del sistema Android, la aplicación muestra una explicación propia de que el permiso se usa solo para nombrar lugares a partir de los metadatos de las fotos seleccionadas. La aplicación no solicita la posición actual del usuario, no usa ubicación en segundo plano y no rastrea continuamente la ubicación actual del usuario.</p>
         <h2>Eliminar datos</h2>
         <p>El usuario puede eliminar álbumes dentro de la aplicación. También puede eliminar los datos de la aplicación desinstalándola o borrando su almacenamiento desde los ajustes del sistema Android.</p>
         <h2>Contacto</h2>

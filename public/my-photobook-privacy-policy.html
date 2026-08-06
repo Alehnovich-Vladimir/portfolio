@@ -166,104 +166,146 @@
 
       <section id="policy-en" class="policy">
         <h1>Privacy Policy for My PhotoBook</h1>
-        <p class="updated">Last updated: July 31, 2026</p>
+        <p class="updated">Last updated: August 6, 2026</p>
 
-        <p>My PhotoBook is a photo album and printable photobook app provided by AlexVovan Studio. The app is designed to work locally on the user's device.</p>
-        <h2>Data the app uses</h2>
-        <p>My PhotoBook may use:</p>
+        <p>My PhotoBook is a photo album and printable photobook app provided by AlexVovan Studio. The app is designed to create and manage albums locally on the user's device.</p>
+        <h2>Data the app accesses and uses</h2>
+        <p>My PhotoBook may access and use:</p>
         <ul>
-          <li>photos selected by the user from the device photo library;</li>
-          <li>photo captions, album titles, album descriptions, album colors, crop settings, and photo order;</li>
-          <li>optional photo metadata, such as photo date and embedded photo location coordinates, when the user creates smart albums or uses features that depend on photo metadata;</li>
-          <li>media-location metadata access on Android when needed to read location coordinates embedded in selected photos;</li>
-          <li>generated PDF files created by the user.</li>
+          <li>photos explicitly selected by the user from the device photo library;</li>
+          <li>imported copies of selected photos;</li>
+          <li>photo captions, album titles, subtitles, descriptions, cover text, colors, crop settings, photo order, print order, and other album-layout settings;</li>
+          <li>hardcover settings entered by the user, such as spine width and optional notes or endpaper choices;</li>
+          <li>optional photo metadata, such as the photo date and embedded GPS coordinates, when the user creates a Smart Album or uses a feature that depends on photo metadata;</li>
+          <li>generated regular, booklet, and hardcover PDF files.</li>
         </ul>
-        <h2>How data is stored</h2>
-        <p>Album data and imported photo copies are stored locally in the app's private storage on the user's device. The app does not require an account and does not use its own backend server. Android Backup is disabled for the app, so this private app data is not included in Android's automatic backup.</p>
+        <p>This data is used to create, edit, display, print, preview, and export the user's photobooks and to provide optional Smart Album date and place-name features.</p>
+        <h2>Local storage and generated files</h2>
+        <p>Album data is stored locally in the app's private storage. Imported photo copies are stored in the app's private files directory. The app does not require an account and does not synchronize albums with a developer-operated server.</p>
+        <p>Generated PDF files are created locally. Regular PDFs, booklet PDFs, hardcover interior PDFs, hardcover cover files, and temporary iOS sharing copies may be stored in the app's cache. Cached files may remain until the operating system clears the cache, the app replaces or removes them, the user clears the app's storage, or the app is uninstalled.</p>
+        <p>Android Backup is disabled for the app, so the app's private album data and imported photo copies are not included in Android automatic app-data backup.</p>
+        <h2>Photos, metadata, and place names</h2>
+        <p>The app uses the system photo picker so the user can choose photos. In Smart Album mode on Android, the app may also request broader photo-library access. This is used to match a selected picker file with its original library item and recover its date or embedded GPS metadata when the system picker does not provide that metadata. File matching and metadata extraction are performed locally on the device.</p>
+        <p>On Android, the app may request media-location metadata access to read GPS coordinates already embedded in selected photos. The app does not request GPS coordinates from the device's current position.</p>
+        <p>To convert embedded photo coordinates into readable place names, My PhotoBook uses the operating system's reverse-geocoding service. Depending on the device and platform, the coordinates and standard network information may be processed by the operating-system or geocoding provider, and a network connection may be required. These coordinates are not sent to a developer-operated My PhotoBook server.</p>
+        <p>On Android, the operating system may require foreground location permission before its geocoder can be used. Before that system prompt, the app displays an explanation that the permission is used only to name places from coordinates already embedded in selected photos. The app does not use background location and does not continuously track the user's current location.</p>
         <h2>Sharing and export</h2>
-        <p>The app can generate PDF files and pass them to the device's system interface when the user explicitly chooses to preview, share, open, or export a photobook. After that, handling is controlled by the app or service selected by the user.</p>
-        <h2>Data collection and third parties</h2>
-        <p>My PhotoBook does not include advertising SDKs or analytics SDKs. The app developer does not collect, sell, or share user photos or album content through a developer-operated server.</p>
-        <p>Platform services and user-selected destination apps may process data when the user grants permissions, opens a PDF, or shares a file.</p>
-        <h2>Permissions and location</h2>
-        <p>The app uses the device's photo picker so the user can select photos for albums. In smart album mode on Android, the app may also request broader photo-library access. This is used to match a selected file with its original library item and recover its date or embedded GPS metadata when the system picker does not provide that metadata. The matching and metadata processing happen on the device; selected photos and metadata are not uploaded to the developer.</p>
-        <p>On Android, the app may request media-location metadata access to read GPS coordinates already embedded in selected photos. In smart album mode, Android may also show a foreground location permission prompt because the system geocoder requires that permission to turn selected photo coordinates into readable place names. Before that Android prompt, the app shows an in-app explanation that the permission is used only to name places from selected photo metadata. The app does not request the user's current position, does not use background location, and does not continuously track the user's current location.</p>
-        <h2>Deleting data</h2>
-        <p>The user can delete albums inside the app. Deleting an album removes its locally stored album data and imported photo copies from the app's private storage. The user can also remove all app data by uninstalling the app or clearing its storage through the device's system settings.</p>
-        <h2>Contact</h2>
-        <p>For privacy-related questions or data deletion requests, contact us at:</p>
-        <p><a href="mailto:alexvovan.dev@gmail.com">alexvovan.dev@gmail.com</a></p>
-
-      </section>
-
-      <section id="policy-ru" class="policy" hidden>
-        <h1>Политика конфиденциальности My PhotoBook</h1>
-        <p class="updated">Последнее обновление: 31 июля 2026 года</p>
-
-        <h2>Русский</h2>
-        <p>My PhotoBook — приложение AlexVovan Studio для создания фотоальбомов и PDF-фотокниг для печати. Приложение рассчитано на локальную работу на устройстве пользователя.</p>
-        <h2>Какие данные использует приложение</h2>
-        <p>My PhotoBook может использовать:</p>
+        <p>The app passes a generated PDF to the device's system preview, open, or sharing interface only after the user explicitly requests that action. The user chooses the destination app or service. After a file is sent, saved, or shared outside My PhotoBook, that external copy is controlled by the selected app, service, storage location, or recipient and cannot be deleted by My PhotoBook.</p>
+        <h2>Network access and third parties</h2>
+        <p>My PhotoBook does not include advertising SDKs or analytics SDKs. The developer does not collect, sell, or use user photos or album content for advertising, profiling, or tracking through a developer-operated backend.</p>
+        <p>Third parties may process limited data in these user-initiated or platform-dependent situations:</p>
         <ul>
-          <li>фотографии, выбранные пользователем из библиотеки фотографий устройства;</li>
-          <li>подписи к фотографиям, названия альбомов, описания альбомов, цвета альбомов, настройки кадрирования и порядок фотографий;</li>
-          <li>необязательные метаданные фотографий, например дату снимка и встроенные координаты места съёмки, если пользователь создаёт умные альбомы или использует функции, зависящие от метаданных фотографий;</li>
-          <li>доступ к геометаданным медиафайлов на Android, когда он нужен для чтения координат, встроенных в выбранные фотографии;</li>
-          <li>PDF-файлы, созданные пользователем.</li>
+          <li>the operating system or its geocoding provider may process embedded photo coordinates to return a place name;</li>
+          <li>a user-selected app or service may process a PDF that the user chooses to open, save, print, or share;</li>
+          <li>when the user opens the privacy policy from Settings, the app checks and opens the public policy website. The website hosting provider may receive standard web-request information such as IP address, request time, and browser or device headers. My PhotoBook does not use this request for advertising or user profiling.</li>
         </ul>
-        <h2>Как хранятся данные</h2>
-        <p>Данные альбомов и импортированные копии фотографий хранятся локально в приватном хранилище приложения на устройстве пользователя. Приложение не требует аккаунта и не использует собственный сервер. Резервное копирование Android для приложения отключено, поэтому эти данные из приватного хранилища не включаются в автоматическую резервную копию Android.</p>
-        <h2>Отправка и экспорт</h2>
-        <p>Приложение может создавать PDF-файлы и передавать их в системный интерфейс устройства, когда пользователь явно выбирает предпросмотр, отправку, открытие или экспорт фотокниги. После этого обработка файла зависит от приложения или сервиса, выбранного пользователем.</p>
-        <h2>Сбор данных и третьи стороны</h2>
-        <p>My PhotoBook не содержит рекламных SDK и аналитических SDK. Разработчик приложения не собирает, не продаёт и не передаёт фотографии пользователя или содержимое альбомов через сервер разработчика.</p>
-        <p>Платформенные сервисы и выбранные пользователем приложения могут обрабатывать данные, когда пользователь выдаёт разрешения, открывает PDF или отправляет файл.</p>
-        <h2>Разрешения и местоположение</h2>
-        <p>Приложение использует системный выбор фотографий, чтобы пользователь мог добавить снимки в альбом. В режиме умного альбома на Android приложение также может запросить более широкий доступ к библиотеке фотографий. Он используется, чтобы сопоставить выбранный файл с оригиналом в библиотеке и восстановить дату или встроенные GPS-метаданные, если системное окно выбора их не передало. Сопоставление и обработка метаданных выполняются на устройстве; выбранные фотографии и метаданные не загружаются разработчику.</p>
-        <p>На Android приложение может запрашивать доступ к геометаданным медиафайлов, чтобы прочитать GPS-координаты, уже встроенные в выбранные фотографии. В режиме умного альбома Android также может показать запрос разрешения на местоположение при использовании приложения, потому что системный геокодер требует это разрешение, чтобы превратить координаты выбранных фотографий в понятные названия мест. Перед этим системным запросом приложение показывает собственное объяснение, что разрешение используется только для названий мест из метаданных выбранных фотографий. Приложение не запрашивает текущую позицию пользователя, не использует фоновое местоположение и не отслеживает текущее местоположение пользователя.</p>
-        <h2>Удаление данных</h2>
-        <p>Пользователь может удалить альбомы внутри приложения. При удалении альбома из приватного хранилища приложения удаляются его локальные данные и импортированные копии фотографий. Также пользователь может удалить все данные приложения, удалив приложение или очистив его хранилище в системных настройках устройства.</p>
-        <h2>Контакты</h2>
-        <p>По вопросам конфиденциальности или удаления данных можно написать на:</p>
+        <p>The privacy and retention practices of operating-system services, website hosts, and user-selected destination apps are governed by their own policies.</p>
+        <h2>Retention and deletion</h2>
+        <p>Album records and imported photo copies remain in the app's private storage until the user deletes the relevant album, clears the app's storage, or uninstalls the app. Generated files in the app cache are temporary and may be removed by the operating system or by clearing the app's cache or storage.</p>
+        <p>Deleting an album removes its locally stored album record and imported photo copies from My PhotoBook. Because the app has no user account or developer-operated album server, the developer normally has no remote copy of the user's albums to delete. Files previously exported or shared outside the app must be deleted from their destination by the user.</p>
+        <h2>Contact</h2>
+        <p>For privacy-related questions, contact:</p>
         <p><a href="mailto:alexvovan.dev@gmail.com">alexvovan.dev@gmail.com</a></p>
-
         <p class="footer">
           Developer website:
           <a href="https://portfolio-alexvovan.vercel.app">https://portfolio-alexvovan.vercel.app</a>
         </p>
       </section>
 
+      <section id="policy-ru" class="policy" hidden>
+        <h1>Политика конфиденциальности My PhotoBook</h1>
+        <p class="updated">Последнее обновление: 6 августа 2026 г.</p>
+
+        <p>My PhotoBook — приложение AlexVovan Studio для создания фотоальбомов и PDF-фотокниг для печати. Приложение предназначено для локального создания и хранения альбомов на устройстве пользователя.</p>
+        <h2>Какие данные использует приложение</h2>
+        <p>My PhotoBook может получать доступ и использовать:</p>
+        <ul>
+          <li>фотографии, которые пользователь явно выбрал из библиотеки фотографий устройства;</li>
+          <li>импортированные копии выбранных фотографий;</li>
+          <li>подписи к фотографиям, названия и подзаголовки альбомов, описания, текст обложек, цвета, настройки кадрирования, порядок фотографий, порядок печати и другие настройки макета;</li>
+          <li>введённые пользователем параметры твёрдой обложки, например ширину корешка и необязательные настройки страницы для заметок или форзацев;</li>
+          <li>необязательные метаданные фотографий, например дату снимка и встроенные GPS-координаты, когда пользователь создаёт умный альбом или использует функцию, зависящую от метаданных;</li>
+          <li>созданные обычные PDF-файлы, PDF-брошюры и PDF-файлы фотокниг в твёрдой обложке.</li>
+        </ul>
+        <p>Эти данные используются для создания, редактирования, отображения, печати, предварительного просмотра и экспорта фотокниг пользователя, а также для необязательных функций умного альбома, связанных с датами и названиями мест.</p>
+        <h2>Локальное хранение и созданные файлы</h2>
+        <p>Данные альбомов хранятся локально в приватном хранилище приложения. Импортированные копии фотографий хранятся в приватной папке файлов приложения. Приложение не требует аккаунта и не синхронизирует альбомы с сервером разработчика.</p>
+        <p>PDF-файлы создаются локально. Обычные PDF, PDF-брошюры, PDF внутреннего блока твёрдой книги, PDF обложки и временные копии для отправки на iOS могут храниться в кэше приложения. Файлы в кэше могут сохраняться до тех пор, пока операционная система не очистит кэш, приложение не заменит или не удалит их, пользователь не очистит хранилище приложения либо не удалит приложение.</p>
+        <p>Резервное копирование Android для приложения отключено, поэтому данные альбомов и импортированные копии фотографий из приватного хранилища не включаются в автоматическую резервную копию данных приложения Android.</p>
+        <h2>Фотографии, метаданные и названия мест</h2>
+        <p>Приложение использует системное окно выбора фотографий. В режиме умного альбома на Android приложение также может запросить более широкий доступ к библиотеке фотографий. Этот доступ используется, чтобы сопоставить выбранный через системное окно файл с оригиналом в библиотеке и восстановить дату или встроенные GPS-метаданные, если системное окно выбора их не предоставило. Сопоставление файлов и извлечение метаданных выполняются локально на устройстве.</p>
+        <p>На Android приложение может запросить доступ к геометаданным медиафайлов, чтобы прочитать GPS-координаты, уже встроенные в выбранные фотографии. Приложение не запрашивает GPS-координаты текущего местоположения устройства.</p>
+        <p>Чтобы преобразовать встроенные координаты фотографии в понятное название места, My PhotoBook использует службу обратного геокодирования операционной системы. В зависимости от устройства и платформы координаты и стандартные сетевые данные могут обрабатываться операционной системой или поставщиком геокодирования; для этого может потребоваться интернет-соединение. Эти координаты не отправляются на сервер My PhotoBook, управляемый разработчиком.</p>
+        <p>На Android операционная система может потребовать разрешение на местоположение при использовании приложения до обращения к геокодеру. Перед системным запросом приложение показывает объяснение, что разрешение используется только для получения названий мест из координат, уже встроенных в выбранные фотографии. Приложение не использует фоновое местоположение и не отслеживает текущее местоположение пользователя.</p>
+        <h2>Отправка и экспорт</h2>
+        <p>Приложение передаёт созданный PDF в системный интерфейс предварительного просмотра, открытия или отправки только после явного действия пользователя. Пользователь сам выбирает приложение или сервис назначения. После отправки, сохранения или экспорта файла за пределы My PhotoBook внешняя копия контролируется выбранным приложением, сервисом, местом хранения или получателем и не может быть удалена приложением My PhotoBook.</p>
+        <h2>Сетевой доступ и третьи стороны</h2>
+        <p>My PhotoBook не содержит рекламных или аналитических SDK. Разработчик не собирает, не продаёт и не использует фотографии пользователя или содержимое альбомов для рекламы, профилирования либо отслеживания через сервер разработчика.</p>
+        <p>Третьи стороны могут обрабатывать ограниченные данные в следующих ситуациях, инициированных пользователем или зависящих от платформы:</p>
+        <ul>
+          <li>операционная система или поставщик геокодирования может обрабатывать встроенные координаты фотографии, чтобы вернуть название места;</li>
+          <li>выбранное пользователем приложение или сервис может обрабатывать PDF, который пользователь решил открыть, сохранить, распечатать или отправить;</li>
+          <li>когда пользователь открывает политику конфиденциальности в настройках, приложение проверяет доступность и открывает публичную веб-страницу политики. Хостинг-провайдер сайта может получить стандартные данные веб-запроса, например IP-адрес, время запроса и заголовки браузера или устройства. My PhotoBook не использует этот запрос для рекламы или профилирования пользователя.</li>
+        </ul>
+        <p>Правила конфиденциальности и сроки хранения данных у системных сервисов, хостинг-провайдера и выбранных пользователем приложений определяются их собственными политиками.</p>
+        <h2>Срок хранения и удаление</h2>
+        <p>Записи альбомов и импортированные копии фотографий остаются в приватном хранилище приложения, пока пользователь не удалит соответствующий альбом, не очистит хранилище приложения или не удалит приложение. Созданные файлы в кэше являются временными и могут быть удалены операционной системой либо при очистке кэша или хранилища приложения.</p>
+        <p>При удалении альбома My PhotoBook удаляет его локальную запись и импортированные копии фотографий. Поскольку в приложении нет аккаунта и сервера разработчика для хранения альбомов, у разработчика обычно нет удалённой копии альбомов пользователя, которую можно было бы удалить. Файлы, ранее экспортированные или отправленные за пределы приложения, пользователь должен удалить в месте их назначения самостоятельно.</p>
+        <h2>Контакты</h2>
+        <p>По вопросам конфиденциальности можно написать на:</p>
+        <p><a href="mailto:alexvovan.dev@gmail.com">alexvovan.dev@gmail.com</a></p>
+        <p class="footer">
+          Сайт разработчика:
+          <a href="https://portfolio-alexvovan.vercel.app">https://portfolio-alexvovan.vercel.app</a>
+        </p>
+      </section>
+
       <section id="policy-es" class="policy" hidden>
         <h1>Política de privacidad de My PhotoBook</h1>
-        <p class="updated">Última actualización: 31 de julio de 2026</p>
+        <p class="updated">Última actualización: 6 de agosto de 2026</p>
 
-        <h2>Español</h2>
-        <p>My PhotoBook es una aplicación de AlexVovan Studio para crear álbumes de fotos y fotolibros PDF listos para imprimir. La aplicación está diseñada para funcionar localmente en el dispositivo del usuario.</p>
-        <h2>Datos que usa la aplicación</h2>
-        <p>My PhotoBook puede usar:</p>
+        <p>My PhotoBook es una aplicación de AlexVovan Studio para crear álbumes de fotos y fotolibros PDF listos para imprimir. La aplicación está diseñada para crear y almacenar álbumes localmente en el dispositivo del usuario.</p>
+        <h2>Datos a los que accede y que utiliza la aplicación</h2>
+        <p>My PhotoBook puede acceder y utilizar:</p>
         <ul>
-          <li>fotos seleccionadas por el usuario desde la biblioteca de fotos del dispositivo;</li>
-          <li>pies de foto, títulos de álbumes, descripciones de álbumes, colores de álbumes, ajustes de recorte y orden de las fotos;</li>
-          <li>metadatos opcionales de las fotos, como la fecha de la foto y las coordenadas de ubicación incrustadas, cuando el usuario crea álbumes inteligentes o utiliza funciones que dependen de los metadatos de las fotos;</li>
-          <li>acceso a metadatos de ubicación de medios en Android cuando sea necesario para leer coordenadas incrustadas en las fotos seleccionadas;</li>
-          <li>archivos PDF generados por el usuario.</li>
+          <li>fotos seleccionadas explícitamente por el usuario desde la biblioteca de fotos del dispositivo;</li>
+          <li>copias importadas de las fotos seleccionadas;</li>
+          <li>pies de foto, títulos y subtítulos de álbumes, descripciones, texto de las cubiertas, colores, ajustes de recorte, orden de las fotos, orden de impresión y otros ajustes de diseño;</li>
+          <li>ajustes de tapa dura introducidos por el usuario, como el ancho del lomo y las opciones de página de notas o guardas;</li>
+          <li>metadatos opcionales de las fotos, como la fecha y las coordenadas GPS incrustadas, cuando el usuario crea un álbum inteligente o utiliza una función que depende de los metadatos;</li>
+          <li>archivos PDF normales, PDF de folleto y archivos PDF de fotolibros de tapa dura generados por el usuario.</li>
         </ul>
-        <h2>Cómo se almacenan los datos</h2>
-        <p>Los datos de los álbumes y las copias de las fotos importadas se almacenan localmente en el almacenamiento privado de la aplicación en el dispositivo del usuario. La aplicación no requiere una cuenta y no utiliza un servidor propio. La copia de seguridad de Android está desactivada para la aplicación, por lo que estos datos privados no se incluyen en la copia de seguridad automática de Android.</p>
+        <p>Estos datos se utilizan para crear, editar, mostrar, imprimir, previsualizar y exportar los fotolibros del usuario, así como para ofrecer las funciones opcionales del álbum inteligente relacionadas con fechas y nombres de lugares.</p>
+        <h2>Almacenamiento local y archivos generados</h2>
+        <p>Los datos de los álbumes se almacenan localmente en el almacenamiento privado de la aplicación. Las copias importadas de las fotos se guardan en el directorio privado de archivos de la aplicación. La aplicación no requiere una cuenta y no sincroniza los álbumes con un servidor operado por el desarrollador.</p>
+        <p>Los archivos PDF se generan localmente. Los PDF normales, los PDF de folleto, los PDF del interior de tapa dura, los PDF de cubierta y las copias temporales para compartir en iOS pueden almacenarse en la caché de la aplicación. Los archivos en caché pueden permanecer hasta que el sistema operativo limpie la caché, la aplicación los sustituya o elimine, el usuario borre el almacenamiento de la aplicación o desinstale la aplicación.</p>
+        <p>La copia de seguridad de Android está desactivada para la aplicación, por lo que los datos privados de los álbumes y las copias importadas de las fotos no se incluyen en la copia de seguridad automática de datos de Android.</p>
+        <h2>Fotos, metadatos y nombres de lugares</h2>
+        <p>La aplicación utiliza el selector de fotos del sistema. En el modo de álbum inteligente en Android, la aplicación también puede solicitar un acceso más amplio a la biblioteca de fotos. Este acceso se usa para relacionar un archivo elegido mediante el selector con su elemento original de la biblioteca y recuperar su fecha o sus metadatos GPS incrustados cuando el selector del sistema no los proporciona. La relación de archivos y la extracción de metadatos se realizan localmente en el dispositivo.</p>
+        <p>En Android, la aplicación puede solicitar acceso a los metadatos de ubicación de los archivos multimedia para leer coordenadas GPS ya incrustadas en las fotos seleccionadas. La aplicación no solicita las coordenadas GPS de la ubicación actual del dispositivo.</p>
+        <p>Para convertir las coordenadas incrustadas de una foto en un nombre de lugar legible, My PhotoBook utiliza el servicio de geocodificación inversa del sistema operativo. Dependiendo del dispositivo y de la plataforma, las coordenadas y la información de red estándar pueden ser procesadas por el sistema operativo o por el proveedor de geocodificación, y puede ser necesaria una conexión a Internet. Estas coordenadas no se envían a un servidor de My PhotoBook operado por el desarrollador.</p>
+        <p>En Android, el sistema operativo puede exigir permiso de ubicación en primer plano antes de utilizar su geocodificador. Antes de ese aviso del sistema, la aplicación muestra una explicación de que el permiso se utiliza únicamente para obtener nombres de lugares a partir de coordenadas ya incrustadas en las fotos seleccionadas. La aplicación no utiliza la ubicación en segundo plano ni rastrea continuamente la ubicación actual del usuario.</p>
         <h2>Compartir y exportar</h2>
-        <p>La aplicación puede generar archivos PDF y pasarlos a la interfaz del sistema del dispositivo cuando el usuario elige explícitamente previsualizar, compartir, abrir o exportar un fotolibro. Después de eso, el tratamiento del archivo depende de la aplicación o servicio seleccionado por el usuario.</p>
-        <h2>Recopilación de datos y terceros</h2>
-        <p>My PhotoBook no incluye SDK publicitarios ni SDK de analítica. El desarrollador de la aplicación no recopila, vende ni comparte las fotos del usuario ni el contenido de los álbumes a través de un servidor operado por el desarrollador.</p>
-        <p>Los servicios de la plataforma y las aplicaciones de destino seleccionadas por el usuario pueden procesar datos cuando el usuario concede permisos, abre un PDF o comparte un archivo.</p>
-        <h2>Permisos y ubicación</h2>
-        <p>La aplicación utiliza el selector de fotos del sistema para que el usuario pueda añadir fotos a sus álbumes. En el modo de álbum inteligente en Android, la aplicación también puede solicitar un acceso más amplio a la biblioteca de fotos. Este acceso se usa para relacionar un archivo seleccionado con su elemento original de la biblioteca y recuperar su fecha o sus metadatos GPS incrustados cuando el selector del sistema no los proporciona. La relación y el tratamiento de los metadatos se realizan en el dispositivo; las fotos seleccionadas y sus metadatos no se envían al desarrollador.</p>
-        <p>En Android, la aplicación puede solicitar acceso a metadatos de ubicación de medios para leer coordenadas GPS ya incrustadas en las fotos seleccionadas. En el modo de álbum inteligente, Android también puede mostrar un permiso de ubicación en primer plano porque el geocodificador del sistema lo requiere para convertir las coordenadas de las fotos seleccionadas en nombres de lugares legibles. Antes de ese permiso del sistema Android, la aplicación muestra una explicación propia de que el permiso se usa solo para nombrar lugares a partir de los metadatos de las fotos seleccionadas. La aplicación no solicita la posición actual del usuario, no usa ubicación en segundo plano y no rastrea continuamente la ubicación actual del usuario.</p>
-        <h2>Eliminar datos</h2>
-        <p>El usuario puede eliminar álbumes dentro de la aplicación. Al eliminar un álbum, sus datos locales y las copias de las fotos importadas se borran del almacenamiento privado de la aplicación. El usuario también puede eliminar todos los datos de la aplicación desinstalándola o borrando su almacenamiento desde los ajustes del sistema del dispositivo.</p>
+        <p>La aplicación pasa un PDF generado a la interfaz del sistema para previsualizar, abrir o compartir únicamente después de una acción explícita del usuario. El usuario elige la aplicación o el servicio de destino. Después de enviar, guardar o exportar un archivo fuera de My PhotoBook, esa copia externa queda bajo el control de la aplicación, el servicio, la ubicación de almacenamiento o el destinatario seleccionados y My PhotoBook no puede eliminarla.</p>
+        <h2>Acceso a la red y terceros</h2>
+        <p>My PhotoBook no incluye SDK publicitarios ni SDK de analítica. El desarrollador no recopila, vende ni utiliza las fotos del usuario ni el contenido de los álbumes para publicidad, elaboración de perfiles o seguimiento mediante un servidor operado por el desarrollador.</p>
+        <p>Terceros pueden procesar datos limitados en las siguientes situaciones iniciadas por el usuario o dependientes de la plataforma:</p>
+        <ul>
+          <li>el sistema operativo o su proveedor de geocodificación puede procesar las coordenadas incrustadas de una foto para devolver un nombre de lugar;</li>
+          <li>una aplicación o servicio elegido por el usuario puede procesar un PDF que el usuario decida abrir, guardar, imprimir o compartir;</li>
+          <li>cuando el usuario abre la política de privacidad desde Ajustes, la aplicación comprueba y abre la página web pública de la política. El proveedor de alojamiento del sitio puede recibir información estándar de la solicitud web, como la dirección IP, la hora de la solicitud y las cabeceras del navegador o del dispositivo. My PhotoBook no utiliza esta solicitud para publicidad ni para elaborar perfiles del usuario.</li>
+        </ul>
+        <p>Las prácticas de privacidad y conservación de datos de los servicios del sistema operativo, del proveedor de alojamiento y de las aplicaciones de destino elegidas por el usuario se rigen por sus propias políticas.</p>
+        <h2>Conservación y eliminación</h2>
+        <p>Los registros de los álbumes y las copias importadas de las fotos permanecen en el almacenamiento privado de la aplicación hasta que el usuario elimina el álbum correspondiente, borra el almacenamiento de la aplicación o desinstala la aplicación. Los archivos generados en la caché son temporales y pueden ser eliminados por el sistema operativo o al borrar la caché o el almacenamiento de la aplicación.</p>
+        <p>Al eliminar un álbum, My PhotoBook borra su registro local y las copias importadas de las fotos. Como la aplicación no tiene cuentas ni un servidor de álbumes operado por el desarrollador, normalmente el desarrollador no dispone de una copia remota de los álbumes del usuario que pueda borrar. Los archivos exportados o compartidos anteriormente fuera de la aplicación deben ser eliminados por el usuario en su destino.</p>
         <h2>Contacto</h2>
-        <p>Para preguntas relacionadas con la privacidad o solicitudes de eliminación de datos, escríbenos a:</p>
+        <p>Para preguntas relacionadas con la privacidad, escribe a:</p>
         <p><a href="mailto:alexvovan.dev@gmail.com">alexvovan.dev@gmail.com</a></p>
-
+        <p class="footer">
+          Sitio web del desarrollador:
+          <a href="https://portfolio-alexvovan.vercel.app">https://portfolio-alexvovan.vercel.app</a>
+        </p>
       </section>
     </article>
   </main>

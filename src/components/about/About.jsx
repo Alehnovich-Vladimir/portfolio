@@ -8,7 +8,7 @@ const About = () => {
   const about = t.about;
 
   return (
-    <div className="a">
+    <section className="a" id="about">
       <div className="a-left">
         <div className="a-card bg"></div>
         <div className="a-card">
@@ -29,14 +29,14 @@ const About = () => {
           ))}
         </div>
         <div className="a-award">
-          <img src={Award} alt="" className="a-award-img" />
+          <div className="a-award-media"><img src={Award} alt="" className="a-award-img" /></div>
           <div className="a-award-texts">
             <h4 className="a-award-title">{about.awardTitle}</h4>
             <p className="a-award-desc">{about.awardDescription}</p>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

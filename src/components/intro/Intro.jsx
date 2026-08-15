@@ -8,7 +8,7 @@ const Intro = () => {
   const intro = t.intro;
 
   return (
-    <div className="i">
+    <section className="i" id="home">
       <div className="i-left">
         <div className="i-left-wrapper">
           <div className="i-kicker">{intro.kicker}</div>
@@ -17,19 +17,28 @@ const Intro = () => {
           <div className="i-title">
             <div className="i-title-wrapper">
               {intro.titleItems.map((item) => (
-                <div className="i-title-item" key={item}>
+                <div
+                  className={`i-title-item ${item.length > 29 ? "is-long" : ""}`}
+                  key={item}
+                >
                   {item}
                 </div>
               ))}
             </div>
           </div>
           <p className="i-desc">{intro.description}</p>
+          <div className="i-availability">
+            <span className="i-availability-dot" aria-hidden="true"></span>
+            <span>{intro.availability}</span>
+          </div>
           <div className="i-actions">
-            <a className="i-action primary" href="#apps">
-              {intro.appsButton}
+            <a className="i-action primary" href="#contact">
+              {intro.contactButton}
+              <span aria-hidden="true">↗</span>
             </a>
             <a className="i-action" href="#projects">
-              {intro.projectsButton}
+              {intro.workButton}
+              <span aria-hidden="true">↓</span>
             </a>
           </div>
           <div className="i-stats" aria-label={intro.highlightsLabel}>
@@ -54,7 +63,7 @@ const Intro = () => {
         </div>
         <img src={Me} alt="" className="i-img" />
       </div>
-    </div>
+    </section>
   );
 };
 

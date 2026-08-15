@@ -2,6 +2,7 @@ export const translations = {
   en: {
     languageName: "English",
     languageShort: "EN",
+    nav: { label: "Portfolio navigation", home: "Home", about: "About", apps: "Apps", projects: "Projects", contact: "Contact" },
     intro: {
       kicker: "Web and mobile product developer",
       greeting: "Hello, my name is",
@@ -15,8 +16,9 @@ export const translations = {
       ],
       description:
         "I build responsive websites and mobile applications with a focus on simple interfaces, useful details and products that can actually ship.",
-      appsButton: "Mobile apps",
-      projectsButton: "Projects",
+      availability: "Open for new web projects",
+      contactButton: "Discuss a project",
+      workButton: "View work",
       stats: [
         { value: "1", label: "Android app live" },
         { value: "2", label: "mobile products" },
@@ -29,9 +31,9 @@ export const translations = {
     about: {
       title: "About me",
       subtitle:
-        "I started with front-end development and now I am moving deeper into mobile products for Android, with iPhone releases on the roadmap.",
+        "I continue to work on web development while also building mobile products for Android, with iPhone releases as the next step.",
       description:
-        "My front-end foundation is HTML5, CSS3, Sass, Bootstrap, JavaScript, React, Redux, Git and Figma. Now I use that base to build responsive interfaces, mobile apps, product UX, local-first features, maps, media workflows and the practical path to publishing apps.",
+        "My web foundation is HTML5, CSS3, Sass, Bootstrap, JavaScript, React, Redux, Git and Figma. I use it in current websites as well as mobile products: responsive interfaces, product UX, local-first features, maps, media workflows and the practical path from development to publication.",
       skills: [
         "HTML5",
         "CSS3",
@@ -50,9 +52,9 @@ export const translations = {
     },
     mobileApps: {
       kicker: "Mobile development",
-      title: "Android apps are now part of my work.",
+      title: "Mobile products",
       description:
-        "I am expanding the portfolio from websites into shipped mobile products: one app is already published for Android, and the next direction includes both Android and future iPhone releases.",
+        "My Android apps for travel and creating photo albums. My Route is available on Google Play; My PhotoBook is in closed testing.",
       tabsLabel: "Mobile apps",
       previewLabel: "preview",
       liveBuild: "Live build",
@@ -70,8 +72,8 @@ export const translations = {
           screenMeta: "4 places  2.8 km",
         },
         "my-photobook": {
-          status: "Preparing next release",
-          platform: "Android now, iPhone next",
+          status: "Closed testing on Google Play",
+          platform: "Android",
           summary:
             "A mobile photobook maker for albums, captions, printable layouts and PDF export that keeps user content local.",
           features: ["photo albums", "PDF export", "print layouts"],
@@ -81,28 +83,64 @@ export const translations = {
       },
     },
     projects: {
-      kicker: "Selected projects",
-      title: "Web foundation and mobile products",
+      kicker: "Web development",
+      title: "Web projects",
       description:
-        "A mix of my front-end course work, diploma project and current Android applications.",
+        "Current builds come first, followed by a diploma project and a compact archive of earlier front-end work.",
+      currentKicker: "In progress",
+      currentTitle: "Currently building",
+      currentDescription:
+        "Two active builds that are not public yet, so the portfolio shows their direction without presenting them as released products.",
+      webKicker: "Selected web work",
+      webTitle: "Diploma project",
+      webDescription:
+        "A larger web project from my front-end training, kept separate from the smaller learning exercises.",
+      completedTitle: "Completed project",
+      archiveKicker: "Learning archive",
+      archiveTitle: "Early web projects",
+      archiveDescription:
+        "Smaller course projects that show the foundation I started from: layout, responsive pages and JavaScript practice.",
+      diplomaLabel: "Diploma project",
       openProject: "Open project",
       items: {
-        1: { description: "Personal website with responsive sections and contact flow." },
         2: { description: "Diploma project: an online store for rhythmic gymnastics products." },
-        7: { description: "Published Android travel app for walking routes, city discovery and travel memories." },
-        8: { description: "Android photobook app for albums, printable layouts and PDF export." },
         3: { description: "Marketplace interface experiment with product filtering." },
         4: { description: "Responsive food delivery website with a bright visual style." },
         5: { description: "Pixel-focused webpage layout and adaptive presentation." },
         6: { description: "Nature-themed page with careful desktop and mobile layout." },
+        9: {
+          status: "In development",
+          tag: "Learning platform",
+          description: "A structured learning platform for Spanish and English courses from A0 to C1.",
+          features: ["Spanish & English", "A0–C1 levels", "interactive lessons"],
+        },
+        10: {
+          status: "In development",
+          tag: "Automotive website",
+          description: "A business website for an automotive electronics workshop working with keys, immobilizers and electronic control units.",
+          features: ["automotive electronics", "keys & immobilizers", "service website"],
+        },
       },
     },
     contact: {
-      kicker: "Available for collaboration",
-      title: "Let's build something useful",
-      descriptionLead: "Have an idea?",
+      cta: {
+        kicker: "Have a website idea?",
+        title: "From idea to launch",
+        description:
+          "I am open to new web projects. I can help shape the structure, build a responsive website, prepare it for publication, connect the domain and handle the basic SEO setup. A detailed technical brief is not required to start — describe the idea briefly in the form below.",
+        button: "Discuss your project",
+        servicesLabel: "Web development services",
+        services: [
+          "Structure and responsive development",
+          "Domain setup and publication",
+          "Basic SEO and launch preparation",
+        ],
+      },
+      kicker: "Contact",
+      title: "Tell me about your project",
+      descriptionLead: "Describe the idea briefly.",
       description:
-        "I am interested in web products, Android apps, mobile UX and projects that need a calm path from prototype to release.",
+        "Use the form to tell me what you want to build, what the website should do and any requirements you already have.",
       placeholders: {
         name: "Name",
         subject: "Subject",
@@ -118,6 +156,7 @@ export const translations = {
   es: {
     languageName: "Español",
     languageShort: "ES",
+    nav: { label: "Navegación del portfolio", home: "Inicio", about: "Sobre mí", apps: "Apps", projects: "Proyectos", contact: "Contacto" },
     intro: {
       kicker: "Desarrollador web y de productos móviles",
       greeting: "Hola, me llamo",
@@ -131,8 +170,9 @@ export const translations = {
       ],
       description:
         "Creo sitios web responsive y aplicaciones móviles con foco en interfaces simples, detalles útiles y productos que pueden publicarse de verdad.",
-      appsButton: "Apps móviles",
-      projectsButton: "Proyectos",
+      availability: "Disponible para nuevos proyectos web",
+      contactButton: "Hablar de un proyecto",
+      workButton: "Ver trabajos",
       stats: [
         { value: "1", label: "app Android publicada" },
         { value: "2", label: "productos móviles" },
@@ -145,9 +185,9 @@ export const translations = {
     about: {
       title: "Sobre mí",
       subtitle:
-        "Empecé con desarrollo front-end y ahora avanzo más hacia productos móviles para Android, con lanzamientos para iPhone en el roadmap.",
+        "Sigo trabajando en desarrollo web y, al mismo tiempo, desarrollo productos móviles para Android; el siguiente paso son los lanzamientos para iPhone.",
       description:
-        "Mi base front-end incluye HTML5, CSS3, Sass, Bootstrap, JavaScript, React, Redux, Git y Figma. Ahora uso esa base para crear interfaces responsive, apps móviles, UX de producto, funciones local-first, mapas, flujos multimedia y el camino práctico para publicar aplicaciones.",
+        "Mi base web incluye HTML5, CSS3, Sass, Bootstrap, JavaScript, React, Redux, Git y Figma. La utilizo tanto en sitios web actuales como en productos móviles: interfaces responsive, UX de producto, funciones local-first, mapas, flujos multimedia y todo el proceso práctico desde el desarrollo hasta la publicación.",
       skills: [
         "HTML5",
         "CSS3",
@@ -166,9 +206,9 @@ export const translations = {
     },
     mobileApps: {
       kicker: "Desarrollo móvil",
-      title: "Las apps Android ya forman parte de mi trabajo.",
+      title: "Productos móviles",
       description:
-        "Estoy ampliando el portfolio desde sitios web hacia productos móviles publicados: una app ya está disponible para Android y el siguiente paso incluye Android y futuros lanzamientos para iPhone.",
+        "Mis aplicaciones Android para viajes y creación de álbumes. My Route está en Google Play; My PhotoBook está en pruebas cerradas.",
       tabsLabel: "Apps móviles",
       previewLabel: "vista previa",
       liveBuild: "Versión activa",
@@ -186,8 +226,8 @@ export const translations = {
           screenMeta: "4 lugares  2.8 km",
         },
         "my-photobook": {
-          status: "Preparando próximo lanzamiento",
-          platform: "Android ahora, iPhone después",
+          status: "Pruebas cerradas en Google Play",
+          platform: "Android",
           summary:
             "Una app para crear fotolibros móviles con álbumes, textos, diseños imprimibles y exportación a PDF, manteniendo el contenido local.",
           features: ["álbumes de fotos", "exportación PDF", "diseños imprimibles"],
@@ -197,28 +237,64 @@ export const translations = {
       },
     },
     projects: {
-      kicker: "Proyectos seleccionados",
-      title: "Base web y productos móviles",
+      kicker: "Desarrollo web",
+      title: "Proyectos web",
       description:
-        "Una mezcla de trabajos front-end, proyecto final del curso y aplicaciones Android actuales.",
+        "Primero aparecen los proyectos actuales en desarrollo; después, el proyecto final y un archivo compacto de trabajos anteriores.",
+      currentKicker: "En desarrollo",
+      currentTitle: "Proyectos actuales",
+      currentDescription:
+        "Dos proyectos en desarrollo que todavía no están publicados. Aquí muestro su dirección sin presentarlos como productos ya lanzados.",
+      webKicker: "Trabajo web seleccionado",
+      webTitle: "Proyecto final",
+      webDescription:
+        "Un proyecto web más amplio de mi formación front-end, separado de los ejercicios de aprendizaje más pequeños.",
+      completedTitle: "Proyecto terminado",
+      archiveKicker: "Archivo de aprendizaje",
+      archiveTitle: "Primeros proyectos web",
+      archiveDescription:
+        "Proyectos de curso más pequeños que muestran la base con la que empecé: maquetación, páginas responsive y práctica de JavaScript.",
+      diplomaLabel: "Proyecto final",
       openProject: "Abrir proyecto",
       items: {
-        1: { description: "Sitio personal con secciones responsive y formulario de contacto." },
         2: { description: "Proyecto final: tienda online de productos para gimnasia rítmica." },
-        7: { description: "App Android publicada para rutas a pie, descubrir ciudades y guardar recuerdos de viaje." },
-        8: { description: "App Android para fotolibros, álbumes, diseños imprimibles y exportación PDF." },
         3: { description: "Experimento de marketplace con filtrado de productos." },
         4: { description: "Sitio responsive de comida a domicilio con estilo visual vivo." },
         5: { description: "Maquetación web cuidada con presentación adaptativa." },
         6: { description: "Página con temática de naturaleza y diseño adaptado a móvil y escritorio." },
+        9: {
+          status: "En desarrollo",
+          tag: "Plataforma educativa",
+          description: "Una plataforma estructurada para aprender español e inglés desde A0 hasta C1.",
+          features: ["español e inglés", "niveles A0–C1", "lecciones interactivas"],
+        },
+        10: {
+          status: "En desarrollo",
+          tag: "Web de automoción",
+          description: "Sitio web para un taller de electrónica del automóvil especializado en llaves, inmovilizadores y unidades electrónicas.",
+          features: ["electrónica del automóvil", "llaves e inmovilizadores", "web de servicios"],
+        },
       },
     },
     contact: {
-      kicker: "Disponible para colaborar",
-      title: "Construyamos algo útil",
-      descriptionLead: "¿Tienes una idea?",
+      cta: {
+        kicker: "¿Tienes una idea para una web?",
+        title: "De la idea al lanzamiento",
+        description:
+          "Estoy disponible para nuevos proyectos web. Puedo ayudarte a definir la estructura, desarrollar un sitio responsive, prepararlo para su publicación, conectar el dominio y realizar una configuración SEO básica. No necesitas un documento técnico completo: describe brevemente la idea en el formulario de abajo.",
+        button: "Hablar de tu proyecto",
+        servicesLabel: "Servicios de desarrollo web",
+        services: [
+          "Estructura y desarrollo responsive",
+          "Dominio y publicación",
+          "SEO básico y preparación del lanzamiento",
+        ],
+      },
+      kicker: "Contacto",
+      title: "Cuéntame tu proyecto",
+      descriptionLead: "Describe brevemente la idea.",
       description:
-        "Me interesan los productos web, las apps Android, la UX móvil y los proyectos que necesitan un camino tranquilo desde el prototipo hasta el lanzamiento.",
+        "Usa el formulario para contarme qué quieres crear, qué debería hacer el sitio y qué requisitos ya tienes definidos.",
       placeholders: {
         name: "Nombre",
         subject: "Asunto",
@@ -234,6 +310,7 @@ export const translations = {
   ru: {
     languageName: "Русский",
     languageShort: "RU",
+    nav: { label: "Навигация по портфолио", home: "Главная", about: "Обо мне", apps: "Приложения", projects: "Проекты", contact: "Контакты" },
     intro: {
       kicker: "Разработчик web и мобильных продуктов",
       greeting: "Привет, меня зовут",
@@ -247,8 +324,9 @@ export const translations = {
       ],
       description:
         "Я создаю адаптивные сайты и мобильные приложения с фокусом на простые интерфейсы, полезные детали и продукты, которые можно довести до релиза.",
-      appsButton: "Мобильные приложения",
-      projectsButton: "Проекты",
+      availability: "Открыт к новым web-проектам",
+      contactButton: "Обсудить проект",
+      workButton: "Смотреть работы",
       stats: [
         { value: "1", label: "Android-приложение опубликовано" },
         { value: "2", label: "мобильных продукта" },
@@ -261,9 +339,9 @@ export const translations = {
     about: {
       title: "Обо мне",
       subtitle:
-        "Я начинал с front-end разработки, а сейчас все глубже ухожу в мобильные продукты для Android, с планами релизов для iPhone.",
+        "Я продолжаю заниматься web-разработкой и параллельно развиваю мобильные продукты для Android; следующим шагом планирую релизы для iPhone.",
       description:
-        "Моя front-end база - HTML5, CSS3, Sass, Bootstrap, JavaScript, React, Redux, Git и Figma. Сейчас я использую эту основу для адаптивных интерфейсов, мобильных приложений, продуктового UX, local-first функций, карт, работы с медиа и практического пути к публикации приложений.",
+        "Моя web-база — HTML5, CSS3, Sass, Bootstrap, JavaScript, React, Redux, Git и Figma. Я использую её и в текущих сайтах, и в мобильных продуктах: для адаптивных интерфейсов, продуктового UX, local-first функций, карт, работы с медиа и всего практического пути от разработки до публикации.",
       skills: [
         "HTML5",
         "CSS3",
@@ -282,9 +360,9 @@ export const translations = {
     },
     mobileApps: {
       kicker: "Мобильная разработка",
-      title: "Android-приложения теперь часть моей работы.",
+      title: "Мобильные продукты",
       description:
-        "Я расширяю портфолио от сайтов к опубликованным мобильным продуктам: одно приложение уже доступно для Android, а дальше в планах Android и будущие релизы для iPhone.",
+        "Мои Android-приложения для путешествий и создания фотоальбомов. My Route опубликован в Google Play, My PhotoBook проходит закрытое тестирование.",
       tabsLabel: "Мобильные приложения",
       previewLabel: "превью",
       liveBuild: "Живая версия",
@@ -302,8 +380,8 @@ export const translations = {
           screenMeta: "4 места  2.8 км",
         },
         "my-photobook": {
-          status: "Готовится следующий релиз",
-          platform: "Android сейчас, iPhone дальше",
+          status: "Закрытое тестирование в Google Play",
+          platform: "Android",
           summary:
             "Мобильное приложение для фотокниг: альбомы, подписи, макеты для печати и экспорт в PDF с локальным хранением контента.",
           features: ["фотоальбомы", "экспорт PDF", "макеты для печати"],
@@ -313,28 +391,64 @@ export const translations = {
       },
     },
     projects: {
-      kicker: "Избранные проекты",
-      title: "Web-основа и мобильные продукты",
+      kicker: "Web-разработка",
+      title: "Web-проекты",
       description:
-        "Здесь собраны учебные front-end работы, дипломный проект и мои актуальные Android-приложения.",
+        "Сначала — проекты, над которыми я работаю сейчас. Ниже — дипломный проект и компактный архив ранних front-end работ.",
+      currentKicker: "В разработке",
+      currentTitle: "Сейчас в работе",
+      currentDescription:
+        "Два проекта в разработке, которые пока не опубликованы. Здесь показано их направление без попытки выдать разработку за готовый релиз.",
+      webKicker: "Избранная web-работа",
+      webTitle: "Дипломный проект",
+      webDescription:
+        "Более крупный web-проект из моего front-end обучения, отделённый от небольших учебных упражнений.",
+      completedTitle: "Завершенный проект",
+      archiveKicker: "Архив обучения",
+      archiveTitle: "Ранние web-проекты",
+      archiveDescription:
+        "Небольшие учебные проекты, которые показывают мою базу: вёрстку, адаптивные страницы и практику JavaScript.",
+      diplomaLabel: "Дипломный проект",
       openProject: "Открыть проект",
       items: {
-        1: { description: "Личный сайт с адаптивными секциями и контактной формой." },
         2: { description: "Дипломный проект: интернет-магазин товаров для художественной гимнастики." },
-        7: { description: "Опубликованное Android-приложение для пеших маршрутов, городов и воспоминаний о поездках." },
-        8: { description: "Android-приложение для фотокниг, альбомов, печатных макетов и экспорта PDF." },
         3: { description: "Эксперимент marketplace-интерфейса с фильтрацией товаров." },
         4: { description: "Адаптивный сайт доставки еды с ярким визуальным стилем." },
         5: { description: "Аккуратная web-верстка с адаптивной презентацией." },
         6: { description: "Страница о природе с продуманной desktop и mobile версткой." },
+        9: {
+          status: "В разработке",
+          tag: "Учебная платформа",
+          description: "Полноценная платформа для изучения испанского и английского языков по уровням от A0 до C1.",
+          features: ["испанский и английский", "уровни A0–C1", "интерактивные уроки"],
+        },
+        10: {
+          status: "В разработке",
+          tag: "Сайт автосервиса",
+          description: "Сайт для мастерской автомобильной электроники: ключи, иммобилайзеры, электронные блоки и связанные услуги.",
+          features: ["автоэлектроника", "ключи и иммобилайзеры", "сервисный сайт"],
+        },
       },
     },
     contact: {
-      kicker: "Открыт к сотрудничеству",
-      title: "Давайте сделаем что-то полезное",
-      descriptionLead: "Есть идея?",
+      cta: {
+        kicker: "Есть идея для сайта?",
+        title: "От идеи до запуска",
+        description:
+          "Сейчас я открыт к новым web-проектам. Могу помочь пройти весь путь: продумать структуру, разработать адаптивный сайт, подготовить его к публикации, подключить домен и выполнить базовую SEO-настройку. Подробное техническое задание не обязательно — кратко опишите идею в форме ниже.",
+        button: "Обсудить проект",
+        servicesLabel: "Услуги web-разработки",
+        services: [
+          "Структура и адаптивная разработка",
+          "Домен и публикация",
+          "Базовая SEO-настройка и подготовка к запуску",
+        ],
+      },
+      kicker: "Связаться",
+      title: "Расскажите о вашем проекте",
+      descriptionLead: "Кратко опишите идею.",
       description:
-        "Мне интересны web-продукты, Android-приложения, мобильный UX и проекты, которым нужен спокойный путь от прототипа до релиза.",
+        "Через форму можно рассказать, что вы хотите создать, какие задачи должен решать сайт и какие требования уже известны.",
       placeholders: {
         name: "Имя",
         subject: "Тема",

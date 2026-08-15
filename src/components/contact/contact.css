@@ -1,56 +1,101 @@
 .c {
-    min-height: 100vh;
+    width: min(100%, 1460px);
+    min-height: 760px;
+    margin: 0 auto;
+    padding: 94px clamp(28px, 6vw, 88px) 82px;
+    box-sizing: border-box;
     position: relative;
 }
 
-.c-bg {
-    width: 20px;
-    height: 100%;
-    background-color: #59b256;
+.c::before {
+    content: "";
     position: absolute;
+    left: clamp(28px, 6vw, 88px);
+    right: clamp(28px, 6vw, 88px);
+    top: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--line) 14%, var(--line) 86%, transparent);
+}
+
+.c-bg {
+    width: 440px;
+    height: 440px;
+    border-radius: 50%;
+    background:
+        radial-gradient(circle at 38% 38%, rgba(76, 196, 216, 0.12), transparent 48%),
+        radial-gradient(circle at 62% 64%, rgba(133, 116, 232, 0.1), transparent 54%);
+    position: absolute;
+    left: -185px;
+    bottom: -40px;
+    pointer-events: none;
 }
 
 .c-wrapper {
-    padding: 50px;
-    display: flex;
-}
-
-.c-left {
-    flex: 1;
-    margin-top: 100px;
-}
-
-.c-right {
-    flex: 1;
-    margin-top: 100px;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.08fr);
+    gap: clamp(48px, 7vw, 100px);
     align-items: center;
-    justify-content: center;
+    position: relative;
+    z-index: 1;
 }
 
-.c-title {
-    font-size: 60px;
-    width: 70%;
-    margin-bottom: 50px;
+.c-left,
+.c-right {
+    min-width: 0;
 }
 
 .c-kicker {
     margin: 0 0 14px;
-    color: #59b256;
-    font-size: 14px;
-    font-weight: 700;
+    color: var(--blue);
+    font-size: 12px;
+    font-weight: 850;
     letter-spacing: 0.12em;
     text-transform: uppercase;
 }
 
+.c-title {
+    max-width: 580px;
+    margin: 0 0 34px;
+    color: var(--text);
+    font-size: clamp(34px, 3.7vw, 48px);
+    line-height: 1.08;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+}
+
+.c-info {
+    display: grid;
+    gap: 12px;
+}
+
 .c-info-item {
+    --info-color: var(--blue);
+    min-width: 0;
+    min-height: 66px;
     display: flex;
     align-items: center;
-    margin: 50px 0px;
-    font-weight: 300;
-    width: 60%;
-    transition: transform 0.2s ease;
+    gap: 14px;
+    border: 1px solid color-mix(in srgb, var(--info-color) 28%, var(--line));
+    border-radius: 17px;
+    padding: 10px 14px 10px 10px;
+    box-sizing: border-box;
+    background:
+        linear-gradient(90deg, color-mix(in srgb, var(--info-color) 8%, transparent), transparent 44%),
+        var(--surface);
+    color: var(--text);
+    font-size: 14px;
+    font-weight: 680;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.c-info-item--phone { --info-color: #23b6ab; }
+.c-info-item--email { --info-color: #58a9e0; }
+.c-info-item--address { --info-color: #8b77e8; }
+
+.c-info-item:hover {
+    transform: translateX(5px);
+    border-color: color-mix(in srgb, var(--info-color) 48%, var(--line));
+    box-shadow: 0 12px 30px color-mix(in srgb, var(--info-color) 11%, transparent);
 }
 
 .c-info-item span,
@@ -60,203 +105,424 @@
 
 .c-email {
     text-decoration: none;
-    white-space: nowrap;
+    overflow-wrap: anywhere;
 }
 
-.c-info-item:hover {
-    transform: translateX(8px);
+.c-icon-shell {
+    width: 44px;
+    height: 44px;
+    flex: 0 0 44px;
+    display: grid;
+    place-items: center;
+    border-radius: 13px;
+    background: color-mix(in srgb, var(--info-color) 12%, transparent);
+    box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--info-color) 20%, transparent);
 }
 
 .c-icon {
-    width: 30px;
-    height: 30px;
-    margin-right: 20px;
-    flex-shrink: 0;
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
+    filter: none;
+}
+
+.app--dark .c-info-item {
+    background:
+        linear-gradient(90deg, color-mix(in srgb, var(--info-color) 10%, transparent), transparent 48%),
+        rgba(8, 28, 45, 0.68);
+}
+
+.app--dark .c-icon {
+    filter: none;
+}
+
+.c-right {
+    border: 1px solid var(--line);
+    border-radius: 28px;
+    padding: 34px;
+    background:
+        radial-gradient(circle at 92% 2%, rgba(85, 168, 223, 0.09), transparent 28%),
+        var(--surface);
+    box-shadow: 0 30px 85px rgba(20, 43, 58, 0.09);
+    backdrop-filter: blur(14px);
+    position: relative;
+    overflow: hidden;
+}
+
+.c-form-accent {
+    width: 130px;
+    height: 4px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--accent), var(--blue), var(--violet));
+    position: absolute;
+    top: 0;
+    left: 34px;
+}
+
+.app--dark .c-right {
+    border-color: rgba(139, 177, 201, 0.16);
+    background:
+        radial-gradient(circle at 92% 3%, rgba(80, 169, 219, 0.11), transparent 30%),
+        linear-gradient(145deg, rgba(12, 40, 61, 0.94), rgba(8, 29, 46, 0.92));
+    box-shadow: 0 30px 85px rgba(1, 10, 18, 0.24);
 }
 
 .c-desc {
-    font-weight: 200;
-    margin-bottom: 80px;
-    max-width: 560px;
-    line-height: 1.65;
+    max-width: 650px;
+    margin: 0 0 25px;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.7;
 }
 
-form {
-   margin-top: 20px; 
+.c-desc b {
+    color: var(--text);
 }
 
-input {
-    width: 50%;
-    height: 50px;
-    border: 1px solid rgba(21, 23, 26, 0.22);
-    border-radius: 8px;
-    margin: 10px 0px;
-    font-size: 14px;
-    padding-left: 10px;
-    background-color: rgba(255, 255, 255, 0.92);
-    color: inherit;
-    box-shadow: 0 10px 28px rgba(19, 32, 44, 0.06);
-    transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-textarea {
+.c form {
     width: 100%;
-    border: 1px solid rgba(21, 23, 26, 0.22);
-    border-radius: 8px;
-    margin: 10px 0px;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 13px;
+}
+
+.c input,
+.c textarea {
+    width: 100%;
+    border: 1px solid var(--line);
+    border-radius: 13px;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.76);
+    color: var(--text);
+    font: inherit;
     font-size: 14px;
-    padding-left: 10px;
-    background-color: rgba(255, 255, 255, 0.92);
-    color: inherit;
-    box-shadow: 0 10px 28px rgba(19, 32, 44, 0.06);
+    box-shadow: none;
+    outline: none;
     transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.app--dark input,
-.app--dark textarea {
-    border-color: rgba(255, 255, 255, 0.28);
-    box-shadow: none;
+.c input {
+    height: 52px;
+    padding: 0 15px;
 }
 
-button {
+.c-email-field {
+    grid-column: 1 / -1;
+}
+
+.c textarea {
+    min-height: 166px;
+    grid-column: 1 / -1;
+    padding: 15px;
+    resize: vertical;
+}
+
+.app--dark .c input,
+.app--dark .c textarea {
+    border-color: rgba(192, 214, 229, 0.14);
+    background: rgba(5, 23, 38, 0.62);
+    color: #f3f7fa;
+}
+
+.c input::placeholder,
+.c textarea::placeholder {
+    color: #7d8a95;
+}
+
+.app--dark .c input::placeholder,
+.app--dark .c textarea::placeholder {
+    color: #9eafba;
+}
+
+.c input:focus,
+.c textarea:focus {
+    border-color: rgba(85, 168, 223, 0.62);
+    box-shadow: 0 0 0 3px rgba(85, 168, 223, 0.11);
+}
+
+.c button {
+    width: fit-content;
+    min-height: 48px;
+    margin: 4px 0 0;
     border: none;
-    border-radius: 5px;
-    padding: 10px 25px;
-    background-color: #59b256;
-    color: white;
-    font-size: 20px;
-    font-weight: 500;
+    border-radius: 11px;
+    padding: 0 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #4fad62, #4b9fca 58%, #6b72d8);
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 800;
     cursor: pointer;
-    margin-right: 50px;
     transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
 }
 
-button:hover:not(:disabled) {
+.c button:hover:not(:disabled) {
     transform: translateY(-2px);
-    box-shadow: 0 14px 30px rgba(89, 178, 86, 0.24);
+    box-shadow: 0 14px 30px rgba(65, 145, 168, 0.24);
 }
 
-button:disabled {
+.c button:disabled {
     cursor: not-allowed;
     opacity: 0.72;
 }
 
-input::placeholder,
-textarea::placeholder {
-    color: #888;
+.c-success {
+    align-self: center;
+    color: #5cbf72;
+    font-size: 13px;
+    font-weight: 700;
 }
 
-input:focus,
-textarea:focus {
-    outline: none;
-    border-color: #59b256;
-    box-shadow: 0 0 0 3px rgba(89, 178, 86, 0.16);
-}
-
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 900px) {
     .c {
         min-height: auto;
-        overflow: hidden;
-    }
-
-    .c-bg {
-        width: 10px;
+        padding: 82px 42px 72px;
     }
 
     .c-wrapper {
-        flex-direction: column;
-        padding: 54px 24px 42px 34px;
-        box-sizing: border-box;
+        grid-template-columns: 1fr;
+        gap: 38px;
     }
 
     .c-left,
     .c-right {
-        margin-top: 0;
-        width: 100%;
+        width: min(720px, 100%);
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 620px) {
+    .c {
+        padding: 64px 18px 54px;
+    }
+
+    .c::before {
+        left: 18px;
+        right: 18px;
     }
 
     .c-title {
-        width: 100%;
-        max-width: 440px;
-        font-size: clamp(42px, 11vw, 54px);
-        line-height: 1.22;
-        margin: 0 0 38px;
-    }
-
-    .c-kicker {
-        font-size: 12px;
+        margin-bottom: 28px;
+        font-size: clamp(31px, 8.8vw, 39px);
     }
 
     .c-info-item {
-        width: 100%;
-        margin: 24px 0;
-        font-size: clamp(18px, 5.3vw, 28px);
-        line-height: 1.35;
-        overflow-wrap: normal;
-        word-break: normal;
+        min-height: 60px;
+        font-size: 13px;
     }
 
-    .c-info-item span {
-        overflow-wrap: anywhere;
-    }
-
-    .c-email {
-        font-size: clamp(18px, 5vw, 25px);
-        overflow-wrap: normal;
-        word-break: keep-all;
+    .c-icon-shell {
+        width: 40px;
+        height: 40px;
+        flex-basis: 40px;
     }
 
     .c-icon {
-        width: 38px;
-        height: 38px;
-        margin-right: 22px;
+        width: 23px;
+        height: 23px;
+    }
+
+    .c-right {
+        border-radius: 21px;
+        padding: 24px 17px 20px;
+    }
+
+    .c-form-accent {
+        left: 17px;
+        width: 110px;
     }
 
     .c-desc {
-        display: none;
+        font-size: 14px;
     }
 
-    form {
+    .c form {
+        grid-template-columns: 1fr;
+    }
+
+    .c-email-field,
+    .c textarea {
+        grid-column: auto;
+    }
+
+    .c button {
         width: 100%;
-        max-width: 520px;
-        margin-top: 36px;
-        display: flex;
-        flex-direction: column;
-        gap: 14px;
+        justify-content: center;
+    }
+}
+
+/* Project enquiry CTA */
+.c-cta {
+    margin-bottom: 78px;
+    border: 1px solid var(--line);
+    border-radius: 30px;
+    padding: clamp(30px, 4vw, 54px);
+    display: grid;
+    grid-template-columns: minmax(0, 1.12fr) minmax(360px, 0.88fr);
+    gap: clamp(38px, 6vw, 86px);
+    align-items: center;
+    background:
+        radial-gradient(circle at 85% 12%, rgba(85, 168, 223, 0.12), transparent 30%),
+        radial-gradient(circle at 15% 85%, rgba(92, 185, 99, 0.1), transparent 34%),
+        var(--surface-strong);
+    box-shadow: 0 32px 90px rgba(18, 42, 58, 0.09);
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.c-cta::after {
+    content: "";
+    width: 320px;
+    height: 320px;
+    border: 1px solid rgba(85, 168, 223, 0.1);
+    border-radius: 50%;
+    position: absolute;
+    right: -150px;
+    top: -145px;
+    box-shadow: 0 0 0 64px rgba(85, 168, 223, 0.018), 0 0 0 128px rgba(133, 116, 232, 0.012);
+    pointer-events: none;
+}
+
+.app--dark .c-cta {
+    border-color: rgba(139, 177, 201, 0.16);
+    background:
+        radial-gradient(circle at 86% 6%, rgba(72, 157, 205, 0.14), transparent 31%),
+        radial-gradient(circle at 12% 92%, rgba(82, 170, 110, 0.09), transparent 34%),
+        linear-gradient(135deg, rgba(10, 36, 56, 0.97), rgba(7, 25, 41, 0.96));
+    box-shadow: 0 34px 95px rgba(1, 10, 18, 0.28);
+}
+
+.c-cta-copy,
+.c-cta-services {
+    min-width: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.c-cta-kicker {
+    margin: 0 0 13px;
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 880;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.c-cta-title {
+    max-width: 690px;
+    margin: 0;
+    color: var(--text);
+    font-size: clamp(36px, 3.9vw, 52px);
+    line-height: 1.08;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+}
+
+.c-cta-desc {
+    max-width: 760px;
+    margin: 22px 0 0;
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.72;
+}
+
+.c-cta-services {
+    display: grid;
+    gap: 12px;
+}
+
+.c-cta-service {
+    min-height: 76px;
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    align-items: center;
+    gap: 14px;
+    border: 1px solid var(--line);
+    border-radius: 17px;
+    padding: 12px 18px 12px 12px;
+    background: color-mix(in srgb, var(--surface) 86%, transparent);
+    box-sizing: border-box;
+}
+
+.app--dark .c-cta-service {
+    background: rgba(5, 24, 39, 0.58);
+    border-color: rgba(150, 184, 207, 0.14);
+}
+
+.c-cta-service > span {
+    width: 48px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    border-radius: 13px;
+    background: linear-gradient(135deg, rgba(92, 185, 99, 0.13), rgba(85, 168, 223, 0.14));
+    color: var(--blue);
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 0.06em;
+}
+
+.c-cta-service strong {
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.35;
+    font-weight: 760;
+}
+
+#contact-form {
+    scroll-margin-top: 108px;
+}
+
+@media screen and (max-width: 980px) {
+    .c-cta {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        margin-bottom: 62px;
     }
 
-    input,
-    textarea {
-        width: 100%;
-        box-sizing: border-box;
-        margin: 0;
-        border: 1px solid rgba(21, 23, 26, 0.2);
-        border-radius: 8px;
-        font-size: 18px;
-        padding: 0 16px;
+    .c-cta-services {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
-    .app--dark input,
-    .app--dark textarea {
-        border-color: rgba(255, 255, 255, 0.3);
+    .c-cta-service {
+        grid-template-columns: 1fr;
+        align-content: start;
+        min-height: 142px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .c-cta {
+        margin-bottom: 48px;
+        border-radius: 23px;
+        padding: 28px 20px;
     }
 
-    input {
-        height: 54px;
+    .c-cta-title {
+        font-size: clamp(32px, 9vw, 40px);
     }
 
-    textarea {
-        min-height: 160px;
-        padding-top: 14px;
-        resize: vertical;
+    .c-cta-desc {
+        margin-top: 18px;
+        font-size: 15px;
+        line-height: 1.64;
     }
 
-    button {
-        width: fit-content;
-        min-width: 150px;
-        margin: 8px 0 0;
-        padding: 14px 28px;
-        border-radius: 8px;
-        font-size: 24px;
+    .c-cta-services {
+        grid-template-columns: 1fr;
+    }
+
+    .c-cta-service {
+        min-height: 0;
+        grid-template-columns: 46px 1fr;
+    }
+
+    .c-cta-service > span {
+        width: 46px;
+        height: 46px;
     }
 }

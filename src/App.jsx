@@ -7,25 +7,48 @@ import LanguageSwitcher from "./components/languageSwitcher/LanguageSwitcher";
 import MobileApps from "./components/mobileApps/MobileApps";
 import ProductList from "./components/productList/ProductList";
 import Toggle from "./components/toggle/Toggle";
-import { ThemeContext } from "./context";
+import { LanguageContext, ThemeContext } from "./context";
 
 const App = () => {
   const theme = useContext(ThemeContext);
+  const { t } = useContext(LanguageContext);
   const darkMode = theme.state.darkMode;
+
   return (
-    <div
-      className={`app ${darkMode ? "app--dark" : "app--light"}`}
-      style={{
-        color: darkMode ? "white" : "#15171a",
-      }}
-    >
-      <Toggle />
-      <LanguageSwitcher />
-      <Intro />
-      <About />
-      <MobileApps />
-      <ProductList />
-      <Contact />
+    <div className={`app ${darkMode ? "app--dark" : "app--light"}`}>
+      <header className="site-header">
+        <a className="site-brand" href="#home" aria-label={t.nav.home}>
+          <span className="site-brand-mark" aria-hidden="true">
+            <span className="site-brand-u">U</span>
+            <span className="site-brand-a">A</span>
+          </span>
+          <span className="site-brand-copy">
+            <strong>Uladzimir Aliakhnovich</strong>
+            <small>Web · Mobile Developer</small>
+          </span>
+        </a>
+
+        <nav className="site-nav" aria-label={t.nav.label}>
+          <a href="#home">{t.nav.home}</a>
+          <a href="#about">{t.nav.about}</a>
+          <a href="#apps">{t.nav.apps}</a>
+          <a href="#projects">{t.nav.projects}</a>
+          <a href="#contact">{t.nav.contact}</a>
+        </nav>
+
+        <div className="site-controls">
+          <LanguageSwitcher />
+          <Toggle />
+        </div>
+      </header>
+
+      <main>
+        <Intro />
+        <About />
+        <MobileApps />
+        <ProductList />
+        <Contact />
+      </main>
     </div>
   );
 };

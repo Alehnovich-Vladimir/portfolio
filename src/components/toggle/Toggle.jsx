@@ -5,21 +5,29 @@ import { useContext } from "react";
 import { ThemeContext } from "../../context";
 
 const Toggle = () => {
-    const theme = useContext(ThemeContext)
+  const theme = useContext(ThemeContext);
+  const darkMode = theme.state.darkMode;
 
-    const handleClick = () => {
-        theme.dispatch({type:"TOGGLE"})
-    }
+  const handleClick = () => {
+    theme.dispatch({ type: "TOGGLE" });
+  };
+
   return (
-      <div className="t">
-          <img src={Sun} alt="" className="t-icon" />
-          <img src={Moon} alt="" className="t-icon" />
-          <div className="t-button"
-              onClick={handleClick}
-              style={{ transform: theme.state.darkMode ? "translateX(0)" : "translateX(32px)" }}
-          ></div>
-    </div>
-  )
-}
+    <button
+      className={`t ${darkMode ? "is-dark" : "is-light"}`}
+      type="button"
+      onClick={handleClick}
+      aria-label={darkMode ? "Switch to light theme" : "Switch to dark theme"}
+      aria-pressed={darkMode}
+    >
+      <span className="t-option t-option--sun" aria-hidden="true">
+        <img src={Sun} alt="" className="t-icon" />
+      </span>
+      <span className="t-option t-option--moon" aria-hidden="true">
+        <img src={Moon} alt="" className="t-icon" />
+      </span>
+    </button>
+  );
+};
 
-export default Toggle
+export default Toggle;

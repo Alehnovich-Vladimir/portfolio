@@ -7,37 +7,80 @@ import { products } from "../../data";
 const ProductList = () => {
   const { language, t } = useContext(LanguageContext);
 
+  const translatedProducts = products.map((item) => ({
+    ...item,
+    ...(t.projects.items[item.id] || {}),
+  }));
+
+  const getProject = (id) => translatedProducts.find((item) => item.id === id);
+  const currentBuilds = [9, 10].map(getProject).filter(Boolean);
+  const selectedWeb = getProject(2);
+  const archive = [3, 4, 5, 6].map(getProject).filter(Boolean);
+
   return (
-    <div className="pl" id="projects">
-      <div className="pl-texts">
-        <p className="pl-kicker">{t.projects.kicker}</p>
-        <h1 className="pl-title">{t.projects.title}</h1>
-        <p className="pl-desc">{t.projects.description}</p>
+    <section className="pl" id="projects">
+      <div className="pl-inner">
+        <header className="pl-heading">
+          <div>
+            <p className="pl-kicker">{t.projects.kicker}</p>
+            <h2>{t.projects.title}</h2>
+          </div>
+          <p>{t.projects.description}</p>
+        </header>
+
+        <section className="pl-current">
+          <div className="pl-section-title pl-section-title--current">
+            <span aria-hidden="true">ϟ</span>
+            <h3>{t.projects.currentTitle}</h3>
+          </div>
+          <div className="pl-current-grid">
+            {currentBuilds.map((item) => (
+              <Product
+                key={item.id}
+                product={item}
+                variant="development"
+                language={language}
+              />
+            ))}
+          </div>
+        </section>
+
+        <div className="pl-lower-grid">
+          {selectedWeb && (
+            <section className="pl-completed">
+              <div className="pl-section-title pl-section-title--completed">
+                <span aria-hidden="true">✓</span>
+                <h3>{t.projects.completedTitle || t.projects.webTitle}</h3>
+              </div>
+              <Product
+                product={selectedWeb}
+                openLabel={t.projects.openProject}
+                variant="web-feature"
+                contextLabel={t.projects.diplomaLabel}
+              />
+            </section>
+          )}
+
+          <section className="pl-archive">
+            <div className="pl-section-title pl-section-title--archive">
+              <span aria-hidden="true">ϟ</span>
+              <h3>{t.projects.archiveTitle}</h3>
+            </div>
+            <div className="pl-archive-grid">
+              {archive.map((item) => (
+                <Product
+                  key={item.id}
+                  product={item}
+                  openLabel={t.projects.openProject}
+                  variant="archive"
+                />
+              ))}
+            </div>
+          </section>
+        </div>
       </div>
-      <div className="pl-list">
-        {products.map((item, index) => (
-          <Product
-            key={item.id}
-            product={{
-              ...item,
-              img: getProductImage(item, language),
-              ...t.projects.items[item.id],
-            }}
-            openLabel={t.projects.openProject}
-            index={index}
-          />
-        ))}
-      </div>
-    </div>
+    </section>
   );
-};
-
-const getProductImage = (product, language) => {
-  if (!product.thumbnails) {
-    return product.img;
-  }
-
-  return product.thumbnails[language] || product.thumbnails.en || product.img;
 };
 
 export default ProductList;

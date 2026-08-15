@@ -9,7 +9,6 @@ const MobileApps = () => {
   const [screenIndex, setScreenIndex] = useState(0);
   const touchStartX = useRef(null);
   const activeApp = apps.find((app) => app.id === activeId) || apps[0];
-  const appCopy = t.mobileApps.items[activeApp.id];
   const screenshots = getScreenshotsForLanguage(activeApp.screenshots, language);
   const activeScreenshot = screenshots[screenIndex] || screenshots[0];
 
@@ -18,20 +17,14 @@ const MobileApps = () => {
   }, [activeId, language]);
 
   const showPreviousScreen = () => {
-    if (screenshots.length < 2) {
-      return;
-    }
-
+    if (screenshots.length < 2) return;
     setScreenIndex((current) =>
       current === 0 ? screenshots.length - 1 : current - 1
     );
   };
 
   const showNextScreen = () => {
-    if (screenshots.length < 2) {
-      return;
-    }
-
+    if (screenshots.length < 2) return;
     setScreenIndex((current) =>
       current === screenshots.length - 1 ? 0 : current + 1
     );
@@ -42,145 +35,111 @@ const MobileApps = () => {
   };
 
   const handleTouchEnd = (event) => {
-    if (touchStartX.current === null) {
-      return;
-    }
-
+    if (touchStartX.current === null) return;
     const deltaX = event.changedTouches[0].clientX - touchStartX.current;
     touchStartX.current = null;
-
-    if (Math.abs(deltaX) < 36) {
-      return;
-    }
-
-    if (deltaX > 0) {
-      showPreviousScreen();
-    } else {
-      showNextScreen();
-    }
+    if (Math.abs(deltaX) < 36) return;
+    deltaX > 0 ? showPreviousScreen() : showNextScreen();
   };
 
   return (
     <section className="apps" id="apps">
-      <div className="apps-copy">
-        <p className="apps-kicker">{t.mobileApps.kicker}</p>
-        <h2>{t.mobileApps.title}</h2>
-        <p>{t.mobileApps.description}</p>
+      <div className="apps-inner">
+        <div className="apps-copy">
+          <p className="apps-kicker">{t.mobileApps.kicker}</p>
+          <h2>{t.mobileApps.title}</h2>
+          <p className="apps-description">{t.mobileApps.description}</p>
 
-        <div className="apps-tabs" role="tablist" aria-label={t.mobileApps.tabsLabel}>
-          {apps.map((app) => (
-            <button
-              className={activeId === app.id ? "active" : ""}
-              key={app.id}
-              type="button"
-              role="tab"
-              aria-selected={activeId === app.id}
-              onClick={() => setActiveId(app.id)}
-            >
-              {app.name}
-            </button>
-          ))}
-        </div>
-
-        <div className="apps-panel">
-          <span>{appCopy.status}</span>
-          <h3>{activeApp.name}</h3>
-          <p>{appCopy.summary}</p>
-          <div className="apps-tags">
-            {appCopy.features.map((feature) => (
-              <span key={feature}>{feature}</span>
-            ))}
+          <div className="apps-list" role="tablist" aria-label={t.mobileApps.tabsLabel}>
+            {apps.map((app) => {
+              const copy = t.mobileApps.items[app.id];
+              const isActive = activeId === app.id;
+              return (
+                <button
+                  className={`apps-list-item ${isActive ? "active" : ""}`}
+                  key={app.id}
+                  type="button"
+                  role="tab"
+                  aria-selected={isActive}
+                  onClick={() => setActiveId(app.id)}
+                >
+                  <span className={`apps-list-icon ${app.id}`} aria-hidden="true">
+                    {app.id === "my-route" ? "⌖" : "▣"}
+                  </span>
+                  <span className="apps-list-copy">
+                    <strong>{app.name}</strong>
+                    <small>{copy.status}</small>
+                  </span>
+                  <span className="apps-list-arrow" aria-hidden="true">›</span>
+                </button>
+              );
+            })}
           </div>
+
           <div className="apps-actions">
-            {activeApp.storeLink && (
-              <a
-                className="store"
-                href={activeApp.storeLink}
-                target="_blank"
-                rel="noreferrer"
-              >
-                {t.mobileApps.storeButton}
+            {activeApp.storeLink ? (
+              <a className="apps-action apps-action--primary" href={activeApp.storeLink} target="_blank" rel="noreferrer">
+                {t.mobileApps.storeButton} ↗
+              </a>
+            ) : (
+              <a className="apps-action" href={activeApp.privacyLink}>
+                {t.mobileApps.privacyButton} ↗
               </a>
             )}
-            <a href="#contact">{t.mobileApps.contactButton}</a>
-            <a className="secondary" href={activeApp.privacyLink}>
-              {t.mobileApps.privacyButton}
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div
-        className="apps-device"
-        aria-label={`${activeApp.name} ${t.mobileApps.previewLabel}`}
-      >
-        <div className={`apps-phone ${screenshots.length ? "has-screenshots" : ""}`}>
-          <div className="apps-phone-speaker"></div>
-          <div
-            className={`apps-screen ${screenshots.length ? "has-screenshots" : ""}`}
-            onTouchStart={handleTouchStart}
-            onTouchEnd={handleTouchEnd}
-            onClick={screenshots.length > 1 ? showNextScreen : undefined}
-          >
-            {activeScreenshot ? (
-              <img
-                src={activeScreenshot.src}
-                alt={`${activeApp.name} ${activeScreenshot.label}`}
-                className="apps-screenshot"
-              />
-            ) : (
-              <>
-                <div className="apps-status">
-                  <span>{appCopy.platform}</span>
-                  <span>{t.mobileApps.liveBuild}</span>
-                </div>
-                <h3>{appCopy.screenTitle}</h3>
-                <p>{appCopy.screenMeta}</p>
-                <div className="apps-map">
-                  <span className="pin start"></span>
-                  <span className="pin middle"></span>
-                  <span className="pin end"></span>
-                  <div className="route-line"></div>
-                </div>
-                <div className="apps-mini-list">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </div>
-              </>
-            )}
           </div>
         </div>
 
-        {screenshots.length > 1 && (
-          <div className="apps-screen-controls" aria-label={`${activeApp.name} screens`}>
-            <div className="apps-shot-dots">
-              {screenshots.map((screenshot, index) => (
-                <button
-                  className={index === screenIndex ? "active" : ""}
-                  key={screenshot.src}
-                  type="button"
-                  aria-label={screenshot.label}
-                  onClick={() => setScreenIndex(index)}
-                ></button>
-              ))}
+        <div className="apps-device" aria-label={`${activeApp.name} ${t.mobileApps.previewLabel}`}>
+          <div className="apps-orbit apps-orbit--outer" aria-hidden="true"></div>
+          <div className="apps-orbit apps-orbit--inner" aria-hidden="true"></div>
+          <span className="apps-orbit-chip apps-orbit-chip--route" aria-hidden="true">⌖</span>
+          <span className="apps-orbit-chip apps-orbit-chip--photo" aria-hidden="true">▧</span>
+          <span className="apps-orbit-chip apps-orbit-chip--audio" aria-hidden="true">◉</span>
+
+          <div className={`apps-phone ${screenshots.length ? "has-screenshots" : ""}`}>
+            <div className="apps-phone-speaker"></div>
+            <div
+              className={`apps-screen ${screenshots.length ? "has-screenshots" : ""}`}
+              onTouchStart={handleTouchStart}
+              onTouchEnd={handleTouchEnd}
+              onClick={screenshots.length > 1 ? showNextScreen : undefined}
+            >
+              {activeScreenshot && (
+                <img
+                  src={activeScreenshot.src}
+                  alt={`${activeApp.name} ${activeScreenshot.label}`}
+                  className="apps-screenshot"
+                />
+              )}
             </div>
           </div>
-        )}
+
+          {screenshots.length > 1 && (
+            <div className="apps-screen-controls" aria-label={`${activeApp.name} screens`}>
+              <button type="button" onClick={showPreviousScreen} aria-label="Previous screen">‹</button>
+              <div className="apps-shot-dots">
+                {screenshots.map((screenshot, index) => (
+                  <button
+                    className={index === screenIndex ? "active" : ""}
+                    key={screenshot.src}
+                    type="button"
+                    aria-label={screenshot.label}
+                    onClick={() => setScreenIndex(index)}
+                  ></button>
+                ))}
+              </div>
+              <button type="button" onClick={showNextScreen} aria-label="Next screen">›</button>
+            </div>
+          )}
+        </div>
       </div>
     </section>
   );
 };
 
 const getScreenshotsForLanguage = (screenshots, language) => {
-  if (!screenshots) {
-    return [];
-  }
-
-  if (Array.isArray(screenshots)) {
-    return screenshots;
-  }
-
+  if (!screenshots) return [];
+  if (Array.isArray(screenshots)) return screenshots;
   return screenshots[language] || screenshots.en || screenshots.ru || [];
 };
 

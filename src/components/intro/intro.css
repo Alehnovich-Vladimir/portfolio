@@ -564,3 +564,154 @@
         box-sizing: border-box;
     }
 }
+
+/* Mobile hero reading order: identity → description → portrait → CTA/stats. */
+.i-identity,
+.i-summary,
+.i-details {
+    width: 100%;
+}
+
+@media screen and (max-width: 1040px) {
+    .i-identity,
+    .i-summary,
+    .i-details {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .i-desc {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media screen and (max-width: 620px) {
+    .i {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        padding-top: 92px;
+    }
+
+    .i-left,
+    .i-left-wrapper {
+        display: contents;
+    }
+
+    .i-identity {
+        order: 1;
+        padding: 0 0 24px;
+        box-sizing: border-box;
+    }
+
+    .i-summary {
+        order: 2;
+        width: 100%;
+        padding: 0 0 26px;
+        box-sizing: border-box;
+    }
+
+    .i-right {
+        order: 3;
+        width: min(100%, 430px);
+        height: min(100vw, 470px);
+        min-height: 390px;
+        margin: 0 auto 30px;
+    }
+
+    .i-details {
+        order: 4;
+        width: 100%;
+        padding: 0 0 6px;
+        box-sizing: border-box;
+    }
+
+    .i-kicker {
+        margin-bottom: 18px;
+    }
+
+    .i-title {
+        margin-bottom: 0;
+    }
+
+    .i-bg {
+        width: calc(100% - 12px);
+        left: 6px;
+        border-radius: 26px;
+        clip-path: polygon(23% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 38%);
+        box-shadow: 0 22px 54px rgba(22, 49, 65, 0.14);
+    }
+
+    .i-img {
+        width: 96%;
+        height: 96%;
+        left: 51%;
+        bottom: 0;
+        object-position: center bottom;
+    }
+
+    .i-right::before {
+        width: 240px;
+        height: 240px;
+        right: -30px;
+        top: 72px;
+    }
+
+    .i-right::after {
+        width: 155px;
+        height: 155px;
+        left: 24px;
+        bottom: 54px;
+    }
+
+    .i-floating-card.one {
+        top: 7%;
+        left: 4%;
+    }
+
+    .i-floating-card.two {
+        right: 0;
+        bottom: 10%;
+    }
+
+    .i-desc {
+        max-width: 520px;
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    .i-availability {
+        margin-top: 18px;
+    }
+
+    .i-actions {
+        margin-top: 24px;
+    }
+
+    .i-stats {
+        margin-top: 6px;
+    }
+}
+
+@media screen and (max-width: 390px) {
+    .i-right {
+        height: 420px;
+        min-height: 360px;
+    }
+
+    .i-floating-card {
+        min-width: 108px;
+        padding: 9px 10px;
+    }
+
+    .i-floating-card span {
+        font-size: 9px;
+    }
+
+    .i-floating-card strong {
+        font-size: 11px;
+    }
+}

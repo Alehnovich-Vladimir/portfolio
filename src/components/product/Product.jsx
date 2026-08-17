@@ -10,6 +10,19 @@ const preparePreviewScroll = (event) => {
   media.style.setProperty("--preview-scroll", `${overflow}px`);
 };
 
+const toggleTouchPreview = (event) => {
+  const canHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+
+  // Desktop keeps the original hover behaviour and normal link click.
+  if (canHover) return;
+
+  event.preventDefault();
+  event.stopPropagation();
+
+  preparePreviewScroll(event);
+  event.currentTarget.classList.toggle("is-previewing");
+};
+
 const Product = ({
   product,
   openLabel,
@@ -73,6 +86,7 @@ const Product = ({
             className="p-web-media"
             onMouseEnter={preparePreviewScroll}
             onFocus={preparePreviewScroll}
+            onClick={toggleTouchPreview}
           >
             <img src={product.img} alt={product.title} className="p-web-img" />
           </div>
@@ -108,6 +122,7 @@ const Product = ({
           className="p-archive-media"
           onMouseEnter={preparePreviewScroll}
           onFocus={preparePreviewScroll}
+          onClick={toggleTouchPreview}
         >
           <img src={product.img} alt={product.title} className="p-archive-img" />
           <span className="p-archive-arrow" aria-hidden="true">↗</span>
@@ -118,6 +133,10 @@ const Product = ({
             <span className="p-archive-tag">{product.tag}</span>
           </div>
           <p>{product.description}</p>
+          <span className="p-mobile-open">
+            {openLabel}
+            <span aria-hidden="true">↗</span>
+          </span>
         </div>
       </a>
     </article>

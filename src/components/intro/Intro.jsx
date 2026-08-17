@@ -11,43 +11,51 @@ const Intro = () => {
     <section className="i" id="home">
       <div className="i-left">
         <div className="i-left-wrapper">
-          <div className="i-kicker">{intro.kicker}</div>
-          <h2 className="i-intro">{intro.greeting}</h2>
-          <h1 className="i-name">{intro.name}</h1>
-          <div className="i-title">
-            <div className="i-title-wrapper">
-              {intro.titleItems.map((item) => (
-                <div
-                  className={`i-title-item ${item.length > 29 ? "is-long" : ""}`}
-                  key={item}
-                >
-                  {item}
+          <div className="i-identity">
+            <div className="i-kicker">{intro.kicker}</div>
+            <h2 className="i-intro">{intro.greeting}</h2>
+            <h1 className="i-name">{intro.name}</h1>
+            <div className="i-title">
+              <div className="i-title-wrapper">
+                {intro.titleItems.map((item) => (
+                  <div
+                    className={`i-title-item ${item.length > 29 ? "is-long" : ""}`}
+                    key={item}
+                  >
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className="i-summary">
+            <p className="i-desc">{intro.description}</p>
+          </div>
+
+          <div className="i-details">
+            <div className="i-availability">
+              <span className="i-availability-dot" aria-hidden="true"></span>
+              <span>{intro.availability}</span>
+            </div>
+            <div className="i-actions">
+              <a className="i-action primary" href="#contact">
+                {intro.contactButton}
+                <span aria-hidden="true">↗</span>
+              </a>
+              <a className="i-action" href="#projects">
+                {intro.workButton}
+                <span aria-hidden="true">↓</span>
+              </a>
+            </div>
+            <div className="i-stats" aria-label={intro.highlightsLabel}>
+              {intro.stats.map((item) => (
+                <div key={item.label}>
+                  <strong>{item.value}</strong>
+                  <span>{item.label}</span>
                 </div>
               ))}
             </div>
-          </div>
-          <p className="i-desc">{intro.description}</p>
-          <div className="i-availability">
-            <span className="i-availability-dot" aria-hidden="true"></span>
-            <span>{intro.availability}</span>
-          </div>
-          <div className="i-actions">
-            <a className="i-action primary" href="#contact">
-              {intro.contactButton}
-              <span aria-hidden="true">↗</span>
-            </a>
-            <a className="i-action" href="#projects">
-              {intro.workButton}
-              <span aria-hidden="true">↓</span>
-            </a>
-          </div>
-          <div className="i-stats" aria-label={intro.highlightsLabel}>
-            {intro.stats.map((item) => (
-              <div key={item.label}>
-                <strong>{item.value}</strong>
-                <span>{item.label}</span>
-              </div>
-            ))}
           </div>
         </div>
       </div>

@@ -33,18 +33,11 @@ export const translations = {
       subtitle:
         "I continue to work on web development while also building mobile products for Android, with iPhone releases as the next step.",
       description:
-        "My web foundation is HTML5, CSS3, Sass, Bootstrap, JavaScript, React, Redux, Git and Figma. I use it in current websites as well as mobile products: responsive interfaces, product UX, local-first features, maps, media workflows and the practical path from development to publication.",
-      skills: [
-        "HTML5",
-        "CSS3",
-        "Sass",
-        "Bootstrap",
-        "JavaScript",
-        "React",
-        "Redux",
-        "Git",
-        "Figma",
-        "Android",
+        "I work across modern web and mobile development: responsive React interfaces, React Native / Expo applications for Android, and the practical path from implementation to deployment and Google Play release.",
+      skillGroups: [
+        { label: "Web", items: ["JavaScript", "React", "HTML / CSS", "Sass", "Redux"] },
+        { label: "Mobile", items: ["React Native", "Expo", "Android", "Google Play"] },
+        { label: "Tools", items: ["Git", "Figma", "Vercel"] },
       ],
       awardTitle: "TeachMeSkills frontend developer course",
       awardDescription:
@@ -187,18 +180,11 @@ export const translations = {
       subtitle:
         "Sigo trabajando en desarrollo web y, al mismo tiempo, desarrollo productos móviles para Android; el siguiente paso son los lanzamientos para iPhone.",
       description:
-        "Mi base web incluye HTML5, CSS3, Sass, Bootstrap, JavaScript, React, Redux, Git y Figma. La utilizo tanto en sitios web actuales como en productos móviles: interfaces responsive, UX de producto, funciones local-first, mapas, flujos multimedia y todo el proceso práctico desde el desarrollo hasta la publicación.",
-      skills: [
-        "HTML5",
-        "CSS3",
-        "Sass",
-        "Bootstrap",
-        "JavaScript",
-        "React",
-        "Redux",
-        "Git",
-        "Figma",
-        "Android",
+        "Trabajo tanto en desarrollo web moderno como móvil: interfaces responsive con React, aplicaciones Android con React Native / Expo y todo el recorrido práctico desde la implementación hasta el despliegue y la publicación en Google Play.",
+      skillGroups: [
+        { label: "Web", items: ["JavaScript", "React", "HTML / CSS", "Sass", "Redux"] },
+        { label: "Mobile", items: ["React Native", "Expo", "Android", "Google Play"] },
+        { label: "Herramientas", items: ["Git", "Figma", "Vercel"] },
       ],
       awardTitle: "Curso de desarrollador frontend en TeachMeSkills",
       awardDescription:
@@ -341,18 +327,11 @@ export const translations = {
       subtitle:
         "Я продолжаю заниматься web-разработкой и параллельно развиваю мобильные продукты для Android; следующим шагом планирую релизы для iPhone.",
       description:
-        "Моя web-база — HTML5, CSS3, Sass, Bootstrap, JavaScript, React, Redux, Git и Figma. Я использую её и в текущих сайтах, и в мобильных продуктах: для адаптивных интерфейсов, продуктового UX, local-first функций, карт, работы с медиа и всего практического пути от разработки до публикации.",
-      skills: [
-        "HTML5",
-        "CSS3",
-        "Sass",
-        "Bootstrap",
-        "JavaScript",
-        "React",
-        "Redux",
-        "Git",
-        "Figma",
-        "Android",
+        "Работаю и с современным web, и с мобильной разработкой: создаю адаптивные интерфейсы на React, Android-приложения на React Native / Expo и прохожу практический путь от реализации до публикации web-проектов и релиза в Google Play.",
+      skillGroups: [
+        { label: "Web", items: ["JavaScript", "React", "HTML / CSS", "Sass", "Redux"] },
+        { label: "Mobile", items: ["React Native", "Expo", "Android", "Google Play"] },
+        { label: "Инструменты", items: ["Git", "Figma", "Vercel"] },
       ],
       awardTitle: "Курс frontend-разработчика TeachMeSkills",
       awardDescription:

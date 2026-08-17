@@ -23,9 +23,25 @@ const About = () => {
         <h1 className="a-title">{about.title}</h1>
         <p className="a-sub">{about.subtitle}</p>
         <p className="a-desc">{about.description}</p>
-        <div className="a-focus">
-          {about.skills.map((skill) => (
-            <span key={skill}>{skill}</span>
+        <div className="a-stack">
+          {about.skillGroups.map((group) => (
+            <div className="a-stack-group" key={group.label}>
+              <span className="a-stack-label">{group.label}</span>
+              <div className="a-focus">
+                {group.items.map((skill) => {
+                  const techClass = skill
+                    .toLowerCase()
+                    .replace(/[^a-z0-9]+/g, "-")
+                    .replace(/(^-|-$)/g, "");
+
+                  return (
+                    <span className={`a-tech a-tech--${techClass}`} key={skill}>
+                      {skill}
+                    </span>
+                  );
+                })}
+              </div>
+            </div>
           ))}
         </div>
         <div className="a-award">

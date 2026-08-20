@@ -1,89 +1,329 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Privacy Policy - My Route</title>
   <style>
-    :root { color-scheme: light; }
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 32px 20px 56px;
-      line-height: 1.62;
-      color: #1f2937;
-      background: #ffffff;
+    :root {
+      --bg: #f0f7fb;
+      --card: #ffffff;
+      --text: #172432;
+      --muted: #637382;
+      --accent: #2f9c73;
+      --accent-dark: #217453;
+      --border: #d9e6ed;
+      --notice-bg: #edf8f3;
     }
-    h1, h2 { color: #0f172a; line-height: 1.25; }
-    h1 { font-size: 32px; margin-bottom: 8px; }
-    h2 { margin-top: 30px; font-size: 22px; }
-    ul { padding-left: 22px; }
-    li { margin: 6px 0; }
-    .date { color: #64748b; margin-top: 0; }
-    .note { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 14px 16px; }
-    a { color: #2563eb; }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.65;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    .page {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 32px 18px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 36px;
+      box-shadow: 0 8px 24px rgba(23, 36, 50, 0.08);
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 34px;
+      line-height: 1.2;
+    }
+
+    h2 {
+      margin-top: 34px;
+      margin-bottom: 12px;
+      font-size: 22px;
+      line-height: 1.3;
+    }
+
+    p { margin: 0 0 16px; font-size: 16px; }
+    ul { margin: 0 0 18px; padding-left: 24px; }
+    li { margin-bottom: 8px; font-size: 16px; }
+    a { color: var(--accent-dark); font-weight: 700; }
+
+    .updated {
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+
+    .notice {
+      border-left: 4px solid var(--accent);
+      background: var(--notice-bg);
+      padding: 14px 16px;
+      border-radius: 10px;
+      margin: 22px 0;
+    }
+
+    .footer {
+      margin-top: 34px;
+      padding-top: 22px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .policy[hidden] { display: none; }
+
+    @media (max-width: 640px) {
+      .page { padding: 18px 12px; }
+      .card { padding: 24px 18px; border-radius: 14px; }
+      h1 { font-size: 28px; }
+      h2 { font-size: 20px; }
+    }
   </style>
 </head>
+
 <body>
-  <h1>Privacy Policy for My Route</h1>
-  <p class="date">Last updated: May 16, 2026</p>
+  <main class="page">
+    <article class="card">
+      <section id="policy-en" class="policy">
+        <h1>Privacy Policy for My Route</h1>
+        <p class="updated">Last updated: May 16, 2026</p>
+        <p>This Privacy Policy explains how My Route handles information when you use the mobile application. My Route is a travel, route-planning and city-exploration application.</p>
 
-  <p>This Privacy Policy explains how My Route handles information when you use the mobile application. My Route is a travel, route-planning and city-exploration application.</p>
+        <h2>1. Developer and contact</h2>
+        <p>My Route is provided by the developer of the My Route application. For privacy-related questions or data deletion requests, contact us at: <strong>alexvovan.dev@gmail.com</strong>.</p>
 
-  <h2>1. Developer and contact</h2>
-  <p>My Route is provided by the developer of the My Route application. For privacy-related questions or data deletion requests, contact us at: <strong>alexvovan.dev@gmail.com</strong>.</p>
+        <h2>2. Information the app may access or process</h2>
+        <p>Depending on the features you use, My Route may access or process the following information:</p>
+        <ul>
+          <li><strong>Approximate and precise location:</strong> used to detect your current city, start a route from your current position, calculate distances, improve route navigation and show nearby places.</li>
+          <li><strong>Search queries:</strong> city names or place names entered by you may be used to search for locations, attractions, map data or route information.</li>
+          <li><strong>Photos selected by you:</strong> used only when you choose to attach photos to visited places or saved trips in your travel album.</li>
+          <li><strong>Travel route and album data:</strong> such as selected cities, visited places, notes, saved trips, route progress, rewards, app language, theme and local preferences.</li>
+          <li><strong>Technical request data:</strong> when the app requests map tiles, routes, place details, translations, city information or images from external services.</li>
+        </ul>
 
-  <h2>2. Information the app may access or process</h2>
-  <p>Depending on the features you use, My Route may access or process the following information:</p>
-  <ul>
-    <li><strong>Approximate and precise location:</strong> used to detect your current city, start a route from your current position, calculate distances, improve route navigation and show nearby places.</li>
-    <li><strong>Search queries:</strong> city names or place names entered by you may be used to search for locations, attractions, map data or route information.</li>
-    <li><strong>Photos selected by you:</strong> used only when you choose to attach photos to visited places or saved trips in your travel album.</li>
-    <li><strong>Travel route and album data:</strong> such as selected cities, visited places, notes, saved trips, route progress, rewards, app language, theme and local preferences.</li>
-    <li><strong>Technical request data:</strong> when the app requests map tiles, routes, place details, translations, city information or images from external services.</li>
-  </ul>
+        <h2>3. How information is used</h2>
+        <p>The information is used to provide the app's core features, including:</p>
+        <ul>
+          <li>finding cities, places and attractions;</li>
+          <li>creating and displaying walking routes;</li>
+          <li>showing city and place information;</li>
+          <li>using maps and route navigation;</li>
+          <li>saving routes, notes, photos and travel memories locally on your device;</li>
+          <li>supporting app language, theme, audio guide, rewards and map features.</li>
+        </ul>
 
-  <h2>3. How information is used</h2>
-  <p>The information is used to provide the app's core features, including:</p>
-  <ul>
-    <li>finding cities, places and attractions;</li>
-    <li>creating and displaying walking routes;</li>
-    <li>showing city and place information;</li>
-    <li>using maps and route navigation;</li>
-    <li>saving routes, notes, photos and travel memories locally on your device;</li>
-    <li>supporting app language, theme, audio guide, rewards and map features.</li>
-  </ul>
+        <h2>4. Local storage</h2>
+        <p>Most app data is stored locally on your device. This may include route progress, saved trips, attached photos, rewards, app settings and preferences. My Route does not use this data to create a user account and does not sell this data.</p>
 
-  <h2>4. Local storage</h2>
-  <p>Most app data is stored locally on your device. This may include route progress, saved trips, attached photos, rewards, app settings and preferences. My Route does not use this data to create a user account and does not sell this data.</p>
+        <h2>5. Sharing with third-party services</h2>
+        <p>My Route uses external services to provide maps, route calculation, place search, geocoding, city/place information, images and translation features. Depending on the feature used, requests may be sent to services such as OpenStreetMap/Nominatim, Overpass API, OSRM, Photon/Komoot, Wikimedia/Wikipedia/Wikidata, Google Translate endpoints, Google Maps links, Carto/Esri map tiles and the My Route backend proxy.</p>
+        <p>These services may receive technical request information such as coordinates, search queries, IP address, device/network information and request metadata as necessary to respond to the app's requests. Their processing is governed by their own privacy policies and terms.</p>
 
-  <h2>5. Sharing with third-party services</h2>
-  <p>My Route uses external services to provide maps, route calculation, place search, geocoding, city/place information, images and translation features. Depending on the feature used, requests may be sent to services such as OpenStreetMap/Nominatim, Overpass API, OSRM, Photon/Komoot, Wikimedia/Wikipedia/Wikidata, Google Translate endpoints, Google Maps links, Carto/Esri map tiles and the My Route backend proxy.</p>
-  <p>These services may receive technical request information such as coordinates, search queries, IP address, device/network information and request metadata as necessary to respond to the app's requests. Their processing is governed by their own privacy policies and terms.</p>
+        <h2>6. Location</h2>
+        <p>The app requests location permission only when a feature needs it, such as detecting your current city, starting a route from your current location, improving navigation or opening directions. Location data may be sent to mapping, geocoding, routing or place-search services only to provide the requested feature.</p>
+        <p>You can deny or revoke location permission in your device settings. Some location-based features may not work without this permission, but you may still use manual city search where available.</p>
 
-  <h2>6. Location</h2>
-  <p>The app requests location permission only when a feature needs it, such as detecting your current city, starting a route from your current location, improving navigation or opening directions. Location data may be sent to mapping, geocoding, routing or place-search services only to provide the requested feature.</p>
-  <p>You can deny or revoke location permission in your device settings. Some location-based features may not work without this permission, but you may still use manual city search where available.</p>
+        <h2>7. Photos</h2>
+        <p>The app accesses your photo library only after you grant permission and only when you choose to add photos to your travel memories. Selected photos are stored locally in the app's album data on your device. The app does not upload your selected photos to the My Route backend.</p>
 
-  <h2>7. Photos</h2>
-  <p>The app accesses your photo library only after you grant permission and only when you choose to add photos to your travel memories. Selected photos are stored locally in the app's album data on your device. The app does not upload your selected photos to the My Route backend.</p>
+        <h2>8. Accounts, advertising and payments</h2>
+        <p>My Route does not currently require user registration or login. The app does not currently show third-party advertising. The current public release does not process in-app payments inside the app.</p>
 
-  <h2>8. Accounts, advertising and payments</h2>
-  <p>My Route does not currently require user registration or login. The app does not currently show third-party advertising. The current public release does not process in-app payments inside the app.</p>
+        <h2>9. Data retention and deletion</h2>
+        <p>Data saved locally by the app remains on your device until you delete it, reset app data, uninstall the app or remove saved content where the app provides such functionality. If you uninstall the app, locally stored app data may be deleted by the operating system.</p>
+        <p class="notice"><strong>Data deletion request:</strong> To request deletion of your data, contact us at <strong>alexvovan.dev@gmail.com</strong> with the subject <strong>“Data deletion request”</strong>. Please include the name of the app, My Route, in your message.</p>
+        <p>Because most app data is stored locally on your device, you can also delete locally stored data by deleting saved routes or photos inside the app where available, clearing the app's data in your device settings or uninstalling the app.</p>
 
-  <h2>9. Data retention and deletion</h2>
-  <p>Data saved locally by the app remains on your device until you delete it, reset app data, uninstall the app or remove saved content where the app provides such functionality. If you uninstall the app, locally stored app data may be deleted by the operating system.</p>
-  <p class="note"><strong>Data deletion request:</strong> To request deletion of your data, contact us at <strong>alexvovan.dev@gmail.com</strong> with the subject <strong>“Data deletion request”</strong>. Please include the name of the app, My Route, in your message.</p>
-  <p>Because most app data is stored locally on your device, you can also delete locally stored data by deleting saved routes or photos inside the app where available, clearing the app's data in your device settings or uninstalling the app.</p>
+        <h2>10. Security</h2>
+        <p>My Route uses standard device storage and network communication mechanisms provided by the operating system and application framework. Network requests are sent using HTTPS where supported by the relevant service. We take reasonable steps to limit data access to what is needed for the app's features.</p>
 
-  <h2>10. Security</h2>
-  <p>My Route uses standard device storage and network communication mechanisms provided by the operating system and application framework. Network requests are sent using HTTPS where supported by the relevant service. We take reasonable steps to limit data access to what is needed for the app's features.</p>
+        <h2>11. Children's privacy</h2>
+        <p>My Route is not specifically designed for children. The app is intended for a general travel audience aged 16 and older. If you believe a child has provided personal information through the app, please contact us.</p>
 
-  <h2>11. Children's privacy</h2>
-  <p>My Route is not specifically designed for children. The app is intended for a general travel audience aged 16 and older. If you believe a child has provided personal information through the app, please contact us.</p>
+        <h2>12. Changes to this Privacy Policy</h2>
+        <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated date.</p>
 
-  <h2>12. Changes to this Privacy Policy</h2>
-  <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated date.</p>
+        <p class="footer">
+          Contact: <a href="mailto:alexvovan.dev@gmail.com">alexvovan.dev@gmail.com</a><br />
+          Developer website: <a href="https://portfolio-alexvovan.vercel.app">AlexVovan Studio</a>
+        </p>
+      </section>
+
+      <section id="policy-ru" class="policy" hidden>
+        <h1>Политика конфиденциальности My Route</h1>
+        <p class="updated">Последнее обновление: 16 мая 2026 г.</p>
+        <p>Настоящая Политика конфиденциальности объясняет, как My Route обрабатывает информацию при использовании мобильного приложения. My Route — приложение для путешествий, планирования маршрутов и знакомства с городами.</p>
+
+        <h2>1. Разработчик и контакты</h2>
+        <p>My Route предоставляется разработчиком приложения My Route. По вопросам конфиденциальности или удаления данных обращайтесь по адресу: <strong>alexvovan.dev@gmail.com</strong>.</p>
+
+        <h2>2. Информация, к которой приложение может получать доступ или которую может обрабатывать</h2>
+        <p>В зависимости от используемых функций My Route может получать доступ к следующей информации или обрабатывать её:</p>
+        <ul>
+          <li><strong>Приблизительное и точное местоположение:</strong> используется для определения текущего города, начала маршрута из текущего местоположения, расчёта расстояний, улучшения навигации по маршруту и показа ближайших мест.</li>
+          <li><strong>Поисковые запросы:</strong> введённые названия городов или мест могут использоваться для поиска локаций, достопримечательностей, картографических данных или сведений о маршрутах.</li>
+          <li><strong>Выбранные вами фотографии:</strong> используются только тогда, когда вы решаете прикрепить фотографии к посещённым местам или сохранённым поездкам в альбоме путешествий.</li>
+          <li><strong>Данные маршрутов и альбомов:</strong> например выбранные города, посещённые места, заметки, сохранённые поездки, ход маршрута, награды, язык приложения, тема и локальные настройки.</li>
+          <li><strong>Технические данные запросов:</strong> когда приложение запрашивает картографические тайлы, маршруты, сведения о местах, переводы, информацию о городах или изображения у внешних сервисов.</li>
+        </ul>
+
+        <h2>3. Как используется информация</h2>
+        <p>Информация используется для предоставления основных функций приложения, включая:</p>
+        <ul>
+          <li>поиск городов, мест и достопримечательностей;</li>
+          <li>создание и отображение пешеходных маршрутов;</li>
+          <li>показ информации о городах и местах;</li>
+          <li>использование карт и навигации по маршрутам;</li>
+          <li>локальное сохранение маршрутов, заметок, фотографий и воспоминаний о путешествиях на вашем устройстве;</li>
+          <li>поддержку языка приложения, темы, аудиогида, наград и функций карты.</li>
+        </ul>
+
+        <h2>4. Локальное хранение</h2>
+        <p>Большая часть данных приложения хранится локально на вашем устройстве. Сюда могут входить ход маршрута, сохранённые поездки, прикреплённые фотографии, награды, настройки и предпочтения приложения. My Route не использует эти данные для создания учётной записи пользователя и не продаёт их.</p>
+
+        <h2>5. Передача сторонним сервисам</h2>
+        <p>My Route использует внешние сервисы для предоставления карт, расчёта маршрутов, поиска мест, геокодирования, информации о городах и местах, изображений и функций перевода. В зависимости от используемой функции запросы могут отправляться таким сервисам, как OpenStreetMap/Nominatim, Overpass API, OSRM, Photon/Komoot, Wikimedia/Wikipedia/Wikidata, конечные точки Google Translate, ссылки Google Maps, картографические тайлы Carto/Esri и backend-прокси My Route.</p>
+        <p>Эти сервисы могут получать техническую информацию запроса, такую как координаты, поисковые запросы, IP-адрес, сведения об устройстве и сети и метаданные запроса, необходимые для ответа на запросы приложения. Обработка регулируется собственными политиками конфиденциальности и условиями этих сервисов.</p>
+
+        <h2>6. Местоположение</h2>
+        <p>Приложение запрашивает разрешение на доступ к местоположению только тогда, когда оно необходимо для функции, например для определения текущего города, начала маршрута из текущего местоположения, улучшения навигации или открытия указаний. Данные о местоположении могут отправляться картографическим сервисам, сервисам геокодирования, построения маршрутов или поиска мест только для предоставления запрошенной функции.</p>
+        <p>Вы можете отклонить или отозвать разрешение на доступ к местоположению в настройках устройства. Некоторые функции, связанные с местоположением, могут без него не работать, но там, где это доступно, можно продолжать использовать ручной поиск города.</p>
+
+        <h2>7. Фотографии</h2>
+        <p>Приложение получает доступ к библиотеке фотографий только после предоставления разрешения и только когда вы решаете добавить фотографии к воспоминаниям о путешествии. Выбранные фотографии сохраняются локально в данных альбома приложения на вашем устройстве. Приложение не загружает выбранные фотографии на backend My Route.</p>
+
+        <h2>8. Учётные записи, реклама и платежи</h2>
+        <p>В настоящее время My Route не требует регистрации или входа в учётную запись. Приложение не показывает стороннюю рекламу. Текущая публичная версия не обрабатывает встроенные платежи внутри приложения.</p>
+
+        <h2>9. Хранение и удаление данных</h2>
+        <p>Данные, сохранённые приложением локально, остаются на устройстве, пока вы не удалите их, не сбросите данные приложения, не удалите приложение или не удалите сохранённый контент с помощью доступных функций. При удалении приложения локально сохранённые данные могут быть удалены операционной системой.</p>
+        <p class="notice"><strong>Запрос на удаление данных:</strong> чтобы запросить удаление своих данных, напишите на <strong>alexvovan.dev@gmail.com</strong> с темой <strong>«Data deletion request»</strong>. Укажите в сообщении название приложения — My Route.</p>
+        <p>Поскольку большая часть данных приложения хранится локально на устройстве, вы также можете удалить их, удалив сохранённые маршруты или фотографии внутри приложения, где это доступно, очистив данные приложения в настройках устройства или удалив приложение.</p>
+
+        <h2>10. Безопасность</h2>
+        <p>My Route использует стандартные механизмы хранения данных на устройстве и сетевого взаимодействия, предоставляемые операционной системой и фреймворком приложения. Сетевые запросы отправляются по HTTPS там, где это поддерживается соответствующим сервисом. Мы принимаем разумные меры, чтобы ограничить доступ к данным объёмом, необходимым для работы функций приложения.</p>
+
+        <h2>11. Конфиденциальность детей</h2>
+        <p>My Route не предназначено специально для детей. Приложение рассчитано на общую аудиторию путешественников в возрасте от 16 лет. Если вы считаете, что ребёнок предоставил личную информацию через приложение, свяжитесь с нами.</p>
+
+        <h2>12. Изменения настоящей Политики конфиденциальности</h2>
+        <p>Мы можем время от времени обновлять настоящую Политику конфиденциальности. Все изменения будут опубликованы на этой странице с обновлённой датой.</p>
+
+        <p class="footer">
+          Контакт: <a href="mailto:alexvovan.dev@gmail.com">alexvovan.dev@gmail.com</a><br />
+          Сайт разработчика: <a href="https://portfolio-alexvovan.vercel.app">AlexVovan Studio</a>
+        </p>
+      </section>
+
+      <section id="policy-es" class="policy" hidden>
+        <h1>Política de privacidad de My Route</h1>
+        <p class="updated">Última actualización: 16 de mayo de 2026</p>
+        <p>Esta Política de privacidad explica cómo My Route gestiona la información cuando utilizas la aplicación móvil. My Route es una aplicación de viajes, planificación de rutas y exploración de ciudades.</p>
+
+        <h2>1. Desarrollador y contacto</h2>
+        <p>My Route es proporcionada por el desarrollador de la aplicación My Route. Para preguntas relacionadas con la privacidad o solicitudes de eliminación de datos, escríbenos a: <strong>alexvovan.dev@gmail.com</strong>.</p>
+
+        <h2>2. Información a la que la aplicación puede acceder o que puede procesar</h2>
+        <p>Dependiendo de las funciones que utilices, My Route puede acceder o procesar la siguiente información:</p>
+        <ul>
+          <li><strong>Ubicación aproximada y precisa:</strong> se utiliza para detectar tu ciudad actual, iniciar una ruta desde tu posición actual, calcular distancias, mejorar la navegación de la ruta y mostrar lugares cercanos.</li>
+          <li><strong>Consultas de búsqueda:</strong> los nombres de ciudades o lugares que introduzcas pueden utilizarse para buscar ubicaciones, atracciones, datos de mapas o información de rutas.</li>
+          <li><strong>Fotos seleccionadas por ti:</strong> se utilizan únicamente cuando decides adjuntar fotos a lugares visitados o viajes guardados en tu álbum de viaje.</li>
+          <li><strong>Datos de rutas y álbumes de viaje:</strong> como ciudades seleccionadas, lugares visitados, notas, viajes guardados, progreso de rutas, recompensas, idioma de la aplicación, tema y preferencias locales.</li>
+          <li><strong>Datos técnicos de las solicitudes:</strong> cuando la aplicación solicita a servicios externos teselas de mapas, rutas, detalles de lugares, traducciones, información de ciudades o imágenes.</li>
+        </ul>
+
+        <h2>3. Cómo se utiliza la información</h2>
+        <p>La información se utiliza para proporcionar las funciones principales de la aplicación, entre ellas:</p>
+        <ul>
+          <li>buscar ciudades, lugares y atracciones;</li>
+          <li>crear y mostrar rutas a pie;</li>
+          <li>mostrar información sobre ciudades y lugares;</li>
+          <li>utilizar mapas y navegación de rutas;</li>
+          <li>guardar localmente en tu dispositivo rutas, notas, fotos y recuerdos de viaje;</li>
+          <li>admitir el idioma de la aplicación, el tema, la audioguía, las recompensas y las funciones del mapa.</li>
+        </ul>
+
+        <h2>4. Almacenamiento local</h2>
+        <p>La mayoría de los datos de la aplicación se almacenan localmente en tu dispositivo. Esto puede incluir el progreso de las rutas, viajes guardados, fotos adjuntas, recompensas, ajustes y preferencias de la aplicación. My Route no utiliza estos datos para crear una cuenta de usuario ni vende estos datos.</p>
+
+        <h2>5. Intercambio con servicios de terceros</h2>
+        <p>My Route utiliza servicios externos para proporcionar mapas, cálculo de rutas, búsqueda de lugares, geocodificación, información sobre ciudades y lugares, imágenes y funciones de traducción. Dependiendo de la función utilizada, pueden enviarse solicitudes a servicios como OpenStreetMap/Nominatim, Overpass API, OSRM, Photon/Komoot, Wikimedia/Wikipedia/Wikidata, endpoints de Google Translate, enlaces de Google Maps, teselas de mapas de Carto/Esri y el proxy backend de My Route.</p>
+        <p>Estos servicios pueden recibir información técnica de la solicitud, como coordenadas, consultas de búsqueda, dirección IP, información del dispositivo o de la red y metadatos de la solicitud, según sea necesario para responder a las solicitudes de la aplicación. El tratamiento se rige por sus propias políticas de privacidad y condiciones.</p>
+
+        <h2>6. Ubicación</h2>
+        <p>La aplicación solicita permiso de ubicación únicamente cuando una función lo necesita, por ejemplo para detectar tu ciudad actual, iniciar una ruta desde tu ubicación, mejorar la navegación o abrir indicaciones. Los datos de ubicación pueden enviarse a servicios de mapas, geocodificación, rutas o búsqueda de lugares únicamente para proporcionar la función solicitada.</p>
+        <p>Puedes denegar o revocar el permiso de ubicación en los ajustes de tu dispositivo. Algunas funciones basadas en la ubicación podrían no funcionar sin este permiso, pero podrás seguir utilizando la búsqueda manual de ciudades cuando esté disponible.</p>
+
+        <h2>7. Fotos</h2>
+        <p>La aplicación accede a tu biblioteca de fotos solo después de que concedas permiso y únicamente cuando decides añadir fotos a tus recuerdos de viaje. Las fotos seleccionadas se guardan localmente en los datos del álbum de la aplicación en tu dispositivo. La aplicación no sube las fotos seleccionadas al backend de My Route.</p>
+
+        <h2>8. Cuentas, publicidad y pagos</h2>
+        <p>Actualmente, My Route no requiere registro ni inicio de sesión. La aplicación no muestra publicidad de terceros. La versión pública actual no procesa pagos dentro de la aplicación.</p>
+
+        <h2>9. Conservación y eliminación de datos</h2>
+        <p>Los datos guardados localmente por la aplicación permanecen en tu dispositivo hasta que los elimines, restablezcas los datos de la aplicación, desinstales la aplicación o borres el contenido guardado cuando la aplicación ofrezca esa función. Si desinstalas la aplicación, el sistema operativo puede eliminar los datos almacenados localmente.</p>
+        <p class="notice"><strong>Solicitud de eliminación de datos:</strong> para solicitar la eliminación de tus datos, escribe a <strong>alexvovan.dev@gmail.com</strong> con el asunto <strong>“Data deletion request”</strong>. Incluye en el mensaje el nombre de la aplicación, My Route.</p>
+        <p>Como la mayoría de los datos de la aplicación se almacenan localmente en tu dispositivo, también puedes eliminarlos borrando las rutas o fotos guardadas dentro de la aplicación cuando esa opción esté disponible, borrando los datos de la aplicación en los ajustes del dispositivo o desinstalando la aplicación.</p>
+
+        <h2>10. Seguridad</h2>
+        <p>My Route utiliza mecanismos estándar de almacenamiento del dispositivo y comunicación de red proporcionados por el sistema operativo y el framework de la aplicación. Las solicitudes de red se envían mediante HTTPS cuando el servicio correspondiente lo admite. Tomamos medidas razonables para limitar el acceso a los datos a lo necesario para las funciones de la aplicación.</p>
+
+        <h2>11. Privacidad de los menores</h2>
+        <p>My Route no está diseñada específicamente para niños. La aplicación está dirigida a un público general de viajeros de 16 años o más. Si crees que un menor ha proporcionado información personal a través de la aplicación, ponte en contacto con nosotros.</p>
+
+        <h2>12. Cambios en esta Política de privacidad</h2>
+        <p>Podemos actualizar esta Política de privacidad ocasionalmente. Los cambios se publicarán en esta página con una fecha actualizada.</p>
+
+        <p class="footer">
+          Contacto: <a href="mailto:alexvovan.dev@gmail.com">alexvovan.dev@gmail.com</a><br />
+          Sitio web del desarrollador: <a href="https://portfolio-alexvovan.vercel.app">AlexVovan Studio</a>
+        </p>
+      </section>
+    </article>
+  </main>
+
+  <script>
+    const supportedLanguages = ["en", "ru", "es"];
+
+    function normalizeLanguage(value) {
+      if (!value || typeof value !== "string") return null;
+      const normalized = value.trim().toLowerCase().slice(0, 2);
+      return supportedLanguages.includes(normalized) ? normalized : null;
+    }
+
+    function getLanguageFromUrl() {
+      return normalizeLanguage(new URLSearchParams(window.location.search).get("lang"));
+    }
+
+    function getLanguageFromBrowser() {
+      return normalizeLanguage(navigator.language) || "en";
+    }
+
+    function setActiveLanguage(language) {
+      const activeLanguage = supportedLanguages.includes(language) ? language : "en";
+      document.querySelectorAll(".policy").forEach((section) => {
+        section.hidden = section.id !== "policy-" + activeLanguage;
+      });
+      document.documentElement.lang = activeLanguage;
+      document.title = {
+        en: "Privacy Policy - My Route",
+        ru: "Политика конфиденциальности - My Route",
+        es: "Política de privacidad - My Route"
+      }[activeLanguage];
+    }
+
+    setActiveLanguage(getLanguageFromUrl() || getLanguageFromBrowser());
+  </script>
 </body>
 </html>

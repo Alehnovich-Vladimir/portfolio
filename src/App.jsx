@@ -23,7 +23,16 @@ const App = () => {
           aria-label="AlexVovan Studio — Web and Mobile Developer"
         >
           <span className="site-brand-mark" aria-hidden="true">
-            <img src="/brand-av-logo.png" alt="" />
+            <img
+              className="site-brand-logo site-brand-logo--light"
+              src="/brand-av-logo-light.png"
+              alt=""
+            />
+            <img
+              className="site-brand-logo site-brand-logo--dark"
+              src="/brand-av-logo-dark.png"
+              alt=""
+            />
           </span>
           <span className="site-brand-copy">
             <strong>AlexVovan Studio</strong>

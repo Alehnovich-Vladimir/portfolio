@@ -13,8 +13,8 @@ const ProductList = () => {
   }));
 
   const getProject = (id) => translatedProducts.find((item) => item.id === id);
-  const currentBuilds = [9, 10].map(getProject).filter(Boolean);
-  const selectedWeb = getProject(2);
+  const currentBuilds = [10].map(getProject).filter(Boolean);
+  const completedProjects = [9, 2].map(getProject).filter(Boolean);
   const archive = [3, 4, 5, 6].map(getProject).filter(Boolean);
 
   return (
@@ -33,7 +33,7 @@ const ProductList = () => {
             <span aria-hidden="true">ϟ</span>
             <h3>{t.projects.currentTitle}</h3>
           </div>
-          <div className="pl-current-grid">
+          <div className={`pl-current-grid${currentBuilds.length === 1 ? " pl-current-grid--single" : ""}`}>
             {currentBuilds.map((item) => (
               <Product
                 key={item.id}
@@ -46,18 +46,24 @@ const ProductList = () => {
         </section>
 
         <div className="pl-lower-grid">
-          {selectedWeb && (
+          {completedProjects.length > 0 && (
             <section className="pl-completed">
               <div className="pl-section-title pl-section-title--completed">
                 <span aria-hidden="true">✓</span>
                 <h3>{t.projects.completedTitle || t.projects.webTitle}</h3>
               </div>
-              <Product
-                product={selectedWeb}
-                openLabel={t.projects.openProject}
-                variant="web-feature"
-                contextLabel={t.projects.diplomaLabel}
-              />
+              <div className="pl-completed-grid">
+                {completedProjects.map((item) => (
+                  <Product
+                    key={item.id}
+                    product={item}
+                    openLabel={t.projects.openProject}
+                    variant="web-feature"
+                    contextLabel={item.status || t.projects.diplomaLabel}
+                    language={language}
+                  />
+                ))}
+              </div>
             </section>
           )}
 

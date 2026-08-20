@@ -79,16 +79,16 @@ export const translations = {
       kicker: "Web development",
       title: "Web projects",
       description:
-        "Current builds come first, followed by a diploma project and a compact archive of earlier front-end work.",
+        "Published and current web work comes first, followed by a compact archive of earlier front-end projects.",
       currentKicker: "In progress",
       currentTitle: "Currently building",
       currentDescription:
-        "Two active builds that are not public yet, so the portfolio shows their direction without presenting them as released products.",
+        "KeyLab is still in development, so it is shown here as active work rather than a released website.",
       webKicker: "Selected web work",
       webTitle: "Diploma project",
       webDescription:
         "A larger web project from my front-end training, kept separate from the smaller learning exercises.",
-      completedTitle: "Completed project",
+      completedTitle: "Completed projects",
       archiveKicker: "Learning archive",
       archiveTitle: "Early web projects",
       archiveDescription:
@@ -102,9 +102,9 @@ export const translations = {
         5: { description: "Pixel-focused webpage layout and adaptive presentation." },
         6: { description: "Nature-themed page with careful desktop and mobile layout." },
         9: {
-          status: "In development",
+          status: "Published website",
           tag: "Learning platform",
-          description: "A structured learning platform for Spanish and English courses from A0 to C1.",
+          description: "A published learning platform for structured Spanish and English courses from A0 to C1.",
           features: ["Spanish & English", "A0–C1 levels", "interactive lessons"],
         },
         10: {
@@ -226,16 +226,16 @@ export const translations = {
       kicker: "Desarrollo web",
       title: "Proyectos web",
       description:
-        "Primero aparecen los proyectos actuales en desarrollo; después, el proyecto final y un archivo compacto de trabajos anteriores.",
+        "Primero aparecen los trabajos web publicados y actuales; después, un archivo compacto de proyectos front-end anteriores.",
       currentKicker: "En desarrollo",
       currentTitle: "Proyectos actuales",
       currentDescription:
-        "Dos proyectos en desarrollo que todavía no están publicados. Aquí muestro su dirección sin presentarlos como productos ya lanzados.",
+        "KeyLab sigue en desarrollo, por eso aparece aquí como trabajo activo y no como un sitio ya publicado.",
       webKicker: "Trabajo web seleccionado",
       webTitle: "Proyecto final",
       webDescription:
         "Un proyecto web más amplio de mi formación front-end, separado de los ejercicios de aprendizaje más pequeños.",
-      completedTitle: "Proyecto terminado",
+      completedTitle: "Proyectos terminados",
       archiveKicker: "Archivo de aprendizaje",
       archiveTitle: "Primeros proyectos web",
       archiveDescription:
@@ -249,9 +249,9 @@ export const translations = {
         5: { description: "Maquetación web cuidada con presentación adaptativa." },
         6: { description: "Página con temática de naturaleza y diseño adaptado a móvil y escritorio." },
         9: {
-          status: "En desarrollo",
+          status: "Sitio publicado",
           tag: "Plataforma educativa",
-          description: "Una plataforma estructurada para aprender español e inglés desde A0 hasta C1.",
+          description: "Una plataforma publicada para aprender español e inglés de forma estructurada desde A0 hasta C1.",
           features: ["español e inglés", "niveles A0–C1", "lecciones interactivas"],
         },
         10: {
@@ -373,16 +373,16 @@ export const translations = {
       kicker: "Web-разработка",
       title: "Web-проекты",
       description:
-        "Сначала — проекты, над которыми я работаю сейчас. Ниже — дипломный проект и компактный архив ранних front-end работ.",
+        "Сначала — опубликованные и текущие web-проекты. Ниже — компактный архив более ранних front-end работ.",
       currentKicker: "В разработке",
       currentTitle: "Сейчас в работе",
       currentDescription:
-        "Два проекта в разработке, которые пока не опубликованы. Здесь показано их направление без попытки выдать разработку за готовый релиз.",
+        "KeyLab пока находится в разработке, поэтому здесь он показан как текущая работа, а не как опубликованный сайт.",
       webKicker: "Избранная web-работа",
       webTitle: "Дипломный проект",
       webDescription:
         "Более крупный web-проект из моего front-end обучения, отделённый от небольших учебных упражнений.",
-      completedTitle: "Завершенный проект",
+      completedTitle: "Завершённые проекты",
       archiveKicker: "Архив обучения",
       archiveTitle: "Ранние web-проекты",
       archiveDescription:
@@ -396,9 +396,9 @@ export const translations = {
         5: { description: "Аккуратная web-верстка с адаптивной презентацией." },
         6: { description: "Страница о природе с продуманной desktop и mobile версткой." },
         9: {
-          status: "В разработке",
+          status: "Опубликованный сайт",
           tag: "Учебная платформа",
-          description: "Полноценная платформа для изучения испанского и английского языков по уровням от A0 до C1.",
+          description: "Опубликованная платформа для последовательного изучения испанского и английского языков по уровням от A0 до C1.",
           features: ["испанский и английский", "уровни A0–C1", "интерактивные уроки"],
         },
         10: {

@@ -46,15 +46,12 @@ export const products = [
     },
     {
         id: 9,
-        img: {
-            ru: "/project-screens/my-language-studio.webp",
-            en: "/project-screens/my-language-studio-en.webp",
-            es: "/project-screens/my-language-studio-es.webp",
-        },
+        img: "/project-screens/my-language-studio-full.webp",
+        link: "https://mylangstudio.com/",
         title: "My Language Studio",
         tag: "Learning platform",
-        kind: "development",
-        description: "Language-learning platform with structured Spanish and English courses from A0 to C1.",
+        kind: "web",
+        description: "Published language-learning platform with structured Spanish and English courses from A0 to C1.",
     },
     {
         id: 10,
@@ -127,17 +124,101 @@ export const apps = [
                     src: "/app-screens/my-photobook-home-en.jpg",
                     label: "Albums screen",
                 },
+                {
+                    src: "/app-screens/my-photobook-create-en.jpg",
+                    label: "New album setup",
+                },
+                {
+                    src: "/app-screens/my-photobook-gallery-en.jpg",
+                    label: "Photo gallery and editing",
+                },
+                {
+                    src: "/app-screens/my-photobook-preview-travel-en.jpg",
+                    label: "Travel album page preview",
+                },
+                {
+                    src: "/app-screens/my-photobook-print-en.jpg",
+                    label: "Print format selection",
+                },
+                {
+                    src: "/app-screens/my-photobook-hardcover-en.jpg",
+                    label: "Hardcover print settings",
+                },
+                {
+                    src: "/app-screens/my-photobook-actions-en.jpg",
+                    label: "PDF, print and album actions",
+                },
+                {
+                    src: "/app-screens/my-photobook-cover-camino-en.jpg",
+                    label: "Finished Camino album cover",
+                },
             ],
             es: [
                 {
                     src: "/app-screens/my-photobook-home-es.jpg",
                     label: "Pantalla de álbumes",
                 },
+                {
+                    src: "/app-screens/my-photobook-create-en.jpg",
+                    label: "Creación de un nuevo álbum",
+                },
+                {
+                    src: "/app-screens/my-photobook-gallery-en.jpg",
+                    label: "Galería y edición de fotos",
+                },
+                {
+                    src: "/app-screens/my-photobook-preview-travel-en.jpg",
+                    label: "Vista previa de una página del álbum",
+                },
+                {
+                    src: "/app-screens/my-photobook-print-en.jpg",
+                    label: "Selección del formato de impresión",
+                },
+                {
+                    src: "/app-screens/my-photobook-hardcover-en.jpg",
+                    label: "Ajustes de impresión de tapa dura",
+                },
+                {
+                    src: "/app-screens/my-photobook-actions-en.jpg",
+                    label: "Acciones de PDF, impresión y álbum",
+                },
+                {
+                    src: "/app-screens/my-photobook-cover-camino-en.jpg",
+                    label: "Portada terminada del álbum Camino",
+                },
             ],
             ru: [
                 {
                     src: "/app-screens/my-photobook-home-ru.jpg",
                     label: "Экран альбомов",
+                },
+                {
+                    src: "/app-screens/my-photobook-create-en.jpg",
+                    label: "Создание нового альбома",
+                },
+                {
+                    src: "/app-screens/my-photobook-gallery-en.jpg",
+                    label: "Галерея и редактирование фотографий",
+                },
+                {
+                    src: "/app-screens/my-photobook-preview-travel-en.jpg",
+                    label: "Предпросмотр страницы альбома",
+                },
+                {
+                    src: "/app-screens/my-photobook-print-en.jpg",
+                    label: "Выбор формата печати",
+                },
+                {
+                    src: "/app-screens/my-photobook-hardcover-en.jpg",
+                    label: "Настройки печати твёрдой обложки",
+                },
+                {
+                    src: "/app-screens/my-photobook-actions-en.jpg",
+                    label: "PDF, печать и действия с альбомом",
+                },
+                {
+                    src: "/app-screens/my-photobook-cover-camino-en.jpg",
+                    label: "Готовая обложка альбома Camino",
                 },
             ],
         },

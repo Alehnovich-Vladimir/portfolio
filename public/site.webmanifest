@@ -1,0 +1,20 @@
+{
+  "name": "Uladzimir Aliakhnovich Portfolio",
+  "short_name": "UA Portfolio",
+  "description": "Portfolio of Uladzimir Aliakhnovich, web and mobile developer.",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#061121",
+  "background_color": "#061121",
+  "display": "standalone"
+}

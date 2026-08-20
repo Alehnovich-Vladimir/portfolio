@@ -17,13 +17,16 @@ const App = () => {
   return (
     <div className={`app ${darkMode ? "app--dark" : "app--light"}`}>
       <header className="site-header">
-        <a className="site-brand" href="#home" aria-label={t.nav.home}>
+        <a
+          className="site-brand"
+          href="#home"
+          aria-label="AlexVovan Studio — Web and Mobile Developer"
+        >
           <span className="site-brand-mark" aria-hidden="true">
-            <span className="site-brand-u">U</span>
-            <span className="site-brand-a">A</span>
+            <img src="/brand-av-logo.png" alt="" />
           </span>
           <span className="site-brand-copy">
-            <strong>Uladzimir Aliakhnovich</strong>
+            <strong>AlexVovan Studio</strong>
             <small>Web · Mobile Developer</small>
           </span>
         </a>

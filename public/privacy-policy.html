@@ -40,6 +40,37 @@
       box-shadow: 0 8px 24px rgba(23, 36, 50, 0.08);
     }
 
+    .language-switcher {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: flex-end;
+      margin-bottom: 24px;
+    }
+
+    .language-button {
+      border: 1px solid var(--border);
+      background: #ffffff;
+      color: var(--text);
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .language-button:hover {
+      border-color: var(--accent);
+      color: var(--accent-dark);
+    }
+
+    .language-button.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #ffffff;
+      font-weight: 700;
+    }
+
     h1 {
       margin: 0 0 8px;
       font-size: 34px;
@@ -84,6 +115,7 @@
     @media (max-width: 640px) {
       .page { padding: 18px 12px; }
       .card { padding: 24px 18px; border-radius: 14px; }
+      .language-switcher { justify-content: flex-start; }
       h1 { font-size: 28px; }
       h2 { font-size: 20px; }
     }
@@ -93,9 +125,15 @@
 <body>
   <main class="page">
     <article class="card">
+      <nav class="language-switcher" aria-label="Language selection">
+        <button type="button" class="language-button" data-lang-button="en">English</button>
+        <button type="button" class="language-button" data-lang-button="ru">Русский</button>
+        <button type="button" class="language-button" data-lang-button="es">Español</button>
+      </nav>
+
       <section id="policy-en" class="policy">
         <h1>Privacy Policy for My Route</h1>
-        <p class="updated">Last updated: May 16, 2026</p>
+        <p class="updated">Last updated: August 21, 2026</p>
         <p>This Privacy Policy explains how My Route handles information when you use the mobile application. My Route is a travel, route-planning and city-exploration application.</p>
 
         <h2>1. Developer and contact</h2>
@@ -161,7 +199,7 @@
 
       <section id="policy-ru" class="policy" hidden>
         <h1>Политика конфиденциальности My Route</h1>
-        <p class="updated">Последнее обновление: 16 мая 2026 г.</p>
+        <p class="updated">Последнее обновление: 21 августа 2026 г.</p>
         <p>Настоящая Политика конфиденциальности объясняет, как My Route обрабатывает информацию при использовании мобильного приложения. My Route — приложение для путешествий, планирования маршрутов и знакомства с городами.</p>
 
         <h2>1. Разработчик и контакты</h2>
@@ -227,7 +265,7 @@
 
       <section id="policy-es" class="policy" hidden>
         <h1>Política de privacidad de My Route</h1>
-        <p class="updated">Última actualización: 16 de mayo de 2026</p>
+        <p class="updated">Última actualización: 21 de agosto de 2026</p>
         <p>Esta Política de privacidad explica cómo My Route gestiona la información cuando utilizas la aplicación móvil. My Route es una aplicación de viajes, planificación de rutas y exploración de ciudades.</p>
 
         <h2>1. Desarrollador y contacto</h2>
@@ -310,20 +348,58 @@
       return normalizeLanguage(navigator.language) || "en";
     }
 
-    function setActiveLanguage(language) {
+    function getStoredLanguage() {
+      try {
+        return normalizeLanguage(window.localStorage.getItem("myRoutePrivacyLanguage"));
+      } catch (error) {
+        return null;
+      }
+    }
+
+    function storeLanguage(language) {
+      try {
+        window.localStorage.setItem("myRoutePrivacyLanguage", language);
+      } catch (error) {
+        // The policy still works when browser storage is unavailable.
+      }
+    }
+
+    function setActiveLanguage(language, shouldUpdateUrl) {
       const activeLanguage = supportedLanguages.includes(language) ? language : "en";
       document.querySelectorAll(".policy").forEach((section) => {
         section.hidden = section.id !== "policy-" + activeLanguage;
       });
+
+      document.querySelectorAll("[data-lang-button]").forEach((button) => {
+        const isActive = button.getAttribute("data-lang-button") === activeLanguage;
+        button.classList.toggle("active", isActive);
+        button.setAttribute("aria-pressed", String(isActive));
+      });
+
       document.documentElement.lang = activeLanguage;
       document.title = {
         en: "Privacy Policy - My Route",
         ru: "Политика конфиденциальности - My Route",
         es: "Política de privacidad - My Route"
       }[activeLanguage];
+
+      storeLanguage(activeLanguage);
+
+      if (shouldUpdateUrl) {
+        const url = new URL(window.location.href);
+        url.searchParams.set("lang", activeLanguage);
+        window.history.replaceState({}, "", url.toString());
+      }
     }
 
-    setActiveLanguage(getLanguageFromUrl() || getLanguageFromBrowser());
+    document.querySelectorAll("[data-lang-button]").forEach((button) => {
+      button.addEventListener("click", () => {
+        setActiveLanguage(button.getAttribute("data-lang-button"), true);
+      });
+    });
+
+    const initialLanguage = getLanguageFromUrl() || getStoredLanguage() || getLanguageFromBrowser();
+    setActiveLanguage(initialLanguage, false);
   </script>
 </body>
 </html>
